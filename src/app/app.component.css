@@ -1,0 +1,15 @@
+app-header {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Make it 80% of the viewport width */
+  height: 70px;
+  z-index: 1000; /* Keep it above other content */
+  background-color: #fff; /* Set background color */
+  /* margin-top: 30px; */
+}
+
+app-home {
+  margin-top: 60px; /* Adjust according to the header height */
+}

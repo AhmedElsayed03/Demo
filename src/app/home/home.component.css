@@ -1,0 +1,110 @@
+.firstSection {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url("/assets/firstSectionImg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.titles h1 {
+  font-family: "NotoKufiSB";
+  margin: 30px 0;
+}
+
+.titles h4 {
+  font-family: "NotoKufi";
+  margin: 5px 0;
+}
+
+.cta {
+  background-image: linear-gradient(
+    to right,
+    #00aaff 0%,
+    #034bd2 51%,
+    #00aaff 100%
+  );
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 1s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 5px;
+  border: 1px;
+  font-family: NotoKufiB;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+  font-family: NotoKufiSB;
+  text-align: right;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+.search-input::placeholder {
+  color: #888;
+  font-size: 14px;
+  opacity: 1;
+  padding-right: 4px;
+  transition: opacity 0.3s ease;
+  text-align: right;
+}
+
+.search-input:focus {
+  border-color: #0098cf;
+  outline: none;
+}
+.search-input:focus::placeholder {
+  opacity: 0;
+}
+
+.arrowDown {
+  position: relative;
+  top: 130px;
+  left: 10px;
+}

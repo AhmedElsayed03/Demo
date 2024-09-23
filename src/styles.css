@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "PoppinsEL";
+  src: url(assets/font/Poppins-ExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PoppinsL";
+  src: url(assets/font/Poppins-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(assets/font/Poppins-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "PoppinsB";
+  src: url(assets/font/Poppins-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PoppinsL";
+  src: url(assets/font/Poppins-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "PoppinsEL";
+  src: url(assets/font/Poppins-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: "PoppinsSB";
+  src: url(assets/font/Poppins-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "NotoKufiL";
+  src: url(assets/font/static/NotoKufiArabic-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "NotoKufiB";
+  src: url(assets/font/static/NotoKufiArabic-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "NotoKufiSB";
+  src: url(assets/font/static/NotoKufiArabic-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "NotoKufi";
+  src: url(assets/font/static/NotoKufiArabic-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "NotoKufiEL";
+  src: url(assets/font/static/NotoKufiArabic-ExtraLight.ttf) format("truetype");
+}
