@@ -55,6 +55,7 @@
   color: #fff;
   text-decoration: none;
 }
+
 .search-container {
   display: flex;
   justify-content: center;
@@ -81,11 +82,13 @@
   color: white;
   border-radius: 5px 0 0 5px;
   cursor: pointer;
+  font-family: NotoKufi;
 }
 
 .search-button:hover {
   background-color: #0056b3;
 }
+
 .search-input::placeholder {
   color: #888;
   font-size: 14px;
@@ -99,6 +102,7 @@
   border-color: #0098cf;
   outline: none;
 }
+
 .search-input:focus::placeholder {
   opacity: 0;
 }
@@ -107,4 +111,112 @@
   position: relative;
   top: 130px;
   left: 10px;
+}
+
+/***************************************************************************************/
+
+.secondSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: NotoKufiB;
+  /* border: rgb(184, 254, 55) solid 2px; */
+}
+
+.process {
+  width: 40%;
+}
+
+/***************************************************************************************/
+
+.fourthSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: salmon solid 2px; */
+  background-image: url(/assets/Background_Effect_Combined.png);
+  background-size: 2000px 1700px; /* Ensures the background image covers the entire div */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image within the div */
+}
+
+.fourthSection h1 {
+  font-family: NotoKufiB;
+  margin-top: 70px;
+}
+
+.fourthSection p {
+  font-family: NotoKufiB;
+  text-align: right;
+}
+
+.imageSection1 {
+  display: flex;
+  align-items: center; /* This will vertically align items in the center */
+  /* border: rgb(0, 33, 200) solid 2px; */
+  margin-bottom: 70px;
+}
+
+.imageSection1 img {
+  max-width: 50%; /* Adjust image width to fit nicely */
+  margin-right: 120px; /* Add space between the image and the text */
+  width: 25%;
+}
+
+.imageSection1 .Info {
+  flex-grow: 1; /* This will make the text div take up the remaining space */
+  direction: rtl; /* Ensure the text is displayed properly for Arabic */
+}
+
+.imageSection2 {
+  display: flex;
+  align-items: center; /* This will vertically align items in the center */
+  /* border: rgb(0, 33, 200) solid 2px; */
+}
+
+.imageSection2 img {
+  max-width: 50%; /* Adjust image width to fit nicely */
+  width: 25%;
+}
+
+.imageSection2 .Info {
+  flex-grow: 1; /* This will make the text div take up the remaining space */
+  direction: rtl; /* Ensure the text is displayed properly for Arabic */
+  margin-right: 220px; /* Add space between the image and the text */
+}
+
+.imageSection3 {
+  display: flex;
+  align-items: center; /* This will vertically align items in the center */
+  /* border: rgb(0, 33, 200) solid 2px; */
+  margin-top: 70px;
+}
+
+.imageSection3 img {
+  max-width: 50%; /* Adjust image width to fit nicely */
+  margin-right: 120px; /* Add space between the image and the text */
+  width: 20%;
+}
+
+.imageSection3 .Info {
+  flex-grow: 1; /* This will make the text div take up the remaining space */
+  direction: rtl; /* Ensure the text is displayed properly for Arabic */
+}
+
+/***************************************************************************************/
+
+.payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure the container takes full width */
+  height: 100%; /* You can set a fixed height if needed, or use percentages */
+  margin-bottom: 50px;
+}
+
+.payment img {
+  width: 100%; /* Image will resize to fill the width of the div */
+  height: 100%; /* Image will resize to fill the height of the div */
+  object-fit: cover; /* Ensures the image covers the div, keeping the aspect ratio */
 }
