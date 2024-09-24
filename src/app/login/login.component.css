@@ -6,6 +6,18 @@
     overflow: hidden;
 }
 
+.top-left {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    margin: 10px; 
+    font-family: "NotoKufiSB";
+    color: white;
+    font-size: 20px;
+
+}
+
+
 .left-half {
     flex: 1;
     display: flex;
@@ -142,6 +154,11 @@ button:hover {
     form {
         max-width: 90%;
     }
+    .top-left {
+        left: 50px; 
+        font-size: 16px; 
+        top: 230px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -155,5 +172,9 @@ button:hover {
 
     button {
         padding: 8px;
+    }
+    .top-left {
+        left: 20px; 
+        font-size: 14px; 
     }
 }
