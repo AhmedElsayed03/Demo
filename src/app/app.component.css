@@ -4,7 +4,7 @@ app-header {
   left: 50%;
   transform: translateX(-50%);
   width: 80%; /* Make it 80% of the viewport width */
-  height: 70px;
+  height: 65px;
   z-index: 1000; /* Keep it above other content */
   background-color: #fff; /* Set background color */
   /* margin-top: 30px; */
