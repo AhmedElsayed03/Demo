@@ -100,11 +100,31 @@ h3 {
 .request-status {
   text-align: center;
 }
-@media (max-width: 768px) {
-  .coatofarms {
+
+.coatofarms {
     margin-top: 20px; 
   }
+  
   .logotext {
     margin-top: 40px;
   }
+
+ 
+  .shadow-box {
+    box-shadow: 2px 2px 8px rgba(63, 63, 63, 0.3);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.coatofarms {
+    margin-top: 10px;
+}
+
+.logotext{
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .logo {
+        margin-top: 10px; 
+    }
 }
