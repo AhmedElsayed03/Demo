@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NewRequestOptionsComponent } from './new-request-options/new-request-options.component';
 import { NewRequestRealEstateComponent } from './new-request-real-estate/new-request-real-estate.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
