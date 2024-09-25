@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  justify-content: space-between; /* Positions nav-links on the left and logo on the right */
+  align-items: center; /* Centers both nav-links and logo vertically */
+  background: linear-gradient(
+    to right,
+    #0057ff,
+    #003499
+  ); /* Background gradient */
+  height: 180px;
+  padding: 0 20px; /* Adds some horizontal padding */
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px; /* Adds space between the links */
+  font-family: NotoKufi;
+  margin-left: 20px;
+}
+
+.nav-button {
+  color: white;
+  text-decoration: none;
+}
+
+.logo p {
+  margin: 0;
+  color: white;
+  text-align: right;
+  font-family: NotoKufiB;
+  margin-right: 20px;
+}
