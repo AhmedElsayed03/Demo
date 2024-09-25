@@ -8,6 +8,7 @@ import { NewRequestRealEstateComponent } from './new-request-real-estate/new-req
 import { UserRequestsComponent } from './user-requests/user-requests.component';
 import { EditRequestDataComponent } from './edit-request-data/edit-request-data.component';
 import { GetRequestComponent } from './get-request/get-request.component';
+import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
 export const routes: Routes = [
   {
     path: '',
@@ -34,5 +35,9 @@ export const routes: Routes = [
     component: NewRequestRealEstateComponent,
   },
    {path : 'EditRequest' , component: EditRequestDataComponent},
-    {path : 'getRequest', component:GetRequestComponent}
+    {path : 'getRequest', component:GetRequestComponent},
+    {
+      path: 'assigned_request_details',
+      component: AssignedRequestDetailsComponent
+    }
 ];
