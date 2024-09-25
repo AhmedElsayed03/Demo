@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NewRequestOptionsComponent } from './new-request-options/new-request-options.component';
 import { NewRequestRealEstateComponent } from './new-request-real-estate/new-request-real-estate.component';
+import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
+
 
 @Component({
   selector: 'app-root',
@@ -23,6 +25,7 @@ import { NewRequestRealEstateComponent } from './new-request-real-estate/new-req
     RegisterComponent,
     NewRequestOptionsComponent,
     NewRequestRealEstateComponent,
+    AssignedRequestDetailsComponent
   ],
 
   templateUrl: './app.component.html',
