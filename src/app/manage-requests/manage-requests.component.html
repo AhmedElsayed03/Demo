@@ -1,37 +1,33 @@
 <div class="container mt-4">
-    <div class="row align-items-center shadow-box">
-      <!-- Right section with logo and title -->
-      <div
-        class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center order-1 order-md-2"
-        style="margin-bottom: 25px"
-      >
-        <img src="assets/LogoText.png" alt="Egypt Logo" class="logotext" />
-        <img
-          src="assets/CoatOfArms.png"
-          alt="Your Logo"
-          class="logo coatofarms ms-2"
-        />
-      </div>
-  
-      <!-- Left section with buttons -->
-      <div
-        class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center order-2 order-md-1"
-        style="font-size: 15px"
-      >
-        <button type="button" class="btn text-primary" style="font-size: inherit">
-          تسجيل الخروج
-        </button>
-        <img src="assets/Notifications.png" />
-      </div>
+  <div class="row align-items-center shadow-box">
+    <!-- Right section with logo and title -->
+    <div
+      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center order-1 order-md-2"
+      style="margin-bottom: 25px"
+    >
+      <img src="assets/LogoText.png" alt="Egypt Logo" class="logotext" />
+      <img
+        src="assets/CoatOfArms.png"
+        alt="Your Logo"
+        class="logo coatofarms ms-2"
+      />
     </div>
-  
-    <div class="row ">
-      <!-- Follow-up on the right -->
-      <div class="col text-end">
-        <h2>متابعة وادارة الطلبات</h2>
-      </div>
-    
-      <!-- Pended Requests button on the left -->
+
+    <!-- Left section with buttons -->
+    <div
+      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center order-2 order-md-1"
+      style="font-size: 15px"
+    >
+      <button type="button" class="btn text-primary" style="font-size: inherit">
+        تسجيل الخروج
+      </button>
+      <img src="assets\Notifications.png" />
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+    <div class="row">
+      <!-- Pended Requests Button on the left -->
       <div class="col-4">
         <div class="d-flex justify-content-start">
           <button type="button" class="btn btn-light text-danger">
@@ -39,103 +35,112 @@
           </button>
         </div>
       </div>
-    </div>
-    
-    <!-- Filters Section -->
-    <div class="row mb-4">
-      <div class="col-4">
-        <div class="input-group rounded">
-          <input
-            type="search"
-            class="form-control rounded"
-            placeholder="ابحث بالاسم او الهاتف او الرقم القومي"
-            aria-label="Search"
-            aria-describedby="search-addon"
-            [(ngModel)]="searchTerm"
-            (ngModelChange)="applyFilters()"
-          />
-          <span class="input-group-text border-0" id="search-addon">
-            <i class="fas fa-search"></i>
-          </span>
-        </div>
+      
+      <!-- Follow-up on the right -->
+      <div class="col text-end">
+        <h2>متابعة وادارة الطلبات</h2>
       </div>
-  
-      <div class="row mb-4">
-        <div class="col-md-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="التاريخ من / الي"
-            [(ngModel)]="dateFilter"
-            (ngModelChange)="applyFilters()"
-          />
-        </div>
-        <div class="col-md-3">
-          <select
-            class="form-select"
-            [(ngModel)]="typeFilter"
-            (ngModelChange)="applyFilters()"
-          >
-            <option value="">نوع الطلب</option>
-            <option *ngFor="let type of requestTypes" [value]="type">
-              {{ type }}
-            </option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <select
-            class="form-select"
-            [(ngModel)]="governorateFilter"
-            (ngModelChange)="applyFilters()"
-          >
-            <option value="">المحافظة</option>
-            <option
-              *ngFor="let governorate of governorates"
-              [value]="governorate"
-            >
-              {{ governorate }}
-            </option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <select
-            class="form-select"
-            [(ngModel)]="statusFilter"
-            (ngModelChange)="applyFilters()"
-          >
-            <option value="">حالة الطلب</option>
-            <option *ngFor="let status of statuses" [value]="status">
-              {{ status }}
-            </option>
-          </select>
-        </div>
-      </div>
-  
-      <!-- Requests Table -->
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>رقم الطلب</th>
-            <th>اسم صاحب الطلب</th>
-            <th>تاريخ الطلب</th>
-            <th>عدد أيام إنشاء الطلب</th>
-            <th>حالة الطلب</th>
-            <th>تفاصيل</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let request of filteredRequests">
-            <td>{{ request.number }}</td>
-            <td>{{ request.owner }}</td>
-            <td>{{ request.date }}</td>
-            <td>{{ request.daysSinceCreation }}</td>
-            <td>{{ request.status }}</td>
-            <td>
-              <button class="btn btn-primary">تفاصيل</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
   
+  
+    <!-- Pended Requests button on the left -->
+     
+    
+  
+    <br /><br /><br />
+
+    <!-- Filters Section -->
+      <div class="input-group rounded">
+        <input
+          type="search"
+          class="form-control rounded"
+          placeholder="ابحث بالاسم او الهاتف او الرقم القومي"
+          aria-label="Search"
+          aria-describedby="search-addon"
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="applyFilters()"
+        />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+      <br /><br /><br />
+
+    <div class="row mb-4">
+      <div class="col-md-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="التاريخ من / الي"
+          [(ngModel)]="dateFilter"
+          (ngModelChange)="applyFilters()"
+        />
+      </div>
+      <div class="col-md-3">
+        <select
+          class="form-select"
+          [(ngModel)]="typeFilter"
+          (ngModelChange)="applyFilters()"
+        >
+          <option value="">نوع الطلب</option>
+          <option *ngFor="let type of requestTypes" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select
+          class="form-select"
+          [(ngModel)]="governorateFilter"
+          (ngModelChange)="applyFilters()"
+        >
+          <option value="">المحافظة</option>
+          <option
+            *ngFor="let governorate of governorates"
+            [value]="governorate"
+          >
+            {{ governorate }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select
+          class="form-select"
+          [(ngModel)]="statusFilter"
+          (ngModelChange)="applyFilters()"
+        >
+          <option value="">حالة الطلب</option>
+          <option *ngFor="let status of statuses" [value]="status">
+            {{ status }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Requests Table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>رقم الطلب</th>
+          <th>اسم صاحب الطلب</th>
+          <th>تاريخ الطلب</th>
+          <th>عدد أيام إنشاء الطلب</th>
+          <th>حالة الطلب</th>
+          <th>تفاصيل</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of filteredRequests">
+          <td>{{ request.number }}</td>
+          <td>{{ request.owner }}</td>
+          <td>{{ request.date }}</td>
+          <td>{{ request.daysSinceCreation }}</td>
+          <td>{{ request.status }}</td>
+          <td>
+            <button class="btn btn-primary">تفاصيل</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

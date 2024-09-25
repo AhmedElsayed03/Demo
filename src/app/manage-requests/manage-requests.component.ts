@@ -51,21 +51,20 @@ export class ManageRequestsComponent implements OnInit {
 
   statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
   governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];
-  requestTypes = ['نوع 1', 'نوع 2'];
+  requestTypes = ['عقار', 'شقة'];
 
   // Filters
   statusFilter: string = '';
   governorateFilter: string = '';
   typeFilter: string = '';
   dateFilter: string = '';
-  searchTerm: string = ''; // Search term for owner name or other fields
+  searchTerm: string = ''; 
 
-  filteredRequests = this.requests;  // Start with all requests initially
+  filteredRequests = this.requests;  
 
   constructor() {}
 
   ngOnInit(): void {
-    // Apply filters when the component initializes
     this.applyFilters();
   }
 
@@ -75,7 +74,7 @@ export class ManageRequestsComponent implements OnInit {
         (!this.statusFilter || request.status === this.statusFilter) &&
         (!this.governorateFilter || request.governorate === this.governorateFilter) &&
         (!this.typeFilter || request.type === this.typeFilter) &&
-        (!this.searchTerm || request.owner.includes(this.searchTerm)) // Add search filter for the owner
+        (!this.searchTerm || request.owner.includes(this.searchTerm)) 
       );
     });
   }
