@@ -1,21 +1,20 @@
-<div class="container">
-    <div class="container mt-4">
-        <div class="row align-items-center">
-            <!-- Left section with buttons -->
-            <div class="col-xxl-6 col-xl-9 col-lg-9 col-md-12 col-sm-12 d-flex align-items-center" style="font-size: 15px;">
-                <button type="button" class="btn text-primary" style="font-size: inherit;">تسجيل الخروج</button>
-                <button type="button" class="btn btn-primary ms-3" style="font-size: inherit;">طلب جديد</button>
-            </div>
-            
-            
-            <!-- Right section with logo and title -->
-            <div class="col-xxl-6 col-xl-9 col-lg-9 col-md-12 col-sm-12 d-flex justify-content-between justify-content-md-end align-items-center">
-                <img src="assets\LogoText.png" alt="Egypt Logo" class="logotext" />
-                <img src="assets\CoatOfArms.png" alt="Your Logo" class="logo" />
-            </div>
-            
-        </div>
-    </div>
+<div class="container mt-4">
+  <div class="row align-items-center" style="box-shadow: 2px 2px 8px rgba(63, 63, 63, 0.3); border-radius: 4px; padding: 4px;">
+      
+      <!-- Right section with logo and title -->
+      <div class="col-xxl-6 col-xl-9 col-lg-9 col-md-12 col-sm-12 d-flex  justify-content-md-end  justify-content-sm-end order-1 order-md-2">
+          <img src="assets/LogoText.png" alt="Egypt Logo" class="logotext" />
+          <img src="assets/CoatOfArms.png" alt="Your Logo" class="logo coatofarms" />
+      </div>
+
+      <!-- Left section with buttons  -->
+      <div class="col-xxl-6 col-xl-9 col-lg-9 col-md-12 col-sm-12 d-flex align-items-center order-2 order-md-1" style="font-size: 15px;">
+          <button type="button" class="btn text-primary" style="font-size: inherit;">تسجيل الخروج</button>
+          <button type="button" class="btn btn-primary ms-3" style="font-size: inherit;">طلب جديد</button>
+      </div>
+      
+  </div>
+
     
       <br>
     <div dir="rtl">
@@ -73,21 +72,33 @@
       </div>
     </div>
   <br><br>
-    <!-- Requests Table -->
-    <div class="table-responsive">
-      <table class="table" style="direction: rtl; text-align: right;">
-        <tbody>
-          <tr class="text-center">
-            <td> رقم الطلب: 15617891125 </td>
-            <td> الاسم: خالد أيمن </td>
-            <td> التاريخ: 02/10/2014 </td>
-          </tr>
-          <tr class="text-center">
-            <td> رقم الطلب: 15617891125 </td>
-            <td> الاسم: خالد أيمن </td>
-            <td> التاريخ: 02/10/2014 </td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="requests-container">
+    <div class="request-box">
+      <div class="request-details">
+        <span> رقم الطلب: 15617891125 </span>
+        <span> الاسم: خالد أيمن </span>
+        <span> التاريخ: 02/10/2014 </span>
+        <span> <img src="assets/Done Icon.png" alt="Done"></span>
+      </div>
     </div>
-    
+  
+    <div class="request-box">
+      <div class="request-details">
+        <span> رقم الطلب: 85455625425 </span>
+        <span> الاسم: خالد أيمن </span>
+        <span> التاريخ: 02/10/2014 </span>
+        <span> <img src="assets/Rejected Icon.png" alt="Rejected"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="request-box">
+    <div class="request-details">
+      <span> رقم الطلب: 85415133315 </span>
+      <span> الاسم: خالد أيمن </span>
+      <span> التاريخ: 02/10/2014 </span>
+      <span> <img src="assets\Pending Icon2.png" alt="Pending"></span>
+    </div>
+  </div>
+</div>
+</div>
