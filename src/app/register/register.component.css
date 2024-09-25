@@ -4,7 +4,12 @@
   
   .logo {
     width: 50px; 
-  }
+    margin-left: 15px; 
+}
+
+.logotext{
+height:30px;
+}
   
   h2 {
     font-family: 'NotoKufiSB';
