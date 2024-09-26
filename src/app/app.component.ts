@@ -9,6 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { NewRequestOptionsComponent } from './new-request-options/new-request-options.component';
 import { NewRequestRealEstateComponent } from './new-request-real-estate/new-request-real-estate.component';
 import { FormsModule } from '@angular/forms';
+import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
+
 
 @Component({
   selector: 'app-root',
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     NewRequestOptionsComponent,
     NewRequestRealEstateComponent,
+    AssignedRequestDetailsComponent
   ],
 
   templateUrl: './app.component.html',

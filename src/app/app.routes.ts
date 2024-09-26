@@ -8,6 +8,7 @@ import { EditRequestDataComponent } from './edit-request-data/edit-request-data.
 import { GetRequestComponent } from './get-request/get-request.component';
 import { ManageRequestsComponent } from './manage-requests/manage-requests.component';
 import { UserRequestsComponent } from './user-requests/user-requests.component';
+import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
 export const routes: Routes = [
   {
     path: '',
@@ -46,4 +47,10 @@ export const routes: Routes = [
     path: 'manageRequests',
     component: ManageRequestsComponent,
   },
+   {path : 'EditRequest' , component: EditRequestDataComponent},
+    {path : 'getRequest', component:GetRequestComponent},
+    {
+      path: 'assigned_request_details',
+      component: AssignedRequestDetailsComponent
+    }
 ];
