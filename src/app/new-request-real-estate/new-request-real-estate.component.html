@@ -1,250 +1,255 @@
-<div class="container mt-4">
-  <div class="row align-items-center shadow-box">
-    <!-- Right section with logo and title -->
-    <div
-      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center order-1 order-md-2"
-      style="margin-bottom: 25px"
-    >
-      <img src="assets/LogoText.png" alt="Egypt Logo" class="logotext" />
-      <img
-        src="assets/CoatOfArms.png"
-        alt="Your Logo"
-        class="logo coatofarms ms-2"
-      />
-    </div>
 
-    <!-- Left section with buttons -->
-    <div
-      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center order-2 order-md-1"
-      style="font-size: 15px"
-    >
-      <button type="button" class="btn text-primary" style="font-size: inherit">
-        تسجيل الخروج
-      </button>
-      <img src="assets/Notifications.png" />
-    </div>
+
+<!--------------------------- Nav Bar ---------------------------->
+<nav class="navbar">
+  <button class="cta-button">تسجيل خروج</button>
+  <div class="nav-links">
+    <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
+        <a href="#services" class="nav-button">تصفح الخدمات</a> -->
   </div>
-  
-  <br /><br />
-  
-  <div class="container">
-    <div class="row mb-3">
-      <!-- Pended Requests Button on the left -->
-      <div class="col-4">
-        <div class="d-flex justify-content-start">
-          <button type="button" class="btn btn-light text-danger">
-            الطلبات المعلقة
-          </button>
-        </div>
-      </div>
-      
-      <!-- Follow-up on the right -->
-      <div class="col text-end">
-        <h2>متابعة وادارة الطلبات</h2>
-      </div>
-    </div>
+  <div class="logo">
+    <img
+      class="text"
+      src="/assets/LogoText.png"
+      style="width: 212px; height: 29px"
+    />
+    <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
   </div>
-  <br>
+</nav>
 
-  <!-- Filters and Search Bar -->
-  <div class="container">
-    <div class="row mb-4">
-      <!-- Assign to Surveyor Button -->
-      <div class="col">
-        <div class="d-flex align-items-center justify-content-between">
-          <!-- Button aligned to the left -->
-          <button
-            type="button"
-            class="btn btn-success me-3"
-            (click)="openAssignSurveyorModal()"
-            [disabled]="selectedRequests.length === 0"
-          >
-            تعيين المساح
-          </button>
+<!--------------------------- Div ---------------------------->
+<div class="title">
+  <h1>انشاء طلب رفع مساحي</h1>
+</div>
 
-          <!-- Search bar with space between -->
-          <div class="col-6 d-flex justify-content-end flex-grow-1">
-            <div class="input-group">
-              <input
-                type="search"
-                class="form-control rounded"
-                placeholder="ابحث بالاسم او الهاتف او الرقم القومي"
-                aria-label="Search"
-                aria-describedby="search-addon"
-                [(ngModel)]="searchTerm"
-                (ngModelChange)="applyFilters()"
-              />
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br><br>
+<!--------------------------- Div ---------------------------->
+<form action="" [formGroup]="realStateRequest">
 
-    <!-- Filter Section -->
-    <div class="row mb-4 d-flex justify-content-between align-items-center ">
-      <!-- Date Filter (From Date) -->
-      <div class="col-md-2 mb-2 mb-md-0">
-        <input
-          type="date"
-          class="form-control"
-          placeholder="التاريخ من"
-          [(ngModel)]="fromDateFilter"
-          (ngModelChange)="applyFilters()"
-        />
-      </div>
-  
-      <!-- Date Filter (To Date) -->
-      <div class="col-md-2 mb-2 mb-md-0">
-        <input
-          type="date"
-          class="form-control"
-          placeholder="التاريخ إلى"
-          [(ngModel)]="toDateFilter"
-          (ngModelChange)="applyFilters()"
-        />
-      </div>
-  
-      <!-- Request Type Filter -->
-      <div class="col-md-2 mb-2 mb-md-0">
-        <select
-          class="form-select"
-          [(ngModel)]="typeFilter"
-          (ngModelChange)="applyFilters()"
-        >
-          <option value="">نوع الطلب</option>
-          <option *ngFor="let type of requestTypes" [value]="type">
-            {{ type }}
-          </option>
-        </select>
-      </div>
-  
-      <!-- Governorate Filter -->
-      <div class="col-md-2 mb-2 mb-md-0">
-        <select
-          class="form-select"
-          [(ngModel)]="governorateFilter"
-          (ngModelChange)="applyFilters()"
-        >
-          <option value="">المحافظة</option>
-          <option *ngFor="let governorate of governorates" [value]="governorate">
-            {{ governorate }}
-          </option>
-        </select>
-      </div>
-  
-      <!-- Status Filter -->
-      <div class="col-md-2 mb-2 mb-md-0">
-        <select
-          class="form-select"
-          [(ngModel)]="statusFilter"
-          (ngModelChange)="applyFilters()"
-        >
-          <option value="">حالة الطلب</option>
-          <option *ngFor="let status of statuses" [value]="status">
-            {{ status }}
-          </option>
-        </select>
-      </div>
-    </div>
-<br><br>
-    <!-- Requests Table -->
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>
-            <!-- Checkbox for selecting all requests -->
-            <input type="checkbox" (change)="toggleSelectAll($event)" />
-          </th>
-          <th>رقم الطلب</th>
-          <th>اسم صاحب الطلب</th>
-          <th>تاريخ الطلب</th>
-          <th>عدد أيام إنشاء الطلب</th>
-          <th>حالة الطلب</th>
-          <th>المساح المعين</th>
-          <th>تفاصيل</th>
-          <!-- Add this column header -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let request of filteredRequests">
-          <td>
-            <!-- Individual checkboxes for each request -->
-            <input
-              type="checkbox"
-              [value]="request"
-              (change)="toggleSelection(request)"
-              [checked]="isSelected(request)"
-            />
-          </td>
-          <td>{{ request.number }}</td>
-          <td>{{ request.owner }}</td>
-          <td>{{ request.date }}</td>
-          <td>{{ request.daysSinceCreation }}</td>
-          <td>{{ request.status }}</td>
-          <td>{{ request.assignedSurveyor || "غير معين" }}</td>
-          <td>
-            <button class="btn btn-primary">تفاصيل</button>
-          </td>
-          <!-- Add this data cell in the table row -->
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Surveyor Assignment Modal -->
-     <div dir="rtl">
-    <div
-  class="modal fade"
-  id="assignSurveyorModal"
-  tabindex="-1"
-  aria-labelledby="assignSurveyorModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="assignSurveyorModalLabel">
-          تعيين المساح
-        </h5>
-       
-      </div>
-      <div class="modal-body">
-        <div class="d-flex flex-wrap">
-          <!-- Displaying surveyors as buttons -->
-          <button
-            *ngFor="let surveyor of surveyors"
-            type="button"
-            class="btn btn-outline-primary m-2"
-            [ngClass]="{'active': selectedSurveyor === surveyor}"
-            (click)="selectSurveyor(surveyor)"
-          >
-            {{ surveyor }}
-          </button>
-        </div>
-      </div>
+<div class="data" style="height: 500px; width: 100%">
+  <div class="title1">
+    <p>بيانات صاحب الطلب</p></div>
+  <div class="fields">
+    <div class="field">
+      <p>البريد الالكتروني</p>
       
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="assignSurveyor()"
-          [disabled]="!selectedSurveyor"
-        >
-          تعيين
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
-          إغلاق
-        </button>
-        
-      </div>
+      <input class="inputText" formControlName="ownereEmail" type="text" placeholder="ادخل البريد الالكتروني" />
+    </div>
+    <div class="field">
+      <p>ادخل رقم الموبايل</p>
+      <input class="inputText" formControlName="phone" type="text" placeholder="رقم الموبايل" />
+    </div>
+    <div class="field">
+      
+      <p>اسم صاحب العقار بالكامل</p>
+      <input class="inputText" type="text" formControlName="ownerFullName" placeholder="ادخل الاسم" />
+    </div>
+    <div class="field">
+      <p>الرقم القومي</p>
+      <input class="inputText" type="text" formControlName="nationalId" placeholder="ادخل الرقم القومي" />
     </div>
   </div>
 </div>
-     </div>
+
+<!--------------------------- Div ---------------------------->
+<div class="data" style="height: 500px; width: 100%">
+  <div class="title1">
+    <p>بيانات الوكيل</p>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <p>البريد الالكتروني</p>
+      
+      <input class="inputText" type="text"  formControlName="agentEmail" placeholder="ادخل البريد الالكتروني" />
+    </div>
+    <div class="field">
+      <p>ادخل رقم الموبايل</p>
+      <input class="inputText" type="text" formControlName="agentPhone" placeholder="رقم الموبايل" />
+    </div>
+    <div class="field">
+      <p>اسم الوكيل بالكامل</p>
+      <input class="inputText" type="text" formControlName="agentFullName" placeholder="ادخل الاسم" />
+    </div>
+    <div class="field">
+      <p>الرقم القومي</p>
+      <input class="inputText" type="text" formControlName="agentNationalId" placeholder="ادخل الرقم القومي" />
+    </div>
+  </div>
+</div>
+
+<!--------------------------- Div ---------------------------->
+<div class="data" style="height: 1030px; width: 100%">
+  <div class="title1">
+    <p>بيانات الطلب</p>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <p>نوع العقار</p>
+      <select formControlName="realStateType" id="cars" class="inputText">
+        <option value="villa">فيلا</option>
+        <option value="townHouse">تاون هاوس</option>
+        <option value="twinHouse">توين هاوس</option>
+        <option value="managerialBuilding">مبني اداري</option>
+        <option value="commercialBuilding">مبني تجاري</option>
+        <option value="Chalet">شاليه</option>
+        <option value="commercialStore">محل تجاري</option>
+      </select>
+    </div>
+    <div class="field">
+      <p>مساحه العقار</p>
+      <input class="inputText" formControlName="area" type="text"  placeholder="ادخل المساحه">
+    </div>
+    <div class="field">
+      <p>المدينه</p>
+      <select name="cars" formControlName="city" id="cars" class="inputText">
+        <option value="مدينه نصر">مدينه نصر</option>
+        <option value="مدينه الرحاب">مدينه الرحاب</option>
+        <option value="مدينه السلام">مدينه السلام</option>
+        <option value="مدينه النرجس">مدينه النرجس</option>
+        <option value="مصر الجديده">مصر الجديده</option>
+        <option value="منشيه ناصر">منشيه ناصر</option>
+        <option value="الزمالك">الزمالك</option>
+        <option value="الزاويه الحمراء">الزاويه الحمراء</option>
+        <option value="السيده زينب">السيده زينب</option>
+      </select>
+    </div>
+    <div class="field">
+      <p>المحافظه</p>
+      <select name="cars" id="cars" formControlName="governorate" class="inputText">
+        <option value="القاهره">القاهره</option>
+        <option value="بورسعيد">بورسعيد</option>
+        <option value="الاسكندريه">الاسكندريه</option>
+        <option value="المنصوره">المنصوره</option>
+        <option value="الاسماعيليه">الاسماعيليه</option>
+        <option value="الجيزه">الجيزه</option>
+        <option value="الدقهليه">الدقهليه</option>
+        <option value="دمياط">دمياط</option>
+        <option value="السويس">السويس</option>
+        <option value="مطروح">مطروح</option>
+        <option value="القليوبيه">القليوبيه</option>
+        <option value="قنا">قنا</option>
+        <option value="المنوفيه">المنوفيه</option>
+        <option value="الوادي الجديد">الوادي الجديد</option>
+        <option value="الفيوم">الفيوم</option>
+        <option value="سوهاج">سوهاج</option>
+        <option value="بني سويف">بني سويف</option>
+        <option value="جنوب سيناء">جنوب سيناء</option>
+        <option value="اسوان">اسوان</option>
+        <option value="اسيوط">اسيوط</option>
+        <option value="الاقصر">الاقصر</option>
+        <option value="البحر الاحمر">البحر الاحمر</option>
+      </select>
+    </div>
+    <div class="field">
+      <p>رقم العقار</p>
+      <input class="inputText" type="text" formControlName="realStateNumber" placeholder="ادخل رقم العقار">
+    </div>
+    <div class="field">
+      <p>ادخل عدد ادوار العقار</p>
+      <input class="inputText" type="text" formControlName="realStateFloorsNumber"  placeholder="ادخل عدد الادوار">
+    </div>
+    <div class="field">
+      <p>ادخل العنوان بالكامل</p>
+      <input class="inputText" id="address" type="text" formControlName="realStateAddress"  placeholder="ادخل العنوان بالتفصيل">
+    </div>
+    <br>
+    <div class="field">
+      <p>الوصف</p>
+      <input class="inputText" id="desc" type="text" formControlName="realStateDescriptions"  placeholder="ادخل وصف العقار">
+    </div>
+</div>
+</div>
+
+
+
+
+
+<!--------------------------- Div ---------------------------->
+<div class="data" style="height: 1800px; width: 100%">
+  <div class="title1">
+    <p>رفع المستندات المطلوبه</p>
+  </div>
+
+
+
+
+
+
+  <div class="upload-container fields">
+    <!-- Single File Uploaders -->
+    <div class="single-file-uploads field">
+      
+      <div *ngFor="let singleFileArray of singleFileArrays; let i = index" class="single-file-upload">
+        <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
+        <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
+        <h6 *ngIf="i === 2">صوره وجه البطاقه للوكيل</h6>
+        <h6 *ngIf="i === 3">صوره ضهر البطاقه للوكيل</h6>
+        <input
+          type="file"
+          id="singleFileInput{{i}}"
+          class="file-input"
+          accept=".pdf, .png, .jpeg, .jpg"
+          (change)="onSingleFileSelected($event, i,singleImageArrays[i])"
+        />
+        <button class="upload-btn" (click)="triggerFileInput('singleFileInput' + i)">
+          اضغط هنا
+        </button>
+        <div class="file-preview" *ngIf="singleFileArray">
+          <p>
+            <i class="fas fa-file"></i> {{ singleFileArray?.name }} -
+            {{ (singleFileArray.size / 1024 / 1024) | number: '1.2-2' }} MB
+            <span class="remove-file" (click)="removeSingleFile(i)">&#10006;</span>
+          </p>
+        </div>
+        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">PDF, JPG, JPEG, PNG :الصيغ المدعومه</p>
+        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">اقصي حجم للملف 5 ميجابايت</p>
+      </div>
+    </div>
+  
+    <!-- Multiple File Uploaders -->
+    <div class="multiple-file-uploads field">
+      <div *ngFor="let multipleFilesArray of multipleFileArrays; let j = index" class="multiple-file-upload">
+        <h6 *ngIf="j === 0">صور محل الطلب</h6>
+        <h6 *ngIf="j === 1">صور سند الملكيه</h6>
+        <h6 *ngIf="j === 2">صور التوكيل</h6>
+        <input
+          type="file"
+          id="multipleFileInput{{j}}"
+          class="file-input"
+          multiple
+          accept=".pdf, .png, .jpeg, .jpg"
+          (change)="onMultipleFilesSelected($event, j)"
+        />
+        <button class="upload-btn" (click)="triggerFileInput('multipleFileInput' + j)">
+          اضغط لاضافه ملفات متعدده
+        </button>
+        <div class="file-preview" *ngIf="multipleFilesArray.length">
+          <ul>
+            <li *ngFor="let file of multipleFilesArray">
+              <i class="fas fa-file"></i> {{ file.name }} -
+              {{ (file.size / 1024 / 1024) | number: '1.2-2' }} MB
+              <span class="remove-file" (click)="removeMultipleFile(file, j)">&#10006;</span>
+            </li>
+          </ul>
+        </div>
+        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">PDF, JPG, JPEG, PNG :الصيغ المدعومه</p>
+        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">اقصي حجم للملف 5 ميجابايت</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+<div  style="display: flex; justify-content: center; align-items: center;margin-bottom: 30px;">
+  <button (click)="sendRequest()" class="cta">انشئ طلب</button>
+</div>
+</form>
