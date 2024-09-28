@@ -1,12 +1,7 @@
-
-
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
   <button class="cta-button">تسجيل خروج</button>
-  <div class="nav-links">
-    <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
-        <a href="#services" class="nav-button">تصفح الخدمات</a> -->
-  </div>
+  <div class="nav-links"></div>
   <div class="logo">
     <img
       class="text"
@@ -17,227 +12,867 @@
   </div>
 </nav>
 
-<!--------------------------- Div ---------------------------->
-<div class="title">
-  <h1>انشاء طلب رفع مساحي</h1>
-</div>
+<!--------------------------- ngIF for unit---------------------------->
+<div class="container mr-5" >
+<div *ngIf="unitType === 'unit'">
+  <form>
+    <!--------------------------- Div ---------------------------->
+    <div class="title">
+      <h1>انشاء طلب رفع مساحي</h1>
+    </div>
 
-<!--------------------------- Div ---------------------------->
-<div class="data" style="height: 500px; width: 100%">
-  <div class="title1">
-    <p>بيانات صاحب الطلب</p></div>
-  <div class="fields">
-    <div class="field">
-      <p>البريد الالكتروني</p>
-      
-      <input class="inputText" type="text" placeholder="ادخل البريد الالكتروني" />
-    </div>
-    <div class="field">
-      <p>ادخل رقم الموبايل</p>
-      <input class="inputText" type="text" placeholder="رقم الموبايل" />
-    </div>
-    <div class="field">
-      
-      <p>اسم صاحب العقار بالكامل</p>
-      <input class="inputText" type="text" placeholder="ادخل الاسم" />
-    </div>
-    <div class="field">
-      <p>الرقم القومي</p>
-      <input class="inputText" type="text" placeholder="ادخل الرقم القومي" />
-    </div>
-  </div>
-</div>
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style="width: 100%">
+      <div class="title1">
+        <p>بيانات صاحب الطلب</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
 
-<!--------------------------- Div ---------------------------->
-<div class="data" style="height: 500px; width: 100%">
-  <div class="title1">
-    <p>بيانات الوكيل</p>
-  </div>
-  <div class="fields">
-    <div class="field">
-      <p>البريد الالكتروني</p>
-      
-      <input class="inputText" type="text" placeholder="ادخل البريد الالكتروني" />
-    </div>
-    <div class="field">
-      <p>ادخل رقم الموبايل</p>
-      <input class="inputText" type="text" placeholder="رقم الموبايل" />
-    </div>
-    <div class="field">
-      
-      <p>اسم صاحب العقار بالكامل</p>
-      <input class="inputText" type="text" placeholder="ادخل الاسم" />
-    </div>
-    <div class="field">
-      <p>الرقم القومي</p>
-      <input class="inputText" type="text" placeholder="ادخل الرقم القومي" />
-    </div>
-  </div>
-</div>
-
-<!--------------------------- Div ---------------------------->
-<div class="data" style="height: 1030px; width: 100%">
-  <div class="title1">
-    <p>بيانات الطلب</p>
-  </div>
-  <div class="fields">
-    <div class="field">
-      <p>نوع العقار</p>
-      <select name="cars" id="cars" class="inputText">
-        <option value="villa">فيلا</option>
-        <option value="townHouse">تاون هاوس</option>
-        <option value="twinHouse">توين هاوس</option>
-        <option value="managerialBuilding">مبني اداري</option>
-        <option value="commercialBuilding">مبني تجاري</option>
-        <option value="Chalet">شاليه</option>
-        <option value="commercialStore">محل تجاري</option>
-      </select>
-    </div>
-    <div class="field">
-      <p>مساحه العقار</p>
-      <input class="inputText" type="text"  placeholder="ادخل المساحه">
-    </div>
-    <div class="field">
-      <p>المدينه</p>
-      <select name="cars" id="cars" class="inputText">
-        <option value="">مدينه نصر</option>
-        <option value="">مدينه الرحاب</option>
-        <option value="">مدينه السلام</option>
-        <option value="">مدينه النرجس</option>
-        <option value="">مصر الجديده</option>
-        <option value="">منشيه ناصر</option>
-        <option value="">الزمالك</option>
-        <option value="">الزاويه الحمراء</option>
-        <option value="">السيده زينب</option>
-      </select>
-    </div>
-    <div class="field">
-      <p>المحافظه</p>
-      <select name="cars" id="cars" class="inputText">
-        <option value="Cairo">القاهره</option>
-        <option value="Portsaid">بورسعيد</option>
-        <option value="Alexandria">الاسكندريه</option>
-        <option value="Mansoura">المنصوره</option>
-        <option value="Ismaillia">الاسماعيليه</option>
-        <option value="Giza">الجيزه</option>
-        <option value="Daqahlia">الدقهليه</option>
-        <option value="Damietta">دمياط</option>
-        <option value="Suez">السويس</option>
-        <option value="matruh">مطروح</option>
-        <option value="Qalyubia">القليوبيه</option>
-        <option value="Qena">قنا</option>
-        <option value="menofia">المنوفيه</option>
-        <option value="NewVally">الوادي الجديد</option>
-        <option value="Faiyum">الفيوم</option>
-        <option value="Sohag">سوهاج</option>
-        <option value="BeniSuef">بني سويف</option>
-        <option value="SouthSinai">جنوب سيناء</option>
-        <option value="Aswan">اسوان</option>
-        <option value="Asyut">اسيوط</option>
-        <option value="Luxor">الاقصر</option>
-        <option value="RedSea">البحر الاحمر</option>
-      </select>
-    </div>
-    <div class="field">
-      <p>رقم العقار</p>
-      <input class="inputText" type="text"  placeholder="ادخل رقم العقار">
-    </div>
-    <div class="field">
-      <p>ادخل عدد ادوار العقار</p>
-      <input class="inputText" type="text"  placeholder="ادخل عدد الادوار">
-    </div>
-    <div class="field">
-      <p>ادخل العنوان بالكامل</p>
-      <input class="inputText" id="address" type="text"  placeholder="ادخل العنوان بالتفصيل">
-    </div>
-    <br>
-    <div class="field">
-      <p>الوصف</p>
-      <input class="inputText" id="desc" type="text"  placeholder="ادخل وصف العقار">
-    </div>
-</div>
-</div>
-
-
-
-
-
-<!--------------------------- Div ---------------------------->
-<div class="data" style="height: 1800px; width: 100%">
-  <div class="title1">
-    <p>رفع المستندات المطلوبه</p>
-  </div>
-
-
-
-
-
-
-  <div class="upload-container fields">
-    <!-- Single File Uploaders -->
-    <div class="single-file-uploads field">
-      <div *ngFor="let singleFileArray of singleFileArrays; let i = index" class="single-file-upload">
-        <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
-        <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
-        <h6 *ngIf="i === 2">صوره وجه البطاقه للوكيل</h6>
-        <h6 *ngIf="i === 3">صوره ضهر البطاقه للوكيل</h6>
-        <input
-          type="file"
-          id="singleFileInput{{i}}"
-          class="file-input"
-          accept=".pdf, .png, .jpeg, .jpg"
-          (change)="onSingleFileSelected($event, i)"
-        />
-        <button class="upload-btn" (click)="triggerFileInput('singleFileInput' + i)">
-          اضغط هنا
-        </button>
-        <div class="file-preview" *ngIf="singleFileArray">
-          <p>
-            <i class="fas fa-file"></i> {{ singleFileArray?.name }} -
-            {{ (singleFileArray.size / 1024 / 1024) | number: '1.2-2' }} MB
-            <span class="remove-file" (click)="removeSingleFile(i)">&#10006;</span>
-          </p>
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل البريد الالكتروني"
+          />
         </div>
-        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">PDF, JPG, JPEG, PNG :الصيغ المدعومه</p>
-        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">اقصي حجم للملف 5 ميجابايت</p>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          <input class="inputText" type="text" placeholder="رقم الموبايل" />
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          <input class="inputText" type="text" placeholder="ادخل الاسم" />
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل الرقم القومي"
+          />
+        </div>
       </div>
     </div>
-  
-    <!-- Multiple File Uploaders -->
-    <div class="multiple-file-uploads field">
-      <div *ngFor="let multipleFilesArray of multipleFileArrays; let j = index" class="multiple-file-upload">
-        <h6 *ngIf="j === 0">صور محل الطلب</h6>
-        <h6 *ngIf="j === 1">صور سند الملكيه</h6>
-        <h6 *ngIf="j === 2">صور التوكيل</h6>
-        <input
-          type="file"
-          id="multipleFileInput{{j}}"
-          class="file-input"
-          multiple
-          accept=".pdf, .png, .jpeg, .jpg"
-          (change)="onMultipleFilesSelected($event, j)"
-        />
-        <button class="upload-btn" (click)="triggerFileInput('multipleFileInput' + j)">
-          اضغط لاضافه ملفات متعدده
-        </button>
-        <div class="file-preview" *ngIf="multipleFilesArray.length">
-          <ul>
-            <li *ngFor="let file of multipleFilesArray">
-              <i class="fas fa-file"></i> {{ file.name }} -
-              {{ (file.size / 1024 / 1024) | number: '1.2-2' }} MB
-              <span class="remove-file" (click)="removeMultipleFile(file, j)">&#10006;</span>
-            </li>
-          </ul>
+
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style="width: 100%">
+      <div class="title1">
+        <p>بيانات الوكيل</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
+
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل البريد الالكتروني"
+          />
         </div>
-        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">PDF, JPG, JPEG, PNG :الصيغ المدعومه</p>
-        <p style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146);">اقصي حجم للملف 5 ميجابايت</p>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          <input class="inputText" type="text" placeholder="رقم الموبايل" />
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          <input class="inputText" type="text" placeholder="ادخل الاسم" />
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل الرقم القومي"
+          />
+        </div>
       </div>
     </div>
+
+    <div class="data" style=" width: 100%">
+      <div class="title1">
+        <p>بيانات الطلب</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>نوع العقار</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="villa">فيلا</option>
+            <option value="townHouse">تاون هاوس</option>
+            <option value="twinHouse">توين هاوس</option>
+            <option value="Chalet">شاليه</option>
+            <option value="commercialStore">محل تجاري</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>مساحه العقار</p>
+          <input class="inputText" type="number" placeholder="ادخل المساحه" />
+        </div>
+        <div class="field">
+          <p>المدينه</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="">مدينه نصر</option>
+            <option value="">مدينه الرحاب</option>
+            <option value="">مدينه السلام</option>
+            <option value="">مدينه النرجس</option>
+            <option value="">مصر الجديده</option>
+            <option value="">منشيه ناصر</option>
+            <option value="">الزمالك</option>
+            <option value="">الزاويه الحمراء</option>
+            <option value="">السيده زينب</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>المحافظه</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="Cairo">القاهره</option>
+            <option value="Portsaid">بورسعيد</option>
+            <option value="Alexandria">الاسكندريه</option>
+            <option value="Mansoura">المنصوره</option>
+            <option value="Ismaillia">الاسماعيليه</option>
+            <option value="Giza">الجيزه</option>
+            <option value="Daqahlia">الدقهليه</option>
+            <option value="Damietta">دمياط</option>
+            <option value="Suez">السويس</option>
+            <option value="matruh">مطروح</option>
+            <option value="Qalyubia">القليوبيه</option>
+            <option value="Qena">قنا</option>
+            <option value="menofia">المنوفيه</option>
+            <option value="NewVally">الوادي الجديد</option>
+            <option value="Faiyum">الفيوم</option>
+            <option value="Sohag">سوهاج</option>
+            <option value="BeniSuef">بني سويف</option>
+            <option value="SouthSinai">جنوب سيناء</option>
+            <option value="Aswan">اسوان</option>
+            <option value="Asyut">اسيوط</option>
+            <option value="Luxor">الاقصر</option>
+            <option value="RedSea">البحر الاحمر</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>رقم العقار</p>
+          <input class="inputText" type="text" placeholder="ادخل رقم العقار" />
+        </div>
+        <div class="field">
+          <p>ادخل العنوان بالكامل</p>
+          <input
+            class="inputText"
+            id="address"
+            type="text"
+            placeholder="ادخل العنوان بالتفصيل"
+          />
+        </div>
+        <div class="field">
+          <p>الوصف</p>
+          <input
+            class="inputText"
+            id="desc"
+            type="text"
+            placeholder="ادخل وصف العقار"
+          />
+        </div>
+      </div>
+    </div>
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style="width: 100%">
+      <div class="title1">
+        <p>رفع المستندات المطلوبه</p>
+      </div>
+
+      <div class="upload-container fields">
+        <!-- Single File Uploaders -->
+        <div class="single-file-uploads field">
+          <div
+            *ngFor="let singleFileArray of singleFileArrays; let i = index"
+            class="single-file-upload"
+          >
+            <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
+            <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
+            <h6 *ngIf="i === 2">صوره وجه البطاقه للوكيل</h6>
+            <h6 *ngIf="i === 3">صوره ضهر البطاقه للوكيل</h6>
+            <input
+              type="file"
+              id="singleFileInput{{ i }}"
+              class="file-input"
+              accept=".pdf, .png, .jpeg, .jpg"
+              (change)="onSingleFileSelected($event, i)"
+            />
+            <button
+              class="upload-btn"
+              (click)="triggerFileInput('singleFileInput' + i)"
+            >
+              اضغط هنا
+            </button>
+            <div class="file-preview" *ngIf="singleFileArray">
+              <p>
+                <i class="fas fa-file"></i> {{ singleFileArray?.name }} -
+                {{ singleFileArray.size / 1024 / 1024 | number : "1.2-2" }} MB
+                <span class="remove-file" (click)="removeSingleFile(i)"
+                  >&#10006;</span
+                >
+              </p>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              PDF, JPG, JPEG, PNG :الصيغ المدعومه
+            </p>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              اقصي حجم للملف 5 ميجابايت
+            </p>
+          </div>
+        </div>
+
+        <!-- Multiple File Uploaders -->
+        <div class="multiple-file-uploads field">
+          <div
+            *ngFor="let multipleFilesArray of multipleFileArrays; let j = index"
+            class="multiple-file-upload"
+          >
+            <h6 *ngIf="j === 0">صور محل الطلب</h6>
+            <h6 *ngIf="j === 1">صور سند الملكيه</h6>
+            <h6 *ngIf="j === 2">صور التوكيل</h6>
+            <input
+              type="file"
+              id="multipleFileInput{{ j }}"
+              class="file-input"
+              multiple
+              accept=".pdf, .png, .jpeg, .jpg"
+              (change)="onMultipleFilesSelected($event, j)"
+            />
+            <button
+              class="upload-btn"
+              (click)="triggerFileInput('multipleFileInput' + j)"
+            >
+              اضغط لاضافه ملفات متعدده
+            </button>
+            <div class="file-preview" *ngIf="multipleFilesArray.length">
+              <ul>
+                <li *ngFor="let file of multipleFilesArray">
+                  <i class="fas fa-file"></i> {{ file.name }} -
+                  {{ file.size / 1024 / 1024 | number : "1.2-2" }} MB
+                  <span
+                    class="remove-file"
+                    (click)="removeMultipleFile(file, j)"
+                    >&#10006;</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              PDF, JPG, JPEG, PNG :الصيغ المدعومه
+            </p>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              اقصي حجم للملف 5 ميجابايت
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      "
+    >
+      <button type="submit" class="cta">انشئ طلب</button>
+    </div>
+  </form>
+</div>
+<!-- ------------   ngIf for Building  ----------------->
+
+<div *ngIf="unitType === 'building'">
+  <form>
+    <!--------------------------- Div ---------------------------->
+    <div class="title">
+      <h1>انشاء طلب رفع مساحي</h1>
+    </div>
+
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style="width: 100%">
+      <div class="title1">
+        <p>بيانات صاحب الطلب</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
+
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل البريد الالكتروني"
+          />
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          <input class="inputText" type="text" placeholder="رقم الموبايل" />
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          <input class="inputText" type="text" placeholder="ادخل الاسم" />
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل الرقم القومي"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style="width: 100%">
+      <div class="title1">
+        <p>بيانات الوكيل</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
+
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل البريد الالكتروني"
+          />
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          <input class="inputText" type="text" placeholder="رقم الموبايل" />
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          <input class="inputText" type="text" placeholder="ادخل الاسم" />
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل الرقم القومي"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="data" style="width: 100%">
+      <div class="title1">
+        <p>بيانات الطلب</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>نوع العقار</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="villa">فيلا</option>
+            <option value="townHouse">تاون هاوس</option>
+            <option value="twinHouse">توين هاوس</option>
+            <option value="Chalet">شاليه</option>
+            <option value="commercialStore">محل تجاري</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>مساحه العقار</p>
+          <input class="inputText" type="number" placeholder=" ادخل المساحه" />
+        </div>
+        <div class="field">
+          <p>المدينه</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="">مدينه نصر</option>
+            <option value="">مدينه الرحاب</option>
+            <option value="">مدينه السلام</option>
+            <option value="">مدينه النرجس</option>
+            <option value="">مصر الجديده</option>
+            <option value="">منشيه ناصر</option>
+            <option value="">الزمالك</option>
+            <option value="">الزاويه الحمراء</option>
+            <option value="">السيده زينب</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>المحافظه</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="Cairo">القاهره</option>
+            <option value="Portsaid">بورسعيد</option>
+            <option value="Alexandria">الاسكندريه</option>
+            <option value="Mansoura">المنصوره</option>
+            <option value="Ismaillia">الاسماعيليه</option>
+            <option value="Giza">الجيزه</option>
+            <option value="Daqahlia">الدقهليه</option>
+            <option value="Damietta">دمياط</option>
+            <option value="Suez">السويس</option>
+            <option value="matruh">مطروح</option>
+            <option value="Qalyubia">القليوبيه</option>
+            <option value="Qena">قنا</option>
+            <option value="menofia">المنوفيه</option>
+            <option value="NewVally">الوادي الجديد</option>
+            <option value="Faiyum">الفيوم</option>
+            <option value="Sohag">سوهاج</option>
+            <option value="BeniSuef">بني سويف</option>
+            <option value="SouthSinai">جنوب سيناء</option>
+            <option value="Aswan">اسوان</option>
+            <option value="Asyut">اسيوط</option>
+            <option value="Luxor">الاقصر</option>
+            <option value="RedSea">البحر الاحمر</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>رقم العقار</p>
+          <input class="inputText" type="text" placeholder="ادخل رقم العقار" />
+        </div>
+        <div class="field">
+          <p>ادخل العنوان بالكامل</p>
+          <input
+            class="inputText"
+            id="address"
+            type="text"
+            placeholder="ادخل العنوان بالتفصيل"
+          />
+        </div>
+        <div class="field">
+          <p>الوصف</p>
+          <input
+            class="inputText"
+            id="desc"
+            type="text"
+            placeholder="ادخل وصف العقار"
+          />
+        </div>
+      </div>
+    </div>
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style="width: 100%">
+      <div class="title1">
+        <p>رفع المستندات المطلوبه</p>
+      </div>
+
+      <div class="upload-container fields">
+        <!-- Single File Uploaders -->
+        <div class="single-file-uploads field">
+          <div
+            *ngFor="let singleFileArray of singleFileArrays; let i = index"
+            class="single-file-upload"
+          >
+            <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
+            <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
+            <h6 *ngIf="i === 2">صوره وجه البطاقه للوكيل</h6>
+            <h6 *ngIf="i === 3">صوره ضهر البطاقه للوكيل</h6>
+            <input
+              type="file"
+              id="singleFileInput{{ i }}"
+              class="file-input"
+              accept=".pdf, .png, .jpeg, .jpg"
+              (change)="onSingleFileSelected($event, i)"
+            />
+            <button
+              class="upload-btn"
+              (click)="triggerFileInput('singleFileInput' + i)"
+            >
+              اضغط هنا
+            </button>
+            <div class="file-preview" *ngIf="singleFileArray">
+              <p>
+                <i class="fas fa-file"></i> {{ singleFileArray?.name }} -
+                {{ singleFileArray.size / 1024 / 1024 | number : "1.2-2" }} MB
+                <span class="remove-file" (click)="removeSingleFile(i)"
+                  >&#10006;</span
+                >
+              </p>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              PDF, JPG, JPEG, PNG :الصيغ المدعومه
+            </p>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              اقصي حجم للملف 5 ميجابايت
+            </p>
+          </div>
+        </div>
+
+        <!-- Multiple File Uploaders -->
+        <div class="multiple-file-uploads field">
+          <div
+            *ngFor="let multipleFilesArray of multipleFileArrays; let j = index"
+            class="multiple-file-upload"
+          >
+            <h6 *ngIf="j === 0">صور محل الطلب</h6>
+            <h6 *ngIf="j === 1">صور سند الملكيه</h6>
+            <h6 *ngIf="j === 2">صور التوكيل</h6>
+            <input
+              type="file"
+              id="multipleFileInput{{ j }}"
+              class="file-input"
+              multiple
+              accept=".pdf, .png, .jpeg, .jpg"
+              (change)="onMultipleFilesSelected($event, j)"
+            />
+            <button
+              class="upload-btn"
+              (click)="triggerFileInput('multipleFileInput' + j)"
+            >
+              اضغط لاضافه ملفات متعدده
+            </button>
+            <div class="file-preview" *ngIf="multipleFilesArray.length">
+              <ul>
+                <li *ngFor="let file of multipleFilesArray">
+                  <i class="fas fa-file"></i> {{ file.name }} -
+                  {{ file.size / 1024 / 1024 | number : "1.2-2" }} MB
+                  <span
+                    class="remove-file"
+                    (click)="removeMultipleFile(file, j)"
+                    >&#10006;</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              PDF, JPG, JPEG, PNG :الصيغ المدعومه
+            </p>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              اقصي حجم للملف 5 ميجابايت
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      "
+    >
+      <button type="submit" class="cta">انشئ طلب</button>
+    </div>
+  </form>
+</div>
+<!--------------------------  ngIf for land  ----------------------------->
+<div *ngIf="unitType === 'land'">
+  <div class="title">
+    <h1>انشاء طلب رفع مساحي</h1>
   </div>
-  </div>
 
+  <form>
+    <div class="data" style=" width: 100%">
+      <div class="title1">
+        <p>بيانات صاحب الطلب</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
 
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل البريد الالكتروني"
+          />
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          <input class="inputText" type="text" placeholder="رقم الموبايل" />
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          <input class="inputText" type="text" placeholder="ادخل الاسم" />
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل الرقم القومي"
+          />
+        </div>
+      </div>
+    </div>
 
-<div  style="display: flex; justify-content: center; align-items: center;margin-bottom: 30px;">
-  <button type="submit" class="cta">انشئ طلب</button>
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style=" width: 100%">
+      <div class="title1">
+        <p>بيانات الوكيل</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
+
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل البريد الالكتروني"
+          />
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          <input class="inputText" type="text" placeholder="رقم الموبايل" />
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          <input class="inputText" type="text" placeholder="ادخل الاسم" />
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <input
+            class="inputText"
+            type="text"
+            placeholder="ادخل الرقم القومي"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style=" width: 100%">
+      <div class="title1">
+        <p>بيانات الطلب</p>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <p>مساحه العقار</p>
+          <input
+            class="inputText"
+            type="number"
+            placeholder="ادخل المساحه بالفدان"
+          />
+        </div>
+        <div class="field">
+          <p>المدينه</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="">مدينه نصر</option>
+            <option value="">مدينه الرحاب</option>
+            <option value="">مدينه السلام</option>
+            <option value="">مدينه النرجس</option>
+            <option value="">مصر الجديده</option>
+            <option value="">منشيه ناصر</option>
+            <option value="">الزمالك</option>
+            <option value="">الزاويه الحمراء</option>
+            <option value="">السيده زينب</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>المحافظه</p>
+          <select name="cars" id="cars" class="inputText">
+            <option value="Cairo">القاهره</option>
+            <option value="Portsaid">بورسعيد</option>
+            <option value="Alexandria">الاسكندريه</option>
+            <option value="Mansoura">المنصوره</option>
+            <option value="Ismaillia">الاسماعيليه</option>
+            <option value="Giza">الجيزه</option>
+            <option value="Daqahlia">الدقهليه</option>
+            <option value="Damietta">دمياط</option>
+            <option value="Suez">السويس</option>
+            <option value="matruh">مطروح</option>
+            <option value="Qalyubia">القليوبيه</option>
+            <option value="Qena">قنا</option>
+            <option value="menofia">المنوفيه</option>
+            <option value="NewVally">الوادي الجديد</option>
+            <option value="Faiyum">الفيوم</option>
+            <option value="Sohag">سوهاج</option>
+            <option value="BeniSuef">بني سويف</option>
+            <option value="SouthSinai">جنوب سيناء</option>
+            <option value="Aswan">اسوان</option>
+            <option value="Asyut">اسيوط</option>
+            <option value="Luxor">الاقصر</option>
+            <option value="RedSea">البحر الاحمر</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <p>ادخل العنوان بالكامل</p>
+          <input
+            class="inputText"
+            id="address"
+            type="text"
+            placeholder="ادخل العنوان بالتفصيل"
+          />
+        </div>
+        <div class="field">
+          <p>الوصف</p>
+          <input
+            class="inputText"
+            id="desc"
+            type="text"
+            placeholder="ادخل وصف العقار"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style=" width: 100%">
+      <div class="title1">
+        <p>رفع المستندات المطلوبه</p>
+      </div>
+
+      <div class="upload-container fields">
+        <!-- Single File Uploaders -->
+        <div class="single-file-uploads field">
+          <div
+            *ngFor="let singleFileArray of singleFileArrays; let i = index"
+            class="single-file-upload"
+          >
+            <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
+            <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
+            <h6 *ngIf="i === 2">صوره وجه البطاقه للوكيل</h6>
+            <h6 *ngIf="i === 3">صوره ضهر البطاقه للوكيل</h6>
+            <input
+              type="file"
+              id="singleFileInput{{ i }}"
+              class="file-input"
+              accept=".pdf, .png, .jpeg, .jpg"
+              (change)="onSingleFileSelected($event, i)"
+            />
+            <button
+              class="upload-btn"
+              (click)="triggerFileInput('singleFileInput' + i)"
+            >
+              اضغط هنا
+            </button>
+            <div class="file-preview" *ngIf="singleFileArray">
+              <p>
+                <i class="fas fa-file"></i> {{ singleFileArray?.name }} -
+                {{ singleFileArray.size / 1024 / 1024 | number : "1.2-2" }} MB
+                <span class="remove-file" (click)="removeSingleFile(i)"
+                  >&#10006;</span
+                >
+              </p>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              PDF, JPG, JPEG, PNG :الصيغ المدعومه
+            </p>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              اقصي حجم للملف 5 ميجابايت
+            </p>
+          </div>
+        </div>
+
+        <!-- Multiple File Uploaders -->
+        <div class="multiple-file-uploads field">
+          <div
+            *ngFor="let multipleFilesArray of multipleFileArrays; let j = index"
+            class="multiple-file-upload"
+          >
+            <h6 *ngIf="j === 0">صور محل الطلب</h6>
+            <h6 *ngIf="j === 1">صور سند الملكيه</h6>
+            <h6 *ngIf="j === 2">صور التوكيل</h6>
+            <input
+              type="file"
+              id="multipleFileInput{{ j }}"
+              class="file-input"
+              multiple
+              accept=".pdf, .png, .jpeg, .jpg"
+              (change)="onMultipleFilesSelected($event, j)"
+            />
+            <button
+              class="upload-btn"
+              (click)="triggerFileInput('multipleFileInput' + j)"
+            >
+              اضغط لاضافه ملفات متعدده
+            </button>
+            <div class="file-preview" *ngIf="multipleFilesArray.length">
+              <ul>
+                <li *ngFor="let file of multipleFilesArray">
+                  <i class="fas fa-file"></i> {{ file.name }} -
+                  {{ file.size / 1024 / 1024 | number : "1.2-2" }} MB
+                  <span
+                    class="remove-file"
+                    (click)="removeMultipleFile(file, j)"
+                    >&#10006;</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              PDF, JPG, JPEG, PNG :الصيغ المدعومه
+            </p>
+            <p
+              style="
+                font-size: 12px;
+                margin-top: 5px;
+                color: rgb(146, 146, 146);
+              "
+            >
+              اقصي حجم للملف 5 ميجابايت
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      "
+    >
+      <button type="submit" class="cta">انشئ طلب</button>
+    </div>
+  </form>
+</div>
 </div>

@@ -145,13 +145,12 @@
 #address {
   width: 100%; /* Allow it to take full width */
   max-width: none; /* Remove the max-width restriction */
-  width: 1000px;
 }
 /* Override for #desc */
 #desc {
   width: 100%; /* Allow it to take full width */
   max-width: none; /* Remove the max-width restriction */
-  width: 1000px;
+  width:500px;
   height: 200px;
 }
 

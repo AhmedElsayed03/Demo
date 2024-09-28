@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './new-request-real-estate.component.css',
 })
 export class NewRequestRealEstateComponent {
+
+  @Input() unitType!: string;
  // Define arrays with proper types, allowing null for single file uploads
  singleFileArrays: (File | null)[] = [null, null, null, null];
 
