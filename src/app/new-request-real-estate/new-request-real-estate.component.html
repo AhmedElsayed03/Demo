@@ -23,6 +23,8 @@
 </div>
 
 <!--------------------------- Div ---------------------------->
+<form action="" [formGroup]="realStateRequest">
+
 <div class="data" style="height: 500px; width: 100%">
   <div class="title1">
     <p>بيانات صاحب الطلب</p></div>
@@ -30,20 +32,20 @@
     <div class="field">
       <p>البريد الالكتروني</p>
       
-      <input class="inputText" type="text" placeholder="ادخل البريد الالكتروني" />
+      <input class="inputText" formControlName="ownereEmail" type="text" placeholder="ادخل البريد الالكتروني" />
     </div>
     <div class="field">
       <p>ادخل رقم الموبايل</p>
-      <input class="inputText" type="text" placeholder="رقم الموبايل" />
+      <input class="inputText" formControlName="phone" type="text" placeholder="رقم الموبايل" />
     </div>
     <div class="field">
       
       <p>اسم صاحب العقار بالكامل</p>
-      <input class="inputText" type="text" placeholder="ادخل الاسم" />
+      <input class="inputText" type="text" formControlName="ownerFullName" placeholder="ادخل الاسم" />
     </div>
     <div class="field">
       <p>الرقم القومي</p>
-      <input class="inputText" type="text" placeholder="ادخل الرقم القومي" />
+      <input class="inputText" type="text" formControlName="nationalId" placeholder="ادخل الرقم القومي" />
     </div>
   </div>
 </div>
@@ -57,20 +59,19 @@
     <div class="field">
       <p>البريد الالكتروني</p>
       
-      <input class="inputText" type="text" placeholder="ادخل البريد الالكتروني" />
+      <input class="inputText" type="text"  formControlName="agentEmail" placeholder="ادخل البريد الالكتروني" />
     </div>
     <div class="field">
       <p>ادخل رقم الموبايل</p>
-      <input class="inputText" type="text" placeholder="رقم الموبايل" />
+      <input class="inputText" type="text" formControlName="agentPhone" placeholder="رقم الموبايل" />
     </div>
     <div class="field">
-      
-      <p>اسم صاحب العقار بالكامل</p>
-      <input class="inputText" type="text" placeholder="ادخل الاسم" />
+      <p>اسم الوكيل بالكامل</p>
+      <input class="inputText" type="text" formControlName="agentFullName" placeholder="ادخل الاسم" />
     </div>
     <div class="field">
       <p>الرقم القومي</p>
-      <input class="inputText" type="text" placeholder="ادخل الرقم القومي" />
+      <input class="inputText" type="text" formControlName="agentNationalId" placeholder="ادخل الرقم القومي" />
     </div>
   </div>
 </div>
@@ -83,7 +84,7 @@
   <div class="fields">
     <div class="field">
       <p>نوع العقار</p>
-      <select name="cars" id="cars" class="inputText">
+      <select formControlName="realStateType" id="cars" class="inputText">
         <option value="villa">فيلا</option>
         <option value="townHouse">تاون هاوس</option>
         <option value="twinHouse">توين هاوس</option>
@@ -95,65 +96,65 @@
     </div>
     <div class="field">
       <p>مساحه العقار</p>
-      <input class="inputText" type="text"  placeholder="ادخل المساحه">
+      <input class="inputText" formControlName="area" type="text"  placeholder="ادخل المساحه">
     </div>
     <div class="field">
       <p>المدينه</p>
-      <select name="cars" id="cars" class="inputText">
-        <option value="">مدينه نصر</option>
-        <option value="">مدينه الرحاب</option>
-        <option value="">مدينه السلام</option>
-        <option value="">مدينه النرجس</option>
-        <option value="">مصر الجديده</option>
-        <option value="">منشيه ناصر</option>
-        <option value="">الزمالك</option>
-        <option value="">الزاويه الحمراء</option>
-        <option value="">السيده زينب</option>
+      <select name="cars" formControlName="city" id="cars" class="inputText">
+        <option value="مدينه نصر">مدينه نصر</option>
+        <option value="مدينه الرحاب">مدينه الرحاب</option>
+        <option value="مدينه السلام">مدينه السلام</option>
+        <option value="مدينه النرجس">مدينه النرجس</option>
+        <option value="مصر الجديده">مصر الجديده</option>
+        <option value="منشيه ناصر">منشيه ناصر</option>
+        <option value="الزمالك">الزمالك</option>
+        <option value="الزاويه الحمراء">الزاويه الحمراء</option>
+        <option value="السيده زينب">السيده زينب</option>
       </select>
     </div>
     <div class="field">
       <p>المحافظه</p>
-      <select name="cars" id="cars" class="inputText">
-        <option value="Cairo">القاهره</option>
-        <option value="Portsaid">بورسعيد</option>
-        <option value="Alexandria">الاسكندريه</option>
-        <option value="Mansoura">المنصوره</option>
-        <option value="Ismaillia">الاسماعيليه</option>
-        <option value="Giza">الجيزه</option>
-        <option value="Daqahlia">الدقهليه</option>
-        <option value="Damietta">دمياط</option>
-        <option value="Suez">السويس</option>
-        <option value="matruh">مطروح</option>
-        <option value="Qalyubia">القليوبيه</option>
-        <option value="Qena">قنا</option>
-        <option value="menofia">المنوفيه</option>
-        <option value="NewVally">الوادي الجديد</option>
-        <option value="Faiyum">الفيوم</option>
-        <option value="Sohag">سوهاج</option>
-        <option value="BeniSuef">بني سويف</option>
-        <option value="SouthSinai">جنوب سيناء</option>
-        <option value="Aswan">اسوان</option>
-        <option value="Asyut">اسيوط</option>
-        <option value="Luxor">الاقصر</option>
-        <option value="RedSea">البحر الاحمر</option>
+      <select name="cars" id="cars" formControlName="governorate" class="inputText">
+        <option value="القاهره">القاهره</option>
+        <option value="بورسعيد">بورسعيد</option>
+        <option value="الاسكندريه">الاسكندريه</option>
+        <option value="المنصوره">المنصوره</option>
+        <option value="الاسماعيليه">الاسماعيليه</option>
+        <option value="الجيزه">الجيزه</option>
+        <option value="الدقهليه">الدقهليه</option>
+        <option value="دمياط">دمياط</option>
+        <option value="السويس">السويس</option>
+        <option value="مطروح">مطروح</option>
+        <option value="القليوبيه">القليوبيه</option>
+        <option value="قنا">قنا</option>
+        <option value="المنوفيه">المنوفيه</option>
+        <option value="الوادي الجديد">الوادي الجديد</option>
+        <option value="الفيوم">الفيوم</option>
+        <option value="سوهاج">سوهاج</option>
+        <option value="بني سويف">بني سويف</option>
+        <option value="جنوب سيناء">جنوب سيناء</option>
+        <option value="اسوان">اسوان</option>
+        <option value="اسيوط">اسيوط</option>
+        <option value="الاقصر">الاقصر</option>
+        <option value="البحر الاحمر">البحر الاحمر</option>
       </select>
     </div>
     <div class="field">
       <p>رقم العقار</p>
-      <input class="inputText" type="text"  placeholder="ادخل رقم العقار">
+      <input class="inputText" type="text" formControlName="realStateNumber" placeholder="ادخل رقم العقار">
     </div>
     <div class="field">
       <p>ادخل عدد ادوار العقار</p>
-      <input class="inputText" type="text"  placeholder="ادخل عدد الادوار">
+      <input class="inputText" type="text" formControlName="realStateFloorsNumber"  placeholder="ادخل عدد الادوار">
     </div>
     <div class="field">
       <p>ادخل العنوان بالكامل</p>
-      <input class="inputText" id="address" type="text"  placeholder="ادخل العنوان بالتفصيل">
+      <input class="inputText" id="address" type="text" formControlName="realStateAddress"  placeholder="ادخل العنوان بالتفصيل">
     </div>
     <br>
     <div class="field">
       <p>الوصف</p>
-      <input class="inputText" id="desc" type="text"  placeholder="ادخل وصف العقار">
+      <input class="inputText" id="desc" type="text" formControlName="realStateDescriptions"  placeholder="ادخل وصف العقار">
     </div>
 </div>
 </div>
@@ -176,6 +177,7 @@
   <div class="upload-container fields">
     <!-- Single File Uploaders -->
     <div class="single-file-uploads field">
+      
       <div *ngFor="let singleFileArray of singleFileArrays; let i = index" class="single-file-upload">
         <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
         <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
@@ -186,7 +188,7 @@
           id="singleFileInput{{i}}"
           class="file-input"
           accept=".pdf, .png, .jpeg, .jpg"
-          (change)="onSingleFileSelected($event, i)"
+          (change)="onSingleFileSelected($event, i,singleImageArrays[i])"
         />
         <button class="upload-btn" (click)="triggerFileInput('singleFileInput' + i)">
           اضغط هنا
@@ -248,5 +250,6 @@
 
 
 <div  style="display: flex; justify-content: center; align-items: center;margin-bottom: 30px;">
-  <button type="submit" class="cta">انشئ طلب</button>
+  <button (click)="sendRequest()" class="cta">انشئ طلب</button>
 </div>
+</form>
