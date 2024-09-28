@@ -39,7 +39,7 @@ export const routes: Routes = [
      path: 'editRequest',
     component: EditRequestDataComponent
  },
-  { path: 'getRequest',
+  { path: 'getRequest/:id',
     component: GetRequestComponent
  },
   { path: 'userRequest',

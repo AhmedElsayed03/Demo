@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Validators, FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -14,10 +14,10 @@ import { RealEstateRequestService } from '../services/real-estate-request.servic
 export class NewRequestRealEstateComponent {
    // Define arrays with proper types, allowing null for single file uploads
  singleImageArrays: string[] = ["ownerFrontImage","ownerBackImage","agentFrontImage" ,"BackImage" ];
- multibleImagesArrays: string[] = ["requestImage","propertyImage","agentImade"  ];
+ multibleImagesArrays: string[] = ["requestImage","propertyImage","agentImage"];
 
  singleFileArrays: (File | null)[] = [null, null, null, null];
-
+ @Input() unitType:any=""
  // Multiple file arrays, initialized as empty arrays
  multipleFileArrays: File[][] = [[], [],[]];
   realStateRequest=this.fb.group({
@@ -45,7 +45,7 @@ export class NewRequestRealEstateComponent {
     BackImage:["",Validators.required],
     requestImage:[[]],
     propertyImage:[[]],
-    agentImade:[[]],
+    agentImage:[[]],
     reqNumber:[""]
 
 
@@ -91,6 +91,8 @@ console.log(this.realStateRequest.controls["date"].value)
    const files: FileList = event.target.files;
    const selectedFiles = Array.from(files).filter(file => this.isValidFile(file));
    this.multipleFileArrays[index].push(...selectedFiles);
+   console.log(selectedFiles);
+   
    const control = this.realStateRequest.get(this.multibleImagesArrays[index]);
    if (control) {
      control.setValue(this.multipleFileArrays[index]);  // `file.name` is a string
