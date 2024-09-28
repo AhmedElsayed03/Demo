@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { NewRequestOptionsComponent } from './new-request-options/new-request-options.component';
 import { NewRequestRealEstateComponent } from './new-request-real-estate/new-request-real-estate.component';
 import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
+import { AssignSingleRequestComponent } from './assign-single-request/assign-single-request.component';
 
 
 @Component({
@@ -25,7 +26,8 @@ import { AssignedRequestDetailsComponent } from './assigned-request-details/assi
     RegisterComponent,
     NewRequestOptionsComponent,
     NewRequestRealEstateComponent,
-    AssignedRequestDetailsComponent
+    AssignedRequestDetailsComponent,
+    AssignSingleRequestComponent
   ],
 
   templateUrl: './app.component.html',
