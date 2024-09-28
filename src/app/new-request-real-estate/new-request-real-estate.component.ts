@@ -1,129 +1,170 @@
-import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { Validators, FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RealEstateRequestService } from '../services/real-estate-request.service';
+import { NgClass, NgFor } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
+import * as bootstrap from 'bootstrap';
+
+interface Request {
+  number: string;
+  owner: string;
+  date: string;
+  daysSinceCreation: number;
+  status: string;
+  governorate: string;
+  type: string;
+  assignedSurveyor?: string; 
+ssn:string;
+}
 
 @Component({
-  selector: 'app-new-request-real-estate',
+  selector: 'app-manage-requests',
   standalone: true,
-  imports: [RouterModule, CommonModule,ReactiveFormsModule,FormsModule],
-  templateUrl: './new-request-real-estate.component.html',
-  styleUrl: './new-request-real-estate.component.css',
+  imports: [FormsModule, NgFor ,NgClass],
+  templateUrl: './manage-requests.component.html',
+  styleUrl: './manage-requests.component.css',
 })
-export class NewRequestRealEstateComponent {
-   // Define arrays with proper types, allowing null for single file uploads
- singleImageArrays: string[] = ["ownerFrontImage","ownerBackImage","agentFrontImage" ,"BackImage" ];
- multibleImagesArrays: string[] = ["requestImage","propertyImage","agentImade"  ];
+export class ManageRequestsComponent implements OnInit {
+  requests : Request[]= [
+    {
+      number: '15612383',
+      owner: 'أحمد خالد أيمن',
+      date: '12/09/2024',
+      daysSinceCreation: 5,
+      status: 'تم الرفع المساحي',
+      governorate: 'القاهرة',
+      type: 'نوع 1',
+      ssn:'29910141200456'
+    },
+    {
+      number: '15612384',
+      owner: 'مروة محمد سليمان',
+      date: '12/09/2024',
+      daysSinceCreation: 25,
+      status: 'تعذر',
+      governorate: 'الإسكندرية',
+      type: 'نوع 2',
+      ssn:'2991014120856'
 
- singleFileArrays: (File | null)[] = [null, null, null, null];
+    },
+    {
+      number: '15612385',
+      owner: 'أحمد خالد أيمن',
+      date: '12/09/2024',
+      daysSinceCreation: 25,
+      status: 'تم الرفع المساحي',
+      governorate: 'الجيزة',
+      type: 'نوع 1',
+      ssn:'2991014125156'
 
- // Multiple file arrays, initialized as empty arrays
- multipleFileArrays: File[][] = [[], [],[]];
-  realStateRequest=this.fb.group({
-    ownereEmail:["",[Validators.required]],
-    phone:["",Validators.required],
-    ownerFullName:["",Validators.required],
-    nationalId:["",Validators.required],
-    phoneNumber:["",Validators.required],
-    agentEmail:["",Validators.required],
-    agentPhone:["",Validators.required],
-    agentFullName:["",Validators.required],
-    agentNationalId:["",Validators.required],
-    realStateType:["",Validators.required],
-    area:["",Validators.required],
-    city:["",Validators.required],
-    date:["",Validators.required],
-    governorate:["",Validators.required],
-    realStateNumber:["",Validators.required],
-    realStateFloorsNumber:["",Validators.required],
-    realStateAddress:["",Validators.required],
-    realStateDescriptions:["",Validators.required],
-    ownerFrontImage:["",Validators.required],
-    ownerBackImage:["",Validators.required],
-    agentFrontImage:["",Validators.required],
-    BackImage:["",Validators.required],
-    requestImage:[[]],
-    propertyImage:[[]],
-    agentImade:[[]],
-    reqNumber:[""]
+    },
+    {
+      number: '15612386',
+      owner: 'أحمد خالد أيمن',
+      date: '12/09/2024',
+      daysSinceCreation: 5,
+      status: 'مدفوع',
+      governorate: 'القاهرة',
+      type: 'نوع 2',
+      ssn:'29910141251556'
 
+    },
+  ];
 
+  statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
+  governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];
+  requestTypes = ['عقار', 'شقة'];
 
-  })
-  constructor(private fb:FormBuilder,private realEstateRequestSer:RealEstateRequestService,private router:Router){}
-   generateRandomTenDigitNumber() {
-    const min = 1000000000; // Smallest 10-digit number
-    const max = 9999999999; // Largest 10-digit number
-    let reqNumber= Math.floor(Math.random() * (max - min + 1)) + min;
-    this.realStateRequest.controls["reqNumber"].setValue(reqNumber.toString())
-}
-ngOnInit(): void {
-this.generateRandomTenDigitNumber();
-let date=new Date
-this.realStateRequest.controls["date"].setValue(date.toString());
-console.log(this.realStateRequest.controls["date"].value)
-}
+  // Filters
+  statusFilter: string = '';
+  governorateFilter: string = '';
+  typeFilter: string = '';
+  dateFilter: string = '';
+  searchTerm: string = '';
+  ssnFilter:string='';
+  fromDateFilter: string = '';  
+  toDateFilter: string = '';  
+  filteredRequests = this.requests;
 
+  constructor() {}
 
- // Single File Selection
- onSingleFileSelected(event: any, index: number, controlName: string) {
-  const file: File = event.target.files[0];  // Get the selected file
-  if (file && this.isValidFile(file)) {  // Check if file is valid
-    this.singleFileArrays[index] = file;  // Store file in the appropriate array
+  ngOnInit(): void {
+    this.applyFilters();
+  }
 
-    // Get the form control and set the file name (or other metadata) in the form control
-    const control = this.realStateRequest.get(controlName);
-    if (control) {
-      control.setValue(file.name);  // Set file name in the form control
+  applyFilters() {
+    this.filteredRequests = this.requests.filter((request) => {
+      const requestDate = new Date(request.date.split('/').reverse().join('-')); // Convert DD/MM/YYYY to YYYY-MM-DD format for comparison
+      
+      const fromDate = this.fromDateFilter ? new Date(this.fromDateFilter) : null;
+      const toDate = this.toDateFilter ? new Date(this.toDateFilter) : null;
+  
+      return (
+        (!this.statusFilter || request.status === this.statusFilter) &&
+        (!this.governorateFilter || request.governorate === this.governorateFilter) &&
+        (!this.typeFilter || request.type === this.typeFilter) &&
+        (!this.searchTerm || request.owner.includes(this.searchTerm) || request.ssn.includes(this.searchTerm)) &&
+        // Date filter: Check if request date is within the selected range
+        (!fromDate || requestDate >= fromDate) &&
+        (!toDate || requestDate <= toDate)
+      );
+    });
+  }
+  
+
+  selectedRequests: any[] = [];
+
+  toggleSelection(request: any) {
+    const index = this.selectedRequests.indexOf(request);
+    if (index > -1) {
+      this.selectedRequests.splice(index, 1);
+    } else {
+      this.selectedRequests.push(request);
     }
   }
-}
 
+  isSelected(request: any): boolean {
+    return this.selectedRequests.includes(request);
+  }
 
- // Remove Single File
- removeSingleFile(index: number) {
-   this.singleFileArrays[index] = null;
- }
+  toggleSelectAll(event: any) {
+    if (event.target.checked) {
+      this.selectedRequests = [...this.filteredRequests];
+    } else {
+      this.selectedRequests = [];
+    }
+  }
 
- // Multiple File Selection
- onMultipleFilesSelected(event: any, index: number) {
-   const files: FileList = event.target.files;
-   const selectedFiles = Array.from(files).filter(file => this.isValidFile(file));
-   this.multipleFileArrays[index].push(...selectedFiles);
-   const control = this.realStateRequest.get(this.multibleImagesArrays[index]);
-   if (control) {
-     control.setValue(this.multipleFileArrays[index]);  // `file.name` is a string
-     
-   }   }
+  surveyors = ['المساح 1', 'المساح 2', 'المساح 3']; 
+  selectedSurveyor: string = '';
 
- 
+  // ... existing methods ...
 
- // Remove Multiple File
- removeMultipleFile(file: File, index: number) {
-   this.multipleFileArrays[index] = this.multipleFileArrays[index].filter(f => f !== file);
- }
-
- // Trigger input programmatically
- triggerFileInput(inputId: string) {
-   const fileInput = document.getElementById(inputId) as HTMLInputElement;
-   fileInput.click();
- }
-
- // File validation
- // File validation
-isValidFile(file: File): boolean {
-  const allowedExtensions = ['pdf', 'png', 'jpeg', 'jpg'];
-  const fileSizeLimit = 5 * 1024 * 1024; // 5 MB
-  const fileExtension = file.name.split('.').pop()?.toLowerCase(); // Use optional chaining
-
-  // Check if the file extension is valid and if the file size is within the limit
-  return !!fileExtension && allowedExtensions.includes(fileExtension) && file.size <= fileSizeLimit;
- }
- sendRequest(){
-  console.log(this.realStateRequest.value)
-this.realEstateRequestSer.addRequest(this.realStateRequest.value);
-this.router.navigate(["/userRequest"])
-
- }
+  openAssignSurveyorModal() {
+    const modalElement = document.getElementById('assignSurveyorModal');
+    if (modalElement) {
+      const modal = new bootstrap.Modal(modalElement);
+      modal.show();
+    } else {
+      console.error('Modal element not found');
+    }
+  }
+  selectSurveyor(surveyor: string): void {
+    this.selectedSurveyor = surveyor;
+  }
+  
+  assignSurveyor() {
+    this.selectedRequests.forEach(request => {
+      request.assignedSurveyor = this.selectedSurveyor;
+    });
+  
+    this.selectedRequests = [];
+    this.selectedSurveyor = '';
+  
+    const modalElement = document.getElementById('assignSurveyorModal');
+    if (modalElement) {
+      const modal = bootstrap.Modal.getInstance(modalElement);
+      modal?.hide(); 
+    }
+  
+    console.log('Assigned to surveyor:', this.selectedSurveyor);
+  }
 }
