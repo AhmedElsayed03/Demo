@@ -109,11 +109,11 @@
       </div>
     </div> -->
 
-    <div class="request-box" *ngFor="let item of userReqests">
-      <div class="request-details">
+    <div class="request-box" *ngFor="let item of userReqests; let i=index">
+      <div class="request-details" [routerLink]="['/getRequest',i]">
         <span> رقم الطلب: {{item.reqNumber}} </span>
         <span> الاسم:{{item.ownerFullName}} </span>
-        <span> التاريخ: {{item.date|date:"yyyy,MM,dd"}} </span>
+        <span> التاريخ: {{item.date|date:"yyyy/MM/dd"}} </span>
         <span> <img src="assets\Pending Icon2.png" alt="Pending" /></span>
       </div>
     </div>

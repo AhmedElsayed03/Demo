@@ -180,12 +180,13 @@
               [checked]="isSelected(request)"
             />
           </td>
-          <td>{{ request.number }}</td>
-          <td>{{ request.owner }}</td>
-          <td>{{ request.date }}</td>
-          <td>{{ request.daysSinceCreation }}</td>
-          <td>{{ request.status }}</td>
-          <td>{{ request.assignedSurveyor || "غير معين" }}</td>
+          <td>{{ request.reqNumber }}</td>
+          <td>{{ request.ownerFullName }}</td>
+          <td>{{ request.date|date:"yyyy/MM/dd" }}</td>
+          <td>{{numberOfDays(request.date)}}</td>
+          <!-- <td>{{ request.status }}</td> -->
+          <td>مدفوع</td>
+          <td>  "غير معين" </td>
           <td>
             <button class="btn btn-primary">تفاصيل</button>
           </td>

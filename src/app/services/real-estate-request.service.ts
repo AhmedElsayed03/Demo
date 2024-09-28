@@ -12,6 +12,7 @@ requesterRequests:any[]=[]
 constructor() { }
 addRequest(request:any){
 this.realEstateRequests.push(request)
+localStorage.setItem("realEstateRequests",JSON.stringify( this.realEstateRequests))
 console.log(this.realEstateRequests);
 
 this.requests$.next(this.realEstateRequests)
