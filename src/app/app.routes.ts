@@ -34,23 +34,22 @@ export const routes: Routes = [
     path: 'new_request_real_estate',
     component: NewRequestRealEstateComponent,
   },
-  { path: 'editRequest',
-     component: EditRequestDataComponent
-  },
+  {
+     path: 'editRequest',
+    component: EditRequestDataComponent
+ },
   { path: 'getRequest',
-     component: GetRequestComponent 
-  },
+    component: GetRequestComponent
+ },
   { path: 'userRequest',
-     component: UserRequestsComponent
+    component: UserRequestsComponent 
   },
   {
     path: 'manageRequests',
     component: ManageRequestsComponent,
   },
-   {path : 'EditRequest' , component: EditRequestDataComponent},
-    {path : 'getRequest', component:GetRequestComponent},
-    {
-      path: 'assigned_request_details',
-      component: AssignedRequestDetailsComponent
-    }
+  {
+    path: 'assigned_request_details',
+    component: AssignedRequestDetailsComponent,
+  },
 ];

@@ -1,1 +1,174 @@
-<p>get-request works!</p>
+<div class="container" >
+  <!--------------------------- Nav Bar ---------------------------->
+  <nav class="navbar">
+    <button class="cta-button">تسجيل خروج</button>
+    <div class="nav-links"></div>
+    <div class="logo">
+      <img
+        class="text"
+        src="/assets/LogoText.png"
+        style="width: 212px; height: 29px"
+      />
+      <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
+    </div>
+  </nav>
+
+  <!--------------------------- Div ---------------------------->
+
+  <div class="title">
+    <h1>طلب الرفع المساحي</h1>
+  </div>
+
+  <!--------------------------- Div ---------------------------->
+  <div class="data">
+    <div class="title1">
+      <p>بيانات صاحب الطلب</p>
+    </div>
+    <div class="container mr-5">
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
+
+          {{ email }}
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          {{ phone }}
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          {{ unitOwnerNme }}
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          {{ ssn }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--------------------------- Div ---------------------------->
+  <div class="data" style=" width: 100%">
+    <div class="title1">
+      <p>بيانات الوكيل</p>
+    </div>
+    <div class="container mr-4">
+      <div class="fields">
+        <div class="field">
+          <p>اسم الوكيل</p>
+          {{ agentEmail }}
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          {{ agentPhoneNumber }}
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          {{ agentName }}
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          {{ agentssn }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data" style=" width: 100%">
+    <div class="title1">
+      <p>بيانات الطلب</p>
+    </div>
+    <div class="container mr-4">
+      <div class="fields">
+        <div class="field">
+          <p>نوع العقار</p>
+          {{ unitType }}
+        </div>
+        <div class="field">
+          <p>مساحه العقار</p>
+          {{ unitArea }}
+        </div>
+        <div class="field">
+          <p>المدينه</p>
+          {{ city }}
+        </div>
+        <div class="field">
+          <p>المحافظه</p>
+          {{ governorate }}
+        </div>
+        <div class="field">
+          <p>رقم العقار</p>
+          {{ unitNumber }}
+        </div>
+        <div class="field">
+          <p>ادخل عدد ادوار العقار</p>
+          {{ unitFloors }}
+        </div>
+        <div class="field">
+          <p>ادخل العنوان بالكامل</p>
+          {{ address }}
+        </div>
+        <br />
+        <div class="field">
+          <p>الوصف</p>
+          {{ description }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data" style=" width: 100%;"></div>
+    <div class="title1">
+      <p>رفع المستندات المطلوبه</p>
+    </div>
+
+    <div class="container" >
+      <div class="upload-container">
+              <!-- Single File Uploaders with Static Images -->
+              <div class="single-file-uploads">
+                <div
+                  class="single-file-upload"
+                  *ngFor="let singleFile of singleFileStaticData; let i = index"
+                >
+                  <h6>{{ singleFile.title }}</h6>
+                  <img
+                    [src]="singleFile.image"
+                    alt="Static Image"
+                    class="static-img"
+                  />
+                </div>
+            <!-- Multiple File Uploaders with Static Images -->
+                <div class="multiple-file-uploads">
+                  <div
+                    class="multiple-file-upload"
+                    *ngFor="let multipleFile of multipleFileStaticData; let j = index"
+                  >
+                    <h6>{{ multipleFile.title }}</h6>
+                    <div class="image-gallery">
+                      <img
+                        *ngFor="let image of multipleFile.images"
+                        [src]="image"
+                        alt="Static Image"
+                        class="static-img"
+                      />
+                    </div>
+                  </div>
+                </div>
+      </div>
+      </div>
+    </div>
+
+      </div>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 30px;
+        "
+      >
+        <button type="submit" class="cta">عدل البيانات</button>
+ 
+
+  
+      </div>
+

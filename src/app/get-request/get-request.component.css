@@ -1,0 +1,265 @@
+.navbar {
+  position: fixed;
+  top: 25px; /* Keep this if you want a top offset */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* 80% of the viewport width */
+  height: 70px; /* Height of the navbar */
+  z-index: 1000; /* Keep it above other content */
+  background-color: #ffffff; /* Background color */
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Padding on left and right */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  border-radius: 5px;
+}
+
+.logo {
+  font-size: 24px; /* Logo font size */
+  font-weight: bold; /* Logo font weight */
+  color: #333; /* Logo color */
+  margin-right: 20px;
+}
+
+.text {
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex; /* Horizontal layout for links */
+  margin-right: 500px;
+}
+
+.nav-button {
+  color: #333; /* Text color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Padding */
+  transition: background-color 0.3s; /* Smooth transition */
+  font-family: NotoKufiB;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+}
+
+.cta-button {
+  background-color: #007bff; /* CTA button background color */
+  color: white; /* CTA button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+  font-family: NotoKufiB;
+  margin-left: 20px;
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Darken on hover */
+}
+
+.title {
+  margin-top: 120px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: NotoKufiB;
+  /* border: solid 2px #0056b3; */
+}
+
+.title h1 {
+  font-size: 30px;
+}
+
+.data {
+  /* border: solid 2px #00b969; */
+  padding: 20px;
+}
+
+.title1 {
+  display: flex;
+  justify-content: end;
+  /* border: solid 2px #ba063c; */
+  margin-bottom: 20px;
+}
+
+.title1 p {
+  font-size: 25px;
+  font-family: NotoKufiSB;
+  margin-right: 20px;
+  margin-top: 10px;
+  color: #0057ff;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Add space between the fields */
+  /* border: solid 2px #ffff00; */
+  direction: rtl; /* Ensure the content is aligned for RTL languages */
+  margin-bottom: 20px; /* Add space between stacked .fields divs */
+}
+
+.field {
+  margin: 20px;
+  font-family: NotoKufiSB;
+  text-align: right;
+  width: 300px; 
+}
+
+.inputText {
+  width: 100%; /* Ensure input takes full width inside the .field */
+  max-width: 300px; /* Limit the width of general inputs */
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  font-family: NotoKufiSB;
+  text-align: right;
+  background-color: #f1f1f1;
+}
+
+.field input::placeholder {
+  color: #888;
+  font-size: 14px;
+  opacity: 1;
+  padding-right: 4px;
+  text-align: right;
+  transition: opacity 0.3s ease;
+}
+
+.field input:focus {
+  border-color: #0098cf;
+  outline: none;
+}
+
+.field input:focus::placeholder {
+  opacity: 0;
+}
+
+
+/* Override for #address */
+#address {
+  width: 100%; /* Allow it to take full width */
+  max-width: none; /* Remove the max-width restriction */
+  width: 1000px;
+}
+/* Override for #desc */
+#desc {
+  width: 100%; /* Allow it to take full width */
+  max-width: none; /* Remove the max-width restriction */
+  width: 1000px;
+  height: 200px;
+}
+
+/********************************* File Upload ********************************************/
+/********************************* File Upload ********************************************/
+/********************************* File Upload ********************************************/
+
+
+
+
+.single-file-upload, .multiple-file-upload {
+padding: 20px;
+border: 2px dashed #004cff;
+box-sizing: border-box;
+border-radius: 15px;
+background-color: #f3f4f6;
+text-align: center;
+transition: background-color 0.3s ease;
+margin-bottom: 20px;
+}
+
+/* .single-file-upload:hover, .multiple-file-upload:hover {
+background-color: #ebedf0;
+} */
+
+.info {
+font-size: 12px;
+margin-top: 5px;
+color: rgb(146, 146, 146);
+}
+
+.file-input {
+display: none;
+}
+
+.upload-btn {
+padding: 10px 25px;
+background-color: #0088ff;
+color: #fff;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+background-color: #004cff;
+}
+
+.file-preview {
+margin-top: 20px;
+text-align: left;
+}
+
+.file-preview ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.file-preview li {
+background-color: #fff;
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 8px;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-preview li i {
+margin-right: 10px;
+color: #0062ff;
+}
+
+.remove-file {
+color: #e53e3e;
+cursor: pointer;
+font-weight: bold;
+}
+
+.remove-file:hover {
+color: #c53030;
+}
+
+
+
+/******************Submit Button*********************/
+
+.cta {
+  background-image: linear-gradient(
+    to right,
+    #00aaff 0%,
+    #034bd2 51%,
+    #00aaff 100%
+  );
+  width: 200px;
+  height: 50px;
+  margin-top: 30px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 1s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 5px;
+  border: 1px;
+  font-family: NotoKufiB;
+  cursor: pointer;
+}
