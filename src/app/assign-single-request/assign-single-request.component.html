@@ -1,0 +1,214 @@
+<!--------------------------- Nav Bar ---------------------------->
+<nav class="navbar">
+    <button class="cta-button">تسجيل خروج</button>
+    <div class="nav-links">
+      <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a> -->
+        <a href="#services" class="nav-button">رجوع للطلبات</a>
+    </div>
+    <div class="logo">
+      <img
+        class="text"
+        src="/assets/LogoText.png"
+        style="width: 212px; height: 29px"
+      />
+      <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
+    </div>
+  </nav>
+
+  <!-------------------------- Control Request ------------------------------>
+  <div class="title">
+    <h1>الطلب رقم 15612383</h1>
+  </div>
+  <div style="display: flex; justify-content: right;">
+    <hr style="width: 50%;">
+  </div>
+  
+  <div class="control">
+    <div class="status">
+      <p>:حاله المراجعه</p>
+      <p [innerHTML]="toggleState ? 'تم المراجعه' : 'بانتظار المراجعه'"></p>
+      @if(!isDistributed){
+        <label class="switch"> <!-- Hide switch if distributed -->
+        <input type="checkbox" (input)="onToggle($event)">
+        <span class="slider round"></span>
+      </label>}
+
+      @if(!toggleState && !isDistributed){<button type="button" class="btn btn-danger" (click)="openPopup()" style="font-family: NotoKufiB; margin-right: 50px;">تعذر</button>}
+      
+    </div>
+  
+    <div class="status">
+      <p>:حاله التوزيع</p>
+      <p [innerHTML]="isDistributed ? 'تم التوزيع' : 'بانتظار التوزيع'"></p>
+      <button type="button" class="btn btn-primary" [disabled]="!toggleState" (click)="distribute()" style="font-family: NotoKufiB;">توزيع</button>
+    </div>
+  </div>
+
+  <!-------------------------- Popup ------------------------------>
+@if(showPopup){
+  <div class="modal" (click)="closePopupOnOutsideClick($event)">
+    <div class="modal-content">
+      <span class="close-btn" (click)="closePopup()">×</span> 
+    <h2>ادخل تفاصيل التعذر</h2>
+    <textarea rows="8" cols="50" placeholder="اكتب تفاصيل التعذر هنا..."></textarea>
+    <br>
+    <button class="btn btn-primary" (click)="closePopup()" style="font-family: NotoKufiB;">ارسال</button>
+    </div>
+</div>}
+
+  <!-------------------------- Data ------------------------------>
+
+  <!--------------------------- Div ---------------------------->
+<div class="data" style="height: 500px; width: 100%">
+    <div class="title1">
+      <p>بيانات صاحب الطلب</p></div>
+    <div class="fields">
+      <div class="field">
+        <p>البريد الالكتروني</p>
+        
+        <input class="inputText" type="text" placeholder="ادخل البريد الالكتروني" />
+      </div>
+      <div class="field">
+        <p>ادخل رقم الموبايل</p>
+        <input class="inputText" type="text" placeholder="رقم الموبايل" />
+      </div>
+      <div class="field">
+        
+        <p>اسم صاحب العقار بالكامل</p>
+        <input class="inputText" type="text" placeholder="ادخل الاسم" />
+      </div>
+      <div class="field">
+        <p>الرقم القومي</p>
+        <input class="inputText" type="text" placeholder="ادخل الرقم القومي" />
+      </div>
+    </div>
+  </div>
+  
+  <!--------------------------- Div ---------------------------->
+  <div class="data" style="height: 500px; width: 100%">
+    <div class="title1">
+      <p>بيانات الوكيل</p>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <p>البريد الالكتروني</p>
+        
+        <input class="inputText" type="text" placeholder="ادخل البريد الالكتروني" />
+      </div>
+      <div class="field">
+        <p>ادخل رقم الموبايل</p>
+        <input class="inputText" type="text" placeholder="رقم الموبايل" />
+      </div>
+      <div class="field">
+        
+        <p>اسم صاحب العقار بالكامل</p>
+        <input class="inputText" type="text" placeholder="ادخل الاسم" />
+      </div>
+      <div class="field">
+        <p>الرقم القومي</p>
+        <input class="inputText" type="text" placeholder="ادخل الرقم القومي" />
+      </div>
+    </div>
+  </div>
+  
+  <!--------------------------- Div ---------------------------->
+  <div class="data" style="height: 1030px; width: 100%">
+    <div class="title1">
+      <p>بيانات الطلب</p>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <p>نوع العقار</p>
+        <select name="cars" id="cars" class="inputText">
+          <option value="villa">فيلا</option>
+          <option value="townHouse">تاون هاوس</option>
+          <option value="twinHouse">توين هاوس</option>
+          <option value="managerialBuilding">مبني اداري</option>
+          <option value="commercialBuilding">مبني تجاري</option>
+          <option value="Chalet">شاليه</option>
+          <option value="commercialStore">محل تجاري</option>
+        </select>
+      </div>
+      <div class="field">
+        <p>مساحه العقار</p>
+        <input class="inputText" type="text"  placeholder="ادخل المساحه">
+      </div>
+      <div class="field">
+        <p>المدينه</p>
+        <select name="cars" id="cars" class="inputText">
+          <option value="">مدينه نصر</option>
+          <option value="">مدينه الرحاب</option>
+          <option value="">مدينه السلام</option>
+          <option value="">مدينه النرجس</option>
+          <option value="">مصر الجديده</option>
+          <option value="">منشيه ناصر</option>
+          <option value="">الزمالك</option>
+          <option value="">الزاويه الحمراء</option>
+          <option value="">السيده زينب</option>
+        </select>
+      </div>
+      <div class="field">
+        <p>المحافظه</p>
+        <select name="cars" id="cars" class="inputText">
+          <option value="Cairo">القاهره</option>
+          <option value="Portsaid">بورسعيد</option>
+          <option value="Alexandria">الاسكندريه</option>
+          <option value="Mansoura">المنصوره</option>
+          <option value="Ismaillia">الاسماعيليه</option>
+          <option value="Giza">الجيزه</option>
+          <option value="Daqahlia">الدقهليه</option>
+          <option value="Damietta">دمياط</option>
+          <option value="Suez">السويس</option>
+          <option value="matruh">مطروح</option>
+          <option value="Qalyubia">القليوبيه</option>
+          <option value="Qena">قنا</option>
+          <option value="menofia">المنوفيه</option>
+          <option value="NewVally">الوادي الجديد</option>
+          <option value="Faiyum">الفيوم</option>
+          <option value="Sohag">سوهاج</option>
+          <option value="BeniSuef">بني سويف</option>
+          <option value="SouthSinai">جنوب سيناء</option>
+          <option value="Aswan">اسوان</option>
+          <option value="Asyut">اسيوط</option>
+          <option value="Luxor">الاقصر</option>
+          <option value="RedSea">البحر الاحمر</option>
+        </select>
+      </div>
+      <div class="field">
+        <p>رقم العقار</p>
+        <input class="inputText" type="text"  placeholder="ادخل رقم العقار">
+      </div>
+      <div class="field">
+        <p>ادخل عدد ادوار العقار</p>
+        <input class="inputText" type="text"  placeholder="ادخل عدد الادوار">
+      </div>
+      <div class="field">
+        <p>ادخل العنوان بالكامل</p>
+        <input class="inputText" id="address" type="text"  placeholder="ادخل العنوان بالتفصيل">
+      </div>
+      <br>
+      <div class="field">
+        <p>الوصف</p>
+        <input class="inputText" id="desc" type="text"  placeholder="ادخل وصف العقار">
+      </div>
+  </div>
+  </div>
+
+
+  
+  <!--------------------------- Docs ---------------------------->
+  <div class="title1">
+    <p>المستندات المرفوعه</p>
+  </div>
+<div class="docs">
+    <div class="button-container">
+        <button class="styled-button" onclick="window.location.href='https://example1.com';">صوره البطاقه</button>
+        <button class="styled-button" onclick="window.location.href='https://example2.com';">صوره عقد الملكيه</button>
+        <button class="styled-button" onclick="window.location.href='https://example3.com';">صوره بطاقه الوكيل</button>
+        <button class="styled-button" onclick="window.location.href='https://example4.com';">صوره التوكيل</button>
+        <button class="styled-button" onclick="window.location.href='https://example6.com';">صوره العقار 2</button>
+        <button class="styled-button" onclick="window.location.href='https://example5.com';">صوره العقار 1</button>
+    </div> 
+</div>
+
+

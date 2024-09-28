@@ -9,6 +9,7 @@ import { GetRequestComponent } from './get-request/get-request.component';
 import { ManageRequestsComponent } from './manage-requests/manage-requests.component';
 import { UserRequestsComponent } from './user-requests/user-requests.component';
 import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
+import { AssignSingleRequestComponent } from './assign-single-request/assign-single-request.component';
 export const routes: Routes = [
   {
     path: '',
@@ -52,4 +53,12 @@ export const routes: Routes = [
     path: 'assigned_request_details',
     component: AssignedRequestDetailsComponent,
   },
+    {
+      path: 'assigned_request_details',
+      component: AssignedRequestDetailsComponent
+    },
+    {
+      path:'assign_single_request',
+      component: AssignSingleRequestComponent
+    }
 ];
