@@ -1,0 +1,129 @@
+.navbar {
+    position: fixed;
+    top: 25px; /* Keep this if you want a top offset */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* 80% of the viewport width */
+    height: 70px; /* Height of the navbar */
+    z-index: 1000; /* Keep it above other content */
+    background-color: #ffffff; /* Background color */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Padding on left and right */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border-radius: 5px;
+  }
+  
+  .logo {
+    font-size: 24px; /* Logo font size */
+    font-weight: bold; /* Logo font weight */
+    color: #333; /* Logo color */
+    margin-right: 20px;
+  }
+  
+  .text {
+    margin-right: 20px;
+  }
+  
+  .nav-links {
+    display: flex; /* Horizontal layout for links */
+    margin-right: 500px;
+  }
+  
+  .nav-button {
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-family: NotoKufiB;
+  }
+  
+  .nav-button:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+  }
+  
+  .cta-button {
+    background-color: #007bff; /* CTA button background color */
+    color: white; /* CTA button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-family: NotoKufiB;
+    margin-left: 20px;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3; /* Darken on hover */
+  }
+
+  /***************************************************************/
+
+  .parent {
+    width: 100%; /* Adjust to fit your design */
+    height: 700px; /* Let the height adapt to content */
+    display: flex;
+    justify-content: space-around; /* Distribute space around the options */
+    align-items: center;
+    flex-wrap: wrap; /* Enable wrapping to new rows */
+    border: solid 2px rgb(123, 255, 0);
+    background-color: rgb(241, 241, 241);
+    padding: 20px 0; /* Add padding for better spacing */
+}
+
+.option {
+    height: 210px;
+    width: 210px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(82, 82, 82, 0.2); /* Add shadow */
+    font-family: notokufiB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px; /* Add margin between options */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.option img {
+    margin-bottom: 25px;
+    transition: opacity 0.3s; /* Smooth transition for image opacity */
+}
+
+.option p {
+    transition: transform 0.3s, color 0.3s; /* Smooth transition for text position and color */
+}
+
+.option:hover {
+    background-color: rgb(0, 110, 255); /* Change background color on hover */
+    color: white; /* Optional: Change text color for better visibility */
+}
+
+.option:hover img {
+    opacity: 0; /* Make the image disappear on hover */
+    cursor: pointer;
+}
+
+.option:hover p {
+    transform: translateY(-10px); /* Move text up smoothly */
+    cursor: pointer;
+}
+
+.title {
+    position: absolute; /* Fixed position to overlay on top */
+    top:140px; /* Align to the top of the parent */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust to center based on width */
+    background-color: rgb(241, 241, 241); /* Match the background */
+    padding: 10px; /* Add padding around the title */
+    z-index: 10; /* Make sure it is above other elements */
+  }
+
+  .title h2 {
+    margin: 0; /* Remove default margins */
+    font-family: NotoKufiB; /* Optional: Use your desired font */
+  }
+

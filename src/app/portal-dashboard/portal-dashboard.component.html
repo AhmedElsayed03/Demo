@@ -1,0 +1,46 @@
+<nav class="navbar">
+    <button class="cta-button" type="button" [routerLink]="['/admin_login']" >
+      تسجيل خروج
+    </button>
+    <!-- <div class="nav-links"> -->
+      <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
+        <a href="#services" class="nav-button">تصفح الخدمات</a> -->
+    <!-- </div> -->
+    <div class="logo">
+      <img
+        class="text"
+        src="/assets/LogoText.png"
+        style="width: 212px; height: 29px"
+      />
+      <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
+    </div>
+  </nav>
+  
+  
+  <div class="parent">
+    <div class="title">
+      <h2>اللوحه الاداريه</h2>
+    </div>
+    <div class="option" (click)="isOptionEnabled('review') ? navigateTo('/manageRequests') : null">
+      <img src="/assets/review.png" style="width: 50%">
+      <p>اداره المراجعه</p>
+    </div>
+    <div class="option" (click)="isOptionEnabled('audit') ? navigateTo('/userRequests') : null">
+      <img src="/assets/audit.png" style="width: 50%">
+      <p>اداره التدقيق</p>
+    </div>
+    <div class="option" (click)="isOptionEnabled('request') ? navigateTo('/manageRequests') : null">
+      <img src="/assets/request.png" style="width: 50%">
+      <p>اداره الطلبات</p>
+    </div>
+    <div class="option" (click)="isOptionEnabled('callCenter') ? navigateTo('/call_center') : null">
+      <img src="/assets/Call-Center.png" style="width: 50%">
+      <p>كول سنتر</p>
+    </div>
+    <div class="option" (click)="isOptionEnabled('teams') ? navigateTo('/#') : null">
+      <img src="/assets/teams.png" style="width: 50%">
+      <p>اداره فرق المسح</p>
+    </div>
+  </div>
+  
+  

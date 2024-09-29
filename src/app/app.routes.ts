@@ -11,6 +11,9 @@ import { UserRequestsComponent } from './user-requests/user-requests.component';
 import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
 import { AssignSingleRequestComponent } from './assign-single-request/assign-single-request.component';
 import { NewRequestLandComponent } from './new-request-land/new-request-land.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { PortalDashboardComponent } from './portal-dashboard/portal-dashboard.component';
+import { CallCenterComponent } from './call-center/call-center.component';
 export const routes: Routes = [
   {
     path: '',
@@ -62,4 +65,17 @@ export const routes: Routes = [
     path: 'new_request_land',
     component: NewRequestLandComponent,
   },
+  {
+    path: 'admin_login',
+    component: AdminLoginComponent,
+  },
+  {
+    path: 'portal_dashboard',
+    component: PortalDashboardComponent,
+  },
+  {
+    path: 'call_center',
+    component: CallCenterComponent,
+  }
+
 ];
