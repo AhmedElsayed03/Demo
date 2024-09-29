@@ -1,7 +1,7 @@
 import { CommonModule, DatePipe, NgClass, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import * as bootstrap from 'bootstrap';
 import { RealEstateRequestService } from '../services/real-estate-request.service';
 import { LandRequestService } from '../services/land-request.service';
@@ -9,7 +9,7 @@ import { LandRequestService } from '../services/land-request.service';
 @Component({
   selector: 'app-manage-requests',
   standalone: true,
-  imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule],
+  imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule ,RouterLink],
   templateUrl: './manage-requests.component.html',
   styleUrls: ['./manage-requests.component.css'],
 })
@@ -132,18 +132,29 @@ export class ManageRequestsComponent implements OnInit {
 
   assignSurveyor() {
     this.selectedRequests.forEach((request) => {
-      request.assignedSurveyor = this.selectedSurveyor;
+      // Find the index of the request in the original requests array
+      const index = this.requests.findIndex((r) => r.reqNumber === request.reqNumber);
+      
+      // If the request exists in the original array, update it
+      if (index !== -1) {
+        this.requests[index].assignedSurveyor = this.selectedSurveyor; // Update assigned surveyor
+      }
     });
-
+  
+    // Clear selections and close modal
     this.selectedRequests = [];
     this.selectedSurveyor = '';
-
+  
     const modalElement = document.getElementById('assignSurveyorModal');
     if (modalElement) {
       const modal = bootstrap.Modal.getInstance(modalElement);
       modal?.hide();
     }
-
+  
     console.log('Assigned to surveyor:', this.selectedSurveyor);
+  
+    // Reapply filters to refresh the displayed requests
+    this.applyFilters();
   }
+  
 }
