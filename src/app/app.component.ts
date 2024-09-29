@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
 import { AssignSingleRequestComponent } from './assign-single-request/assign-single-request.component';
 import { NewRequestLandComponent } from './new-request-land/new-request-land.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { CallCenterComponent } from './call-center/call-center.component';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +32,8 @@ import { NewRequestLandComponent } from './new-request-land/new-request-land.com
     AssignedRequestDetailsComponent,
     AssignSingleRequestComponent,
     NewRequestLandComponent,
+    AdminLoginComponent,
+    CallCenterComponent
   ],
 
   templateUrl: './app.component.html',

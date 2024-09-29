@@ -14,11 +14,10 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onLogin() {
-    if (this.username === 'Ahmed' && this.password) {
+    if (this.username === 'Ahmed' && this.password === 'Ahmed') {
       this.router.navigate(['/userRequest']); 
-    } else if (this.username === 'admin' && this.password) {
-      this.router.navigate(['/manageRequests']); 
-    } else {
+    } 
+    else {
       alert('اسم المستخدم أو كلمة المرور غير صحيحة'); 
     }
   }
