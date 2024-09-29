@@ -18,7 +18,7 @@
       class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center order-2 order-md-1"
       style="font-size: 15px"
     >
-      <button type="button" class="btn text-primary" style="font-size: inherit">
+      <button type="button" class="btn text-primary" style="font-size: inherit" [routerLink]="['/login']">
         تسجيل الخروج
       </button>
       <img src="assets/Notifications.png" />
@@ -189,7 +189,7 @@
           <td>{{ numberOfDays(request.date) }}</td>
           <!-- <td>{{ request.status }}</td> -->
           <td>مدفوع</td>
-          <td>"غير معين"</td>
+          <td>{{ request.assignedSurveyor || 'غير معين' }}</td>
           <td>
             <button class="btn btn-primary">تفاصيل</button>
           </td>
