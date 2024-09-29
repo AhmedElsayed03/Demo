@@ -10,6 +10,7 @@ import { ManageRequestsComponent } from './manage-requests/manage-requests.compo
 import { UserRequestsComponent } from './user-requests/user-requests.component';
 import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
 import { AssignSingleRequestComponent } from './assign-single-request/assign-single-request.component';
+import { NewRequestLandComponent } from './new-request-land/new-request-land.component';
 export const routes: Routes = [
   {
     path: '',
@@ -36,15 +37,11 @@ export const routes: Routes = [
     component: NewRequestRealEstateComponent,
   },
   {
-     path: 'editRequest',
-    component: EditRequestDataComponent
- },
-  { path: 'getRequest/:id',
-    component: GetRequestComponent
- },
-  { path: 'userRequest',
-    component: UserRequestsComponent 
+    path: 'editRequest',
+    component: EditRequestDataComponent,
   },
+  { path: 'getRequest/:id', component: GetRequestComponent },
+  { path: 'userRequest', component: UserRequestsComponent },
   {
     path: 'manageRequests',
     component: ManageRequestsComponent,
@@ -53,12 +50,16 @@ export const routes: Routes = [
     path: 'assigned_request_details',
     component: AssignedRequestDetailsComponent,
   },
-    {
-      path: 'assigned_request_details',
-      component: AssignedRequestDetailsComponent
-    },
-    {
-      path:'assign_single_request',
-      component: AssignSingleRequestComponent
-    }
+  {
+    path: 'assigned_request_details',
+    component: AssignedRequestDetailsComponent,
+  },
+  {
+    path: 'assign_single_request',
+    component: AssignSingleRequestComponent,
+  },
+  {
+    path: 'new_request_land',
+    component: NewRequestLandComponent,
+  },
 ];

@@ -24,9 +24,9 @@
       <img src="assets/Notifications.png" />
     </div>
   </div>
-  
+
   <br /><br />
-  
+
   <div class="container">
     <div class="row mb-3">
       <!-- Pended Requests Button on the left -->
@@ -37,14 +37,14 @@
           </button>
         </div>
       </div>
-      
+
       <!-- Follow-up on the right -->
       <div class="col text-end">
         <h2>متابعة وادارة الطلبات</h2>
       </div>
     </div>
   </div>
-  <br>
+  <br />
 
   <!-- Filters and Search Bar -->
   <div class="container">
@@ -82,10 +82,10 @@
         </div>
       </div>
     </div>
-    <br><br>
+    <br /><br />
 
     <!-- Filter Section -->
-    <div class="row mb-4 d-flex justify-content-between align-items-center ">
+    <div class="row mb-4 d-flex justify-content-between align-items-center">
       <!-- Date Filter (From Date) -->
       <div class="col-md-2 mb-2 mb-md-0">
         <input
@@ -96,7 +96,7 @@
           (ngModelChange)="applyFilters()"
         />
       </div>
-  
+
       <!-- Date Filter (To Date) -->
       <div class="col-md-2 mb-2 mb-md-0">
         <input
@@ -107,7 +107,7 @@
           (ngModelChange)="applyFilters()"
         />
       </div>
-  
+
       <!-- Request Type Filter -->
       <div class="col-md-2 mb-2 mb-md-0">
         <select
@@ -121,7 +121,7 @@
           </option>
         </select>
       </div>
-  
+
       <!-- Governorate Filter -->
       <div class="col-md-2 mb-2 mb-md-0">
         <select
@@ -130,12 +130,15 @@
           (ngModelChange)="applyFilters()"
         >
           <option value="">المحافظة</option>
-          <option *ngFor="let governorate of governorates" [value]="governorate">
+          <option
+            *ngFor="let governorate of governorates"
+            [value]="governorate"
+          >
             {{ governorate }}
           </option>
         </select>
       </div>
-  
+
       <!-- Status Filter -->
       <div class="col-md-2 mb-2 mb-md-0">
         <select
@@ -150,9 +153,9 @@
         </select>
       </div>
     </div>
-<br><br>
+    <br /><br />
     <!-- Requests Table -->
-    <table class="table table-striped">
+    <table class="table table-striped" style="height: 350px">
       <thead>
         <tr>
           <th>
@@ -182,11 +185,11 @@
           </td>
           <td>{{ request.reqNumber }}</td>
           <td>{{ request.ownerFullName }}</td>
-          <td>{{ request.date|date:"yyyy/MM/dd" }}</td>
-          <td>{{numberOfDays(request.date)}}</td>
+          <td>{{ request.date | date : "yyyy/MM/dd" }}</td>
+          <td>{{ numberOfDays(request.date) }}</td>
           <!-- <td>{{ request.status }}</td> -->
           <td>مدفوع</td>
-          <td>  "غير معين" </td>
+          <td>"غير معين"</td>
           <td>
             <button class="btn btn-primary">تفاصيل</button>
           </td>
@@ -196,56 +199,56 @@
     </table>
 
     <!-- Surveyor Assignment Modal -->
-     <div dir="rtl">
-    <div
-  class="modal fade"
-  id="assignSurveyorModal"
-  tabindex="-1"
-  aria-labelledby="assignSurveyorModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="assignSurveyorModalLabel">
-          تعيين المساح
-        </h5>
-       
-      </div>
-      <div class="modal-body">
-        <div class="d-flex flex-wrap">
-          <!-- Displaying surveyors as buttons -->
-          <button
-            *ngFor="let surveyor of surveyors"
-            type="button"
-            class="btn btn-outline-primary m-2"
-            [ngClass]="{'active': selectedSurveyor === surveyor}"
-            (click)="selectSurveyor(surveyor)"
-          >
-            {{ surveyor }}
-          </button>
+    <div dir="rtl">
+      <div
+        class="modal fade"
+        id="assignSurveyorModal"
+        tabindex="-1"
+        aria-labelledby="assignSurveyorModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="assignSurveyorModalLabel">
+                تعيين المساح
+              </h5>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex flex-wrap">
+                <!-- Displaying surveyors as buttons -->
+                <button
+                  *ngFor="let surveyor of surveyors"
+                  type="button"
+                  class="btn btn-outline-primary m-2"
+                  [ngClass]="{ active: selectedSurveyor === surveyor }"
+                  (click)="selectSurveyor(surveyor)"
+                >
+                  {{ surveyor }}
+                </button>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="assignSurveyor()"
+                [disabled]="!selectedSurveyor"
+              >
+                تعيين
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                إغلاق
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="assignSurveyor()"
-          [disabled]="!selectedSurveyor"
-        >
-          تعيين
-        </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
-          إغلاق
-        </button>
-        
       </div>
     </div>
   </div>
 </div>
-     </div>

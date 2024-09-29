@@ -11,7 +11,7 @@ import { NewRequestRealEstateComponent } from './new-request-real-estate/new-req
 import { FormsModule } from '@angular/forms';
 import { AssignedRequestDetailsComponent } from './assigned-request-details/assigned-request-details.component';
 import { AssignSingleRequestComponent } from './assign-single-request/assign-single-request.component';
-
+import { NewRequestLandComponent } from './new-request-land/new-request-land.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +28,8 @@ import { AssignSingleRequestComponent } from './assign-single-request/assign-sin
     NewRequestOptionsComponent,
     NewRequestRealEstateComponent,
     AssignedRequestDetailsComponent,
-    AssignSingleRequestComponent
+    AssignSingleRequestComponent,
+    NewRequestLandComponent,
   ],
 
   templateUrl: './app.component.html',

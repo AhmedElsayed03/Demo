@@ -25,7 +25,7 @@
         type="button"
         class="btn btn-primary ms-3"
         style="font-size: inherit"
-        [routerLink]="['/new_request_options']" 
+        [routerLink]="['/new_request_options']"
       >
         طلب جديد
       </button>
@@ -85,7 +85,7 @@
     <!-- Status Filters -->
     <div class="row">
       <div class="col-12">
-        <img src="assets\Guide.png" style="width: 100%" height="70%" />
+        <img src="assets\Guide.png" style="width: 900px" height="90px" />
       </div>
     </div>
     <br /><br />
@@ -109,11 +109,11 @@
       </div>
     </div> -->
 
-    <div class="request-box" *ngFor="let item of userReqests; let i=index">
-      <div class="request-details" [routerLink]="['/getRequest',i]">
-        <span> رقم الطلب: {{item.reqNumber}} </span>
-        <span> الاسم:{{item.ownerFullName}} </span>
-        <span> التاريخ: {{item.date|date:"yyyy/MM/dd"}} </span>
+    <div class="request-box" *ngFor="let item of userReqests; let i = index">
+      <div class="request-details" [routerLink]="['/getRequest', i]">
+        <span> رقم الطلب: {{ item.reqNumber }} </span>
+        <span> الاسم:{{ item.ownerFullName }} </span>
+        <span> التاريخ: {{ item.date | date : "yyyy/MM/dd" }} </span>
         <span> <img src="assets\Pending Icon2.png" alt="Pending" /></span>
       </div>
     </div>

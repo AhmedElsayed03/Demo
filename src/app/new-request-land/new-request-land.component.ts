@@ -7,16 +7,16 @@ import {
   ReactiveFormsModule,
   FormsModule,
 } from '@angular/forms';
-import { RealEstateRequestService } from '../services/real-estate-request.service';
+import { LandRequestService } from '../services/land-request.service';
 
 @Component({
-  selector: 'app-new-request-real-estate',
+  selector: 'app-new-request-land',
   standalone: true,
   imports: [RouterModule, CommonModule, ReactiveFormsModule, FormsModule],
-  templateUrl: './new-request-real-estate.component.html',
-  styleUrl: './new-request-real-estate.component.css',
+  templateUrl: './new-request-land.component.html',
+  styleUrl: './new-request-land.component.css',
 })
-export class NewRequestRealEstateComponent {
+export class NewRequestLandComponent {
   // Define arrays with proper types, allowing null for single file uploads
   singleImageArrays: string[] = [
     'ownerFrontImage',
@@ -35,7 +35,7 @@ export class NewRequestRealEstateComponent {
   // Multiple file arrays, initialized as empty arrays
   multipleFileArrays: File[][] = [[], [], []];
   realStateRequest = this.fb.group({
-    ownerEmail: ['', [Validators.required]],
+    ownerEmail: [''],
     phone: ['', Validators.required],
     ownerFullName: ['', Validators.required],
     nationalId: ['', Validators.required],
@@ -64,7 +64,7 @@ export class NewRequestRealEstateComponent {
   });
   constructor(
     private fb: FormBuilder,
-    private realEstateRequestSer: RealEstateRequestService,
+    private realEstateRequestSer: LandRequestService,
     private router: Router
   ) {}
   generateRandomTenDigitNumber() {

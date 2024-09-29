@@ -1,9 +1,7 @@
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
   <button class="cta-button">تسجيل خروج</button>
-  <div class="nav-links">
-
-  </div>
+  <div class="nav-links"></div>
   <div class="logo">
     <img
       class="text"
@@ -18,19 +16,26 @@
 <div class="title">
   <h1>اختر نوع الطلب</h1>
 </div>
+<div class="Requests">
+  <div class="Choice">
+    <a [routerLink]="['/new_request_land']">ارض</a>
+  </div>
+  <div class="Choice"><a>وحده</a></div>
+  <div class="Choice">
+    <a [routerLink]="['/new_request_real_estate']">عقار</a>
+  </div>
+</div>
 
-<div id="unitType" class="Requests">
+<!-- <div id="unitType" class="Requests" style="height: 500px">
   <div class="Choice" (click)="selectUnit('building')"><a>عقار</a></div>
   <div class="Choice" (click)="selectUnit('unit')"><a>وحده</a></div>
   <div class="Choice" (click)="selectUnit('land')"><a>ارض</a></div>
-</div>
+</div> -->
 
 <!-- Pass the selected unit to the child component -->
-<app-new-request-real-estate [unitType]="selectUnit"></app-new-request-real-estate>
+<!-- <app-new-request-real-estate
+  [unitType]="selectUnit"
+></app-new-request-real-estate> -->
 
-<br><br><br>
-<br><br><br>
-
-
-
-
+<br /><br /><br />
+<br /><br /><br />
