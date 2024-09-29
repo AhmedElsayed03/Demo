@@ -25,6 +25,7 @@
         type="button"
         class="btn btn-primary ms-3"
         style="font-size: inherit"
+        [routerLink]="['/new_request_options']" 
       >
         طلب جديد
       </button>
@@ -88,8 +89,7 @@
       </div>
     </div>
     <br /><br />
-    <div class="requests-container">
-      <a href="/getRequest">
+    <!-- <div class="requests-container">
       <div class="request-box">
         <div class="request-details">
           <span> رقم الطلب: 15617891125 </span>
@@ -98,9 +98,7 @@
           <span> <img src="assets/Done Icon.png" alt="Done" /></span>
         </div>
       </div>
-      </a>
 
-      <a href="/getRequest">
       <div class="request-box">
         <div class="request-details">
           <span> رقم الطلب: 85455625425 </span>
@@ -109,15 +107,15 @@
           <span> <img src="assets/Rejected Icon.png" alt="Rejected" /></span>
         </div>
       </div>
-  </a>
+    </div> -->
 
-    <div class="request-box">
-      <div class="request-details">
-        <span> رقم الطلب: 85415133315 </span>
-        <span> الاسم: خالد أيمن </span>
-        <span> التاريخ: 02/10/2014 </span>
+    <div class="request-box" *ngFor="let item of userReqests; let i=index">
+      <div class="request-details" [routerLink]="['/getRequest',i]">
+        <span> رقم الطلب: {{item.reqNumber}} </span>
+        <span> الاسم:{{item.ownerFullName}} </span>
+        <span> التاريخ: {{item.date|date:"yyyy/MM/dd"}} </span>
         <span> <img src="assets\Pending Icon2.png" alt="Pending" /></span>
       </div>
     </div>
-  </div></div>
+  </div>
 </div>

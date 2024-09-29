@@ -29,19 +29,19 @@
         <div class="field">
           <p>البريد الالكتروني</p>
 
-          {{ email }}
+          {{ userData.ownereEmail }}
         </div>
         <div class="field">
           <p>ادخل رقم الموبايل</p>
-          {{ phone }}
+          {{  userData.phone }}
         </div>
         <div class="field">
           <p>اسم صاحب العقار بالكامل</p>
-          {{ unitOwnerNme }}
+          {{  userData.ownerFullName }}
         </div>
         <div class="field">
           <p>الرقم القومي</p>
-          {{ ssn }}
+          {{ userData.nationalId }}
         </div>
       </div>
     </div>
@@ -55,19 +55,19 @@
       <div class="fields">
         <div class="field">
           <p>اسم الوكيل</p>
-          {{ agentEmail }}
+          {{ userData.agentFullName }}
         </div>
         <div class="field">
-          <p>ادخل رقم الموبايل</p>
-          {{ agentPhoneNumber }}
+          <p>رقم الموبايل</p>
+          {{  userData.agentPhone}}
         </div>
         <div class="field">
-          <p>اسم صاحب العقار بالكامل</p>
-          {{ agentName }}
+<p>البريدالالكتروني للوكيل</p>      
+    {{ userData.agentEmail }}
         </div>
         <div class="field">
           <p>الرقم القومي</p>
-          {{ agentssn }}
+          {{ userData.agentNationalId }}
         </div>
       </div>
     </div>
@@ -81,36 +81,36 @@
       <div class="fields">
         <div class="field">
           <p>نوع العقار</p>
-          {{ unitType }}
+          {{ userData.realStateType }}
         </div>
         <div class="field">
           <p>مساحه العقار</p>
-          {{ unitArea }}
+          {{ userData.area }}
         </div>
         <div class="field">
           <p>المدينه</p>
-          {{ city }}
+          {{userData.city }}
         </div>
         <div class="field">
           <p>المحافظه</p>
-          {{ governorate }}
+          {{userData.governorate }}
         </div>
         <div class="field">
           <p>رقم العقار</p>
-          {{ unitNumber }}
+          {{userData.realStateNumber }}
         </div>
         <div class="field">
           <p>ادخل عدد ادوار العقار</p>
-          {{ unitFloors }}
+          {{ userData.realStateFloorsNumber }}
         </div>
         <div class="field">
           <p>ادخل العنوان بالكامل</p>
-          {{ address }}
+          {{ userData.realStateAddress }}
         </div>
         <br />
         <div class="field">
           <p>الوصف</p>
-          {{ description }}
+          {{userData.realStateDescriptions }}
         </div>
       </div>
     </div>
