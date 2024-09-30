@@ -14,6 +14,7 @@ import { AssignSingleRequestComponent } from './assign-single-request/assign-sin
 import { NewRequestLandComponent } from './new-request-land/new-request-land.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CallCenterComponent } from './call-center/call-center.component';
+import { NewRequestUnitComponent } from './new-request-unit/new-request-unit.component';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,8 @@ import { CallCenterComponent } from './call-center/call-center.component';
     AssignSingleRequestComponent,
     NewRequestLandComponent,
     AdminLoginComponent,
-    CallCenterComponent
+    CallCenterComponent,
+    NewRequestUnitComponent
   ],
 
   templateUrl: './app.component.html',

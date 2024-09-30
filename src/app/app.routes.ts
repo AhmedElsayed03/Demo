@@ -14,6 +14,7 @@ import { NewRequestLandComponent } from './new-request-land/new-request-land.com
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { PortalDashboardComponent } from './portal-dashboard/portal-dashboard.component';
 import { CallCenterComponent } from './call-center/call-center.component';
+import { NewRequestUnitComponent } from './new-request-unit/new-request-unit.component';
 export const routes: Routes = [
   {
     path: '',
@@ -76,6 +77,10 @@ export const routes: Routes = [
   {
     path: 'call_center',
     component: CallCenterComponent,
+  },
+  {
+    path: 'new_request_unit',
+    component: NewRequestUnitComponent,
   }
 
 ];
