@@ -1,0 +1,99 @@
+.container{
+    font-family: "NotoKufiSB";
+    max-width: 1000px;
+
+
+}
+.coatofarms {
+    margin-top: 20px; 
+  }
+  
+  .logotext {
+    margin-top: 40px;
+  }
+
+ 
+  .shadow-box {
+    box-shadow: 2px 2px 8px rgba(63, 63, 63, 0.3);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.coatofarms {
+    margin-top: 10px;
+}
+
+.logotext{
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .logo {
+        margin-top: 10px; 
+    }
+    .btn{
+        margin-bottom: 10px;
+    }
+}
+.logo {
+    width: 50px;
+    margin-left: 15px;
+  }
+  
+  .logotext {
+    height: 30px;
+  }
+ 
+  
+  .container {
+    max-width: 1000px;
+  }
+  
+  .table {
+    text-align: right;
+    direction: rtl;
+  }
+  
+  .table thead th {
+    text-align: center;
+  }
+  
+  .table tbody td {
+    text-align: center;
+  }
+  
+  .form-select, .form-control {
+    text-align: right;
+    direction: rtl;
+    font-family: Notokufi;
+  }
+  
+/* Center the modal title */
+.modal-title {
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Center the number inputs */
+  input[type="number"] {
+    text-align: center;
+  }
+  
+  /* Right-align the labels and form controls for RTL layout */
+  .modal-body .form-label {
+    text-align: right;
+    display: block;
+    direction: rtl;
+  }
+  
+  /* Make sure the input fields are also right-aligned */
+  .modal-body .form-control {
+    text-align: right;
+    direction: rtl;
+  }
+  
+  /* Align the select element for AM/PM to the right */
+  .modal-body select.form-select {
+    text-align: right;
+    direction: rtl;
+  }
+  
