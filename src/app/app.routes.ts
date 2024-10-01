@@ -18,6 +18,7 @@ import { AuditRequestsWithSurveyorsComponent } from './audit-requests-with-surve
 import { RevisingManagementComponent } from './revising-management/revising-management.component';
 import { RequesrsManagementComponent } from './requesrs-management/requesrs-management.component';
 import { AssigningRequestsForSurveyorsComponent } from './assigning-requests-for-surveyors/assigning-requests-for-surveyors.component';
+import { NewRequestUnitComponent } from './new-request-unit/new-request-unit.component';
 export const routes: Routes = [
   {
     path: '',
@@ -100,6 +101,8 @@ export const routes: Routes = [
   {
     path:'assigning_requests_for_surveyors',
     component:AssigningRequestsForSurveyorsComponent
+    path: 'new_request_unit',
+    component: NewRequestUnitComponent,
   }
 
 ];
