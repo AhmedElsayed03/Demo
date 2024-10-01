@@ -1,0 +1,69 @@
+.container{
+    font-family: "NotoKufiSB";
+    max-width: 1000px;
+
+
+}
+.coatofarms {
+    margin-top: 20px; 
+  }
+  
+  .logotext {
+    margin-top: 40px;
+  }
+
+ 
+  .shadow-box {
+    box-shadow: 2px 2px 8px rgba(63, 63, 63, 0.3);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.coatofarms {
+    margin-top: 10px;
+}
+
+.logotext{
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .logo {
+        margin-top: 10px; 
+    }
+    .btn{
+        margin-bottom: 10px;
+    }
+}
+.logo {
+    width: 50px;
+    margin-left: 15px;
+  }
+  
+  .logotext {
+    height: 30px;
+  }
+ 
+  
+  .container {
+    max-width: 1000px;
+  }
+  
+  .table {
+    text-align: right;
+    direction: rtl;
+  }
+  
+  .table thead th {
+    text-align: center;
+  }
+  
+  .table tbody td {
+    text-align: center;
+  }
+  
+  .form-select, .form-control {
+    text-align: right;
+    direction: rtl;
+  }
+  
+  

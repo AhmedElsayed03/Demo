@@ -1,19 +1,20 @@
 import { CommonModule, DatePipe, NgClass, NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import * as bootstrap from 'bootstrap';
+import { Component, OnInit} from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {  ActivatedRoute, RouterLink } from '@angular/router';
 import { RealEstateRequestService } from '../services/real-estate-request.service';
 import { LandRequestService } from '../services/land-request.service';
+import * as bootstrap from 'bootstrap';
+
 
 @Component({
-  selector: 'app-manage-requests',
+  selector: 'app-audit-requests-with-surveyors',
   standalone: true,
   imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule ,RouterLink],
-  templateUrl: './manage-requests.component.html',
-  styleUrls: ['./manage-requests.component.css'],
+  templateUrl: './audit-requests-with-surveyors.component.html',
+  styleUrl: './audit-requests-with-surveyors.component.css'
 })
-export class ManageRequestsComponent implements OnInit {
+export class AuditRequestsWithSurveyorsComponent  implements OnInit {
   requests: any[] = [];
   statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
   governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];
@@ -154,4 +155,7 @@ export class ManageRequestsComponent implements OnInit {
   
   
   
+
+
+
 

@@ -54,6 +54,7 @@ activatedRoute.params.subscribe(param=>{
 })
 }
 ngOnInit(): void {
+  console.log(`id is ${this.id}`)
   this.realEstateSer.getAllRealEstateRequests().subscribe(res=>{
     this.userData=res[this.id]
     this.singleFileStaticData=[

@@ -40,7 +40,7 @@
 
       <!-- Follow-up on the right -->
       <div class="col text-end">
-        <h2>متابعة وادارة الطلبات</h2>
+        <h2>اداره استقبال الطلبات</h2>
       </div>
     </div>
   </div>
@@ -52,15 +52,7 @@
       <!-- Assign to Surveyor Button -->
       <div class="col">
         <div class="d-flex align-items-center justify-content-between">
-          <!-- Button aligned to the left -->
-          <button
-            type="button"
-            class="btn btn-success me-3"
-            (click)="openAssignSurveyorModal()"
-            [disabled]="selectedRequests.length === 0"
-          >
-            تعيين المساح
-          </button>
+          
 
           <!-- Search bar with space between -->
           <div class="col-6 d-flex justify-content-end flex-grow-1">
@@ -167,8 +159,8 @@
           <th>تاريخ الطلب</th>
           <th>عدد أيام إنشاء الطلب</th>
           <th>حالة الطلب</th>
-          <th>المساح المعين</th>
           <th>تفاصيل</th>
+          <th>تعليق</th>
           <!-- Add this column header -->
         </tr>
       </thead>
@@ -189,66 +181,64 @@
           <td>{{ numberOfDays(request.date) }}</td>
           <!-- <td>{{ request.status }}</td> -->
           <td>مدفوع</td>
-          <td>{{ request.assignedSurveyor || 'غير معين' }}</td>
           <td>
-            <button class="btn btn-primary">تفاصيل</button>
+            <button class="btn btn-primary" [routerLink]="['/getRequest', 0]">تفاصيل</button>
           </td>
+          <td>
+            <button class="btn btn-secondary" (click)="openCommentModal(request)">إضافة تعليق</button>
+          </td>
+          
           <!-- Add this data cell in the table row -->
         </tr>
       </tbody>
     </table>
 
-    <!-- Surveyor Assignment Modal -->
-    <div dir="rtl">
-      <div
-        class="modal fade"
-        id="assignSurveyorModal"
-        tabindex="-1"
-        aria-labelledby="assignSurveyorModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="assignSurveyorModalLabel">
-                تعيين المساح
-              </h5>
-            </div>
-            <div class="modal-body">
-              <div class="d-flex flex-wrap">
-                <!-- Displaying surveyors as buttons -->
-                <button
-                  *ngFor="let surveyor of surveyors"
-                  type="button"
-                  class="btn btn-outline-primary m-2"
-                  [ngClass]="{ active: selectedSurveyor === surveyor }"
-                  (click)="selectSurveyor(surveyor)"
-                >
-                  {{ surveyor }}
-                </button>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="assignSurveyor()"
-                [disabled]="!selectedSurveyor"
-              >
-                تعيين
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                إغلاق
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Comment Modal -->
+<div
+class="modal fade"
+id="commentModal"
+tabindex="-1"
+aria-labelledby="commentModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="commentModalLabel">إضافة تعليق</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
     </div>
+    <div class="modal-body">
+      <textarea
+        class="form-control"
+        [(ngModel)]="comment"
+        placeholder="أدخل تعليقاً هنا"
+      ></textarea>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+      >
+        إغلاق
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="saveComment()"
+        data-bs-dismiss="modal"
+      >
+        حفظ
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
   </div>
 </div>
