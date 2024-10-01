@@ -14,6 +14,10 @@ import { NewRequestLandComponent } from './new-request-land/new-request-land.com
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { PortalDashboardComponent } from './portal-dashboard/portal-dashboard.component';
 import { CallCenterComponent } from './call-center/call-center.component';
+import { AuditRequestsWithSurveyorsComponent } from './audit-requests-with-surveyors/audit-requests-with-surveyors.component';
+import { RevisingManagementComponent } from './revising-management/revising-management.component';
+import { RequesrsManagementComponent } from './requesrs-management/requesrs-management.component';
+import { AssigningRequestsForSurveyorsComponent } from './assigning-requests-for-surveyors/assigning-requests-for-surveyors.component';
 export const routes: Routes = [
   {
     path: '',
@@ -43,15 +47,19 @@ export const routes: Routes = [
     path: 'editRequest',
     component: EditRequestDataComponent,
   },
-  { path: 'getRequest/:id', component: GetRequestComponent },
-  { path: 'userRequest', component: UserRequestsComponent },
+  {
+     path: 'getRequest/:id',
+     component: GetRequestComponent },
+  {
+     path: 'getRequest',
+     component: GetRequestComponent },
+
+  {
+     path: 'userRequest',
+     component: UserRequestsComponent },
   {
     path: 'manageRequests',
     component: ManageRequestsComponent,
-  },
-  {
-    path: 'assigned_request_details',
-    component: AssignedRequestDetailsComponent,
   },
   {
     path: 'assigned_request_details',
@@ -76,6 +84,22 @@ export const routes: Routes = [
   {
     path: 'call_center',
     component: CallCenterComponent,
+  },
+  {
+  path:'audit_requests_with_surveyors',
+  component : AuditRequestsWithSurveyorsComponent
+  },
+  {
+    path: 'revising_Management',
+    component : RevisingManagementComponent
+  },
+  {
+    path: 'requests_management',
+    component : RequesrsManagementComponent
+  },
+  {
+    path:'assigning_requests_for_surveyors',
+    component:AssigningRequestsForSurveyorsComponent
   }
 
 ];

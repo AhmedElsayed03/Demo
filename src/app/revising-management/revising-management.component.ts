@@ -7,13 +7,13 @@ import { RealEstateRequestService } from '../services/real-estate-request.servic
 import { LandRequestService } from '../services/land-request.service';
 
 @Component({
-  selector: 'app-manage-requests',
+  selector: 'app-revising-management',
   standalone: true,
   imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule ,RouterLink],
-  templateUrl: './manage-requests.component.html',
-  styleUrls: ['./manage-requests.component.css'],
+  templateUrl: './revising-management.component.html',
+  styleUrl: './revising-management.component.css'
 })
-export class ManageRequestsComponent implements OnInit {
+export class RevisingManagementComponent  implements OnInit {
   requests: any[] = [];
   statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
   governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];

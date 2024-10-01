@@ -63,6 +63,7 @@
 
   .title {
     margin-top: 120px;
+    height: 75px;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -78,14 +79,13 @@
 
 /***********************Control Div**************************/
 
-
-
 .status {
     display: flex;
     justify-content: flex-start; /* Aligns elements to the right */
     align-items: center; /* Center vertically */
     flex-direction: row-reverse; /* To place the Arabic text first */
     /* border: solid 2px #00c1df; */
+    margin-top: 30px;
     gap: 10px; /* Space between the toggle and the text */
 }
 
@@ -243,27 +243,38 @@ input:checked + .slider:before {
 
 
 /****************************Docs************************************/
+/****************************Docs************************************/
 .button-container {
-  display: flex;               /* Use flexbox for layout */
-  flex-wrap: wrap;            /* Allow items to wrap to the next line */
-  justify-content: center;     /* Center items horizontally */
-  gap: 30px;                  /* Increase space between images */
-  margin: 20px 0;             /* Margin above and below */
-}
+    display: flex;               /* Use flexbox for layout */
+    flex-wrap: wrap;            /* Allow items to wrap to the next line */
+    justify-content: center;     /* Center items horizontally */
+    gap: 30px;                  /* Increase space between images */
+    margin: 20px 0;             /* Margin above and below */
+  }
+  
+  .styled-image {
+    width: 200px;               /* Increased width for larger images */
+    height: auto;               /* Maintain aspect ratio */
+    cursor: pointer;            /* Indicate that images are clickable */
+    border: 2px solid #ddd;     /* Optional: add a border */
+    border-radius: 5px;         /* Optional: add rounded corners */
+    transition: transform 0.2s; /* Optional: smooth hover effect */
+  }
+  
+  .styled-image:hover {
+    transform: scale(1.1);      /* Slightly enlarge on hover */
+  }
+  
+  
+  .styled-button:active {
+      background-color: #003f7f;
+      box-shadow: none;
+  }
+  
 
-.styled-image {
-  width: 200px;               /* Increased width for larger images */
-  height: auto;               /* Maintain aspect ratio */
-  cursor: pointer;            /* Indicate that images are clickable */
-  border: 2px solid #ddd;     /* Optional: add a border */
-  border-radius: 5px;         /* Optional: add rounded corners */
-  transition: transform 0.2s; /* Optional: smooth hover effect */
+.styled-button:hover {
+    background-color: #0056b3;
 }
-
-.styled-image:hover {
-  transform: scale(1.1);      /* Slightly enlarge on hover */
-}
-
 
 .styled-button:active {
     background-color: #003f7f;

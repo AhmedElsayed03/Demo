@@ -26,16 +26,17 @@
   
   <div class="control">
     <div class="status">
-      <p>:حاله المراجعه</p>
-      <p [innerHTML]="toggleState ? 'تم المراجعه' : 'بانتظار المراجعه'"></p>
-      @if(!isDistributed){
-        <label class="switch"> <!-- Hide switch if distributed -->
-        <input type="checkbox" (input)="onToggle($event)">
-        <span class="slider round"></span>
-      </label>}
+        <p>:حاله المراجعه</p>
+        <p class="alert alert-success d-flex align-items-center rounded-pill ">
+            <i class="fas fa-check-circle me-2"></i> تم المراجعة  
+          </p>   
+    </div>
 
-      @if(!toggleState && !isDistributed){<button type="button" class="btn btn-danger" (click)="openPopup()" style="font-family: NotoKufiB; margin-right: 50px;">تعذر</button>}
-      
+    
+  
+    <div class="status">
+      <p>:حاله التوزيع</p>
+      <p >بانتظار التوزيع </p>
     </div>
   </div>
 
@@ -53,7 +54,6 @@
 
   <!-------------------------- Data ------------------------------>
 
-  <!--------------------------- Div ---------------------------->
   <div class="title">
     <h1>طلب الرفع المساحي</h1>
   </div>
@@ -121,7 +121,7 @@
       <div class="fields">
         <div class="field">
           <p>نوع العقار</p>
-          Apartment
+          شقه
         </div>
         <div class="field">
           <p>مساحه العقار</p>
@@ -129,11 +129,11 @@
         </div>
         <div class="field">
           <p>المدينه</p>
-          Cairo
+القاهرة
         </div>
         <div class="field">
           <p>المحافظه</p>
-          Giza
+          الجيزة
         </div>
         <div class="field">
           <p>رقم العقار</p>

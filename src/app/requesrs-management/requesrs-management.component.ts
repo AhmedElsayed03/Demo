@@ -7,13 +7,14 @@ import { RealEstateRequestService } from '../services/real-estate-request.servic
 import { LandRequestService } from '../services/land-request.service';
 
 @Component({
-  selector: 'app-manage-requests',
+  selector: 'app-requesrs-management',
   standalone: true,
   imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule ,RouterLink],
-  templateUrl: './manage-requests.component.html',
-  styleUrls: ['./manage-requests.component.css'],
+  templateUrl: './requesrs-management.component.html',
+  styleUrl: './requesrs-management.component.css'
 })
-export class ManageRequestsComponent implements OnInit {
+export class RequesrsManagementComponent  implements OnInit {
+  requestId :number =0;
   requests: any[] = [];
   statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
   governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];
@@ -35,12 +36,18 @@ export class ManageRequestsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private realEstateSer: RealEstateRequestService,
-    private landSer: LandRequestService
+    private landSer: LandRequestService,
+    private router : ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.loadRequests();
     this.applyFilters();
+    this.router.paramMap.subscribe(params => {
+      const id = params.get('id');  // 'id' is extracted from the route parameters
+      // Handle the 'id' value here
+    });
+
   }
 
   loadRequests() {
@@ -115,43 +122,48 @@ export class ManageRequestsComponent implements OnInit {
       this.selectedRequests = [];
     }
   }
-    // Other properties...
-    selectedRequest: any = null;
-    comment: string = '';
-  
-    openCommentModal(request: any) {
-      this.selectedRequest = request;
-      this.comment = request.comment || ''; // Load existing comment if available
-      
-      const modalElement = document.getElementById('commentModal');
-      
-      // Ensure modalElement is not null
-      if (modalElement) {
-        const modal = new bootstrap.Modal(modalElement);
-        modal.show();
-      } else {
-        console.error('Modal element not found');
-      }
-    }
-    
-    saveComment() {
-      if (this.selectedRequest) {
-        this.selectedRequest.comment = this.comment;
-        this.updateRequest(this.selectedRequest); // Call method to update the request (in local storage or backend)
-      }
-    }
-  
-    updateRequest(request: any) {
-      // Find the request and update it (either save it to local storage or call a service to save it in the backend)
-      const index = this.requests.findIndex((req) => req.reqNumber === request.reqNumber);
-      if (index > -1) {
-        this.requests[index] = request;
-        // Save to local storage or backend
-        localStorage.setItem('realEstateRequests', JSON.stringify(this.requests));
-      }
+
+  openAssignSurveyorModal() {
+    const modalElement = document.getElementById('assignSurveyorModal');
+    if (modalElement) {
+      const modal = new bootstrap.Modal(modalElement);
+      modal.show();
+    } else {
+      console.error('Modal element not found');
     }
   }
+
+  selectSurveyor(surveyor: string): void {
+    this.selectedSurveyor = surveyor;
+  }
+
+  assignSurveyor() {
+    this.selectedRequests.forEach((request) => {
+      // Find the index of the request in the original requests array
+      const index = this.requests.findIndex((r) => r.reqNumber === request.reqNumber);
+      
+      // If the request exists in the original array, update it
+      if (index !== -1) {
+        this.requests[index].assignedSurveyor = this.selectedSurveyor; // Update assigned surveyor
+      }
+    });
   
+    // Clear selections and close modal
+    this.selectedRequests = [];
+    this.selectedSurveyor = '';
   
+    const modalElement = document.getElementById('assignSurveyorModal');
+    if (modalElement) {
+      const modal = bootstrap.Modal.getInstance(modalElement);
+      modal?.hide();
+    }
   
+    console.log('Assigned to surveyor:', this.selectedSurveyor);
+  
+    // Reapply filters to refresh the displayed requests
+    this.applyFilters();
+  }
+  
+}
+
 
