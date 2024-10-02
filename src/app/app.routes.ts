@@ -100,7 +100,8 @@ export const routes: Routes = [
   },
   {
     path:'assigning_requests_for_surveyors',
-    component:AssigningRequestsForSurveyorsComponent
+    component:AssigningRequestsForSurveyorsComponent},
+    {
     path: 'new_request_unit',
     component: NewRequestUnitComponent,
   }

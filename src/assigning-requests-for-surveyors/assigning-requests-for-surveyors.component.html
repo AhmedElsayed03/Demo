@@ -1,0 +1,185 @@
+<!--------------------------- Nav Bar ---------------------------->
+<nav class="navbar">
+    <button class="cta-button">تسجيل خروج</button>
+    <div class="nav-links">
+      <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a> -->
+        <a href="#services" class="nav-button">رجوع للطلبات</a>
+    </div>
+    <div class="logo">
+      <img
+        class="text"
+        src="/assets/LogoText.png"
+        style="width: 212px; height: 29px"
+      />
+      <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
+    </div>
+  </nav>
+
+  <!-------------------------- Control Request ------------------------------>
+  <div class="container">
+  <div class="title">
+    <h1>الطلب رقم 15612383</h1>
+  </div>
+  <div style="display: flex; justify-content: right;">
+    <hr style="width: 50%;">
+  </div>
+  
+  <div class="control">
+    <div class="status">
+        <p>:حاله المراجعه</p>
+        <p class="alert alert-success d-flex align-items-center rounded-pill ">
+            <i class="fas fa-check-circle me-2"></i> تم المراجعة  
+          </p>   
+    </div>
+
+    
+  
+    <div class="status">
+      <p>:حاله التوزيع</p>
+      <p >بانتظار التوزيع </p>
+    </div>
+  </div>
+
+  <!-------------------------- Popup ------------------------------>
+@if(showPopup){
+  <div class="modal" (click)="closePopupOnOutsideClick($event)">
+    <div class="modal-content">
+      <span class="close-btn" (click)="closePopup()">×</span> 
+    <h2>ادخل تفاصيل التعذر</h2>
+    <textarea rows="8" cols="50" placeholder="اكتب تفاصيل التعذر هنا..."></textarea>
+    <br>
+    <button class="btn btn-primary" (click)="closePopup()" style="font-family: NotoKufiB;">ارسال</button>
+    </div>
+</div>}
+
+  <!-------------------------- Data ------------------------------>
+
+  <div class="title">
+    <h1>طلب الرفع المساحي</h1>
+  </div>
+
+  <!--------------------------- بيانات صاحب الطلب ---------------------------->
+  <div class="data">
+    <div class="title1">
+      <p>بيانات صاحب الطلب</p>
+    </div>
+    <div class="container mr-5">
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
+          Mohamed54512yahoo.com
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          01234567890
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          محمد
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          12345678901234
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--------------------------- بيانات الوكيل ---------------------------->
+  <div class="data" style=" width: 100%">
+    <div class="title1">
+      <p>بيانات الوكيل</p>
+    </div>
+    <div class="container mr-4">
+      <div class="fields">
+        <div class="field">
+          <p>اسم الوكيل</p>
+          احمد
+        </div>
+        <div class="field">
+          <p>رقم الموبايل</p>
+          09876543210
+        </div>
+        <div class="field">
+          <p>البريد الالكتروني للوكيل</p>
+          Ahmedgmail.com
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          98765432109876
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--------------------------- بيانات الطلب ---------------------------->
+  <div class="data" style=" width: 100%">
+    <div class="title1">
+      <p>بيانات الطلب</p>
+    </div>
+    <div class="container mr-4">
+      <div class="fields">
+        <div class="field">
+          <p>نوع العقار</p>
+          شقه
+        </div>
+        <div class="field">
+          <p>مساحه العقار</p>
+          150 متر مربع
+        </div>
+        <div class="field">
+          <p>المدينه</p>
+القاهرة
+        </div>
+        <div class="field">
+          <p>المحافظه</p>
+          الجيزة
+        </div>
+        <div class="field">
+          <p>رقم العقار</p>
+          25
+        </div>
+        <div class="field">
+          <p>ادخل عدد ادوار العقار</p>
+          3
+        </div>
+        <div class="field">
+          <p>ادخل العنوان بالكامل</p>
+          123 مصر االجديدة القاهرة
+        </div>
+        <br />
+        <div class="field">
+          <p>الوصف</p>
+          شقة كبيرة بوسط البلد
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!--------------------------- Docs ---------------------------->
+  <div class="title1">
+    <p>المستندات المرفوعه</p>
+</div>
+<br><br>
+<br><br>
+<br><br>
+
+<div class="docs">
+  <div class="button-container">
+      <a href="https://example1.com">
+          <img src="/assets/idfront.jpg" alt="صوره البطاقه" class="styled-image" />
+      </a>
+      <a href="https://example2.com">
+          <img src="assets/سند ملكية.jpg" alt="صوره عقد الملكيه" class="styled-image" />
+      </a>
+      <a href="https://example3.com">
+          <img src="assets/idfront2.jpg" alt="صوره بطاقه الوكيل" class="styled-image" />
+      </a>
+      <a href="https://example4.com">
+          <img src="/assets/توكيل2.jpg" alt="صوره التوكيل" class="styled-image" />
+      </a>
+      <a href="https://example6.com">
+          <img src="assets/فيلا للبيع.jpg" alt="صوره العقار 2" class="styled-image" />
+      </a>
+  </div>
+</div>
+<br><br>

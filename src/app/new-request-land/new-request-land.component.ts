@@ -6,6 +6,7 @@ import {
   FormBuilder,
   ReactiveFormsModule,
   FormsModule,
+  FormGroup,
 } from '@angular/forms';
 import { LandRequestService } from '../services/land-request.service';
 
@@ -29,6 +30,7 @@ export class NewRequestLandComponent {
     'propertyImage',
     'agentImage',
   ];
+
 
   singleFileArrays: (File | null)[] = [null, null, null, null];
   @Input() unitType: any = '';
