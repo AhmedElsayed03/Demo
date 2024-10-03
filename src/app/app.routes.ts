@@ -19,6 +19,9 @@ import { RevisingManagementComponent } from './revising-management/revising-mana
 import { RequesrsManagementComponent } from './requesrs-management/requesrs-management.component';
 import { AssigningRequestsForSurveyorsComponent } from './assigning-requests-for-surveyors/assigning-requests-for-surveyors.component';
 import { NewRequestUnitComponent } from './new-request-unit/new-request-unit.component';
+import { Component } from '@angular/core';
+import { FinalRevisionComponent } from './final-revision/final-revision.component';
+import { RequestFinalRevisionComponent } from './request-final-revision/request-final-revision.component';
 export const routes: Routes = [
   {
     path: '',
@@ -100,10 +103,21 @@ export const routes: Routes = [
   },
   {
     path:'assigning_requests_for_surveyors',
+    component:AssigningRequestsForSurveyorsComponent
+  },
+  {
     component:AssigningRequestsForSurveyorsComponent},
     {
     path: 'new_request_unit',
-    component: NewRequestUnitComponent,
+    component: NewRequestUnitComponent
+  },
+  {
+    path:'final_revision',
+    component: FinalRevisionComponent
+  },
+  {
+    path:'request_final_revision',
+    component: RequestFinalRevisionComponent
   }
 
 ];
