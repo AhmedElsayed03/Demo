@@ -13,3 +13,16 @@ app-header {
 app-home {
   margin-top: 60px; /* Adjust according to the header height */
 }
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0; /* Ensure there's no margin on the body */
+  background-color: #f4f4f4;
+}
+
+.parent {
+  flex-grow: 1; /* Ensure the content expands to take up available space */
+}
