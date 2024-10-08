@@ -1,32 +1,22 @@
 <div class="container mt-4">
-    <div class="row align-items-center shadow-box">
-      <!-- Right section with logo and title -->
-      <div
-        class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center order-1 order-md-2"
-        style="margin-bottom: 25px"
-      >
-        <img src="assets/LogoText.png" alt="Egypt Logo" class="logotext" />
-        <img
-          src="assets/CoatOfArms.png"
-          alt="Your Logo"
-          class="logo coatofarms ms-2"
-        />
-      </div>
-  
-      <!-- Left section with buttons -->
-      <div
-        class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center order-2 order-md-1"
-        style="font-size: 15px"
-      >
-        <button type="button" class="btn text-primary" style="font-size: inherit" [routerLink]="['/login']">
-          تسجيل الخروج
-        </button>
-        <img src="assets/Notifications.png" />
-      </div>
+  <nav class="navbar">
+    <button class="cta-button" routerLink="['/admin_login']">تسجيل خروج</button>
+    <div class="nav-links">
+      <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
+        <a href="#services" class="nav-button">تصفح الخدمات</a> -->
     </div>
-  
-    <br /><br />
-  
+    <div class="logo">
+      <img
+        class="text"
+        src="/assets/LogoText.png"
+        style="width: 212px; height: 29px"
+      />
+      <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
+    </div>
+  </nav>
+  <br><br><br>
+  <br><br><br>
+
     <div class="container">
       <div class="row mb-3">
         <!-- Pended Requests Button on the left -->
@@ -40,7 +30,7 @@
   
         <!-- Follow-up on the right -->
         <div class="col text-end">
-          <h2>اداره المراجعة</h2>
+          <h2>ادارة المراجعة قبل المسح </h2>
         </div>
       </div>
     </div>

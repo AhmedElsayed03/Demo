@@ -1,6 +1,6 @@
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
-  <button class="cta-button">تسجيل خروج</button>
+  <button class="cta-button" routerLink="['/login']">تسجيل خروج</button>
   <div class="nav-links">
     <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
           <a href="#services" class="nav-button">تصفح الخدمات</a> -->
@@ -140,20 +140,7 @@
           placeholder="ادخل المساحه"
         />
       </div>
-      <div class="field">
-        <p>المدينه</p>
-        <select name="cars" formControlName="city" id="cars" class="inputText">
-          <option value="مدينه نصر">مدينه نصر</option>
-          <option value="مدينه الرحاب">مدينه الرحاب</option>
-          <option value="مدينه السلام">مدينه السلام</option>
-          <option value="مدينه النرجس">مدينه النرجس</option>
-          <option value="مصر الجديده">مصر الجديده</option>
-          <option value="منشيه ناصر">منشيه ناصر</option>
-          <option value="الزمالك">الزمالك</option>
-          <option value="الزاويه الحمراء">الزاويه الحمراء</option>
-          <option value="السيده زينب">السيده زينب</option>
-        </select>
-      </div>
+      
       <div class="field">
         <p>المحافظه</p>
         <select
@@ -184,6 +171,22 @@
           <option value="اسيوط">اسيوط</option>
           <option value="الاقصر">الاقصر</option>
           <option value="البحر الاحمر">البحر الاحمر</option>
+        </select>
+      </div>
+      
+
+      <div class="field">
+        <p>المدينه</p>
+        <select name="cars" formControlName="city" id="cars" class="inputText">
+          <option value="مدينه نصر">مدينه نصر</option>
+          <option value="مدينه الرحاب">مدينه الرحاب</option>
+          <option value="مدينه السلام">مدينه السلام</option>
+          <option value="مدينه النرجس">مدينه النرجس</option>
+          <option value="مصر الجديده">مصر الجديده</option>
+          <option value="منشيه ناصر">منشيه ناصر</option>
+          <option value="الزمالك">الزمالك</option>
+          <option value="الزاويه الحمراء">الزاويه الحمراء</option>
+          <option value="السيده زينب">السيده زينب</option>
         </select>
       </div>
       <div class="field">

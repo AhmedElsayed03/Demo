@@ -4,7 +4,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { NewRequestOptionsComponent } from './new-request-options/new-request-options.component';
 import { NewRequestRealEstateComponent } from './new-request-real-estate/new-request-real-estate.component';
-import { EditRequestDataComponent } from './edit-request-data/edit-request-data.component';
 import { GetRequestComponent } from './get-request/get-request.component';
 import { ManageRequestsComponent } from './manage-requests/manage-requests.component';
 import { UserRequestsComponent } from './user-requests/user-requests.component';
@@ -46,10 +45,6 @@ export const routes: Routes = [
   {
     path: 'new_request_real_estate',
     component: NewRequestRealEstateComponent,
-  },
-  {
-    path: 'editRequest',
-    component: EditRequestDataComponent,
   },
   {
      path: 'getRequest/:id',

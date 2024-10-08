@@ -68,7 +68,7 @@
     justify-content: space-around; /* Distribute space around the options */
     align-items: center;
     flex-wrap: wrap; /* Enable wrapping to new rows */
-    border: solid 2px rgb(123, 255, 0);
+    
     background-color: rgb(241, 241, 241);
     padding: 20px 0; /* Add padding for better spacing */
 }
