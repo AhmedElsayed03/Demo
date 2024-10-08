@@ -7,8 +7,13 @@
     #0057ff,
     #003499
   ); /* Background gradient */
-  height: 100px;
+  height: 50px;
   padding: 0 20px; /* Adds some horizontal padding */
+  width: 100%;
+  position: fixed;
+  bottom: 0; /* Stick the footer to the bottom */
+  left: 0; /* Ensure the footer is aligned with the screen */
+  z-index: 1000; /* Ensure it's on top of other content */
 }
 
 .nav-links {

@@ -1,0 +1,338 @@
+/****************************NavBar************************************/
+.navbar {
+    position: fixed;
+    top: 25px; /* Keep this if you want a top offset */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* 80% of the viewport width */
+    height: 70px; /* Height of the navbar */
+    z-index: 1000; /* Keep it above other content */
+    background-color: #ffffff; /* Background color */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Padding on left and right */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    border-radius: 5px;
+  }
+  
+  .logo {
+    font-size: 24px; /* Logo font size */
+    font-weight: bold; /* Logo font weight */
+    color: #333; /* Logo color */
+    margin-right: 20px;
+  }
+  .text {
+    margin-right: 20px;
+  }
+  
+  .nav-links {
+    display: flex; /* Horizontal layout for links */
+    margin-right: 500px;
+  }
+  
+  .nav-button {
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-family: NotoKufiB;
+  }
+  
+  .nav-button:hover {
+    background-color: #f0f0f0; /* Background color on hover */
+  }
+  
+  .cta-button {
+    background-color: #007bff; /* CTA button background color */
+    color: white; /* CTA button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-family: NotoKufiB;
+    margin-left: 20px;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3; /* Darken on hover */
+  }
+  
+  /****************************Title************************************/
+
+  .title {
+    margin-top: 120px;
+    height: 75px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: NotoKufiB;
+
+    /* border: solid 2px #0056b3; */
+  }
+  
+  .title h1 {
+    font-size: 25px;
+    margin-right: 25px;
+  }
+
+/***********************Control Div**************************/
+
+.status {
+    display: flex;
+    justify-content: flex-start; /* Aligns elements to the right */
+    align-items: center; /* Center vertically */
+    flex-direction: row-reverse; /* To place the Arabic text first */
+    /* border: solid 2px #00c1df; */
+    margin-top: 30px;
+    gap: 10px; /* Space between the toggle and the text */
+}
+
+.status p {
+    font-family: NotokufiB;
+    margin: 0 10px; /* Adjust margins for spacing */
+    text-align: center; /* Ensure the text is centered horizontally */
+}
+
+/***********************Toggle Button**************************/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* Adjusted width */
+    height: 20px; /* Adjusted height */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Adjusted height */
+    width: 16px; /* Adjusted width */
+    left: 2px; /* Adjusted for smaller size */
+    bottom: 2px; /* Adjusted for smaller size */
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px); /* Adjusted for smaller size */
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 20px; /* Adjusted for smaller size */
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/****************************Data Input Text************************************/
+.data {
+    /* border: solid 2px #00b969; */
+    padding: 20px;
+  }
+  
+  .title1 {
+    display: flex;
+    justify-content: end;
+    /* border: solid 2px #ba063c; */
+    margin-bottom: 20px;
+  }
+  
+  .title1 p {
+    font-size: 25px;
+    font-family: NotoKufiSB;
+    margin-right: 20px;
+    margin-top: 10px;
+    color: #0057ff;
+  }
+  
+  .fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Add space between the fields */
+    /* border: solid 2px #ffff00; */
+    direction: rtl; /* Ensure the content is aligned for RTL languages */
+    margin-bottom: 20px; /* Add space between stacked .fields divs */
+  }
+  
+  .field {
+    margin: 20px;
+    font-family: NotoKufiSB;
+    text-align: right;
+    width: 300px; 
+  }
+  
+  .inputText {
+    width: 100%; /* Ensure input takes full width inside the .field */
+    max-width: 300px; /* Limit the width of general inputs */
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    font-family: NotoKufiSB;
+    text-align: right;
+    background-color: #f1f1f1;
+  }
+  
+  .field input::placeholder {
+    color: #888;
+    font-size: 14px;
+    opacity: 1;
+    padding-right: 4px;
+    text-align: right;
+    transition: opacity 0.3s ease;
+  }
+  
+  .field input:focus {
+    border-color: #0098cf;
+    outline: none;
+  }
+  
+  .field input:focus::placeholder {
+    opacity: 0;
+  }
+  
+  
+  /* Override for #address */
+  #address {
+    width: 100%; /* Allow it to take full width */
+    max-width: none; /* Remove the max-width restriction */
+    width: 1000px;
+  }
+  /* Override for #desc */
+  #desc {
+    width: 100%; /* Allow it to take full width */
+    max-width: none; /* Remove the max-width restriction */
+    width: 1000px;
+    height: 200px;
+  }
+
+
+/****************************Docs************************************/
+/****************************Docs************************************/
+.button-container {
+    display: flex;               /* Use flexbox for layout */
+    flex-wrap: wrap;            /* Allow items to wrap to the next line */
+    justify-content: center;     /* Center items horizontally */
+    gap: 30px;                  /* Increase space between images */
+    margin: 20px 0;             /* Margin above and below */
+  }
+  
+  .styled-image {
+    width: 200px;               /* Increased width for larger images */
+    height: auto;               /* Maintain aspect ratio */
+    cursor: pointer;            /* Indicate that images are clickable */
+    border: 2px solid #ddd;     /* Optional: add a border */
+    border-radius: 5px;         /* Optional: add rounded corners */
+    transition: transform 0.2s; /* Optional: smooth hover effect */
+  }
+  
+  .styled-image:hover {
+    transform: scale(1.1);      /* Slightly enlarge on hover */
+  }
+  
+  
+  .styled-button:active {
+      background-color: #003f7f;
+      box-shadow: none;
+  }
+  
+
+.styled-button:hover {
+    background-color: #0056b3;
+}
+
+.styled-button:active {
+    background-color: #003f7f;
+    box-shadow: none;
+}
+
+/****************************Popup********************************/
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: NotoKufi;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  position: relative;
+}
+
+/* Close (X) button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #f00; /* Change color when hovered */
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  text-align: right;
+}
+
+/* Button styling */
+.btn {
+  margin-top: 10px;
+}
