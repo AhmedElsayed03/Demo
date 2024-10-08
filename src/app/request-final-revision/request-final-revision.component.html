@@ -1,10 +1,7 @@
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
-  <button class="cta-button" type="button">تسجيل الدخول</button>
-  <div class="nav-links">
-    <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
-         <a href="#services" class="nav-button">تصفح الخدمات</a> -->
-  </div>
+  <button class="cta-button" type="button" routerLink="['/admin_login']">تسجيل الخروج</button>
+  <div class="nav-links"></div>
   <div class="logo">
     <img class="text" src="/assets/LogoText.png" style="width: 212px; height: 29px" />
     <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
@@ -16,263 +13,182 @@
 
 <div class="container">
   <div class="request-container">
-  <h2 class="request-number">الطلب رقم 15612383</h2>
-  
-  <div class="request-details">
-    <div class="button-section">
-      <button class="btn-redistribute">إعادة توزيع الطلب</button>
-    </div>
-    
-    <div class="request-info">
-      <p><strong>تاريخ الرفع:</strong> 14/9/2024</p>
-      <p><strong>فريق المسح:</strong> الفرقة الثانية</p>
-      <p><strong>كود الطاقم:</strong> 1256</p>
-    </div>
-    
-    <div class="request-info">
-      <p><strong>حاله الطلب:</strong> <span class="status-link">جاري المسح</span></p>
-      <p><strong>اسم القائم بالرفع:</strong> محمد جمال</p>
+    <h2 class="request-number">الطلب رقم 15612383</h2>
+
+    <div class="request-details">
+      <div class="button-section">
+        <button class="btn-redistribute">إعادة توزيع الطلب</button>
+      </div>
+
+      <div class="request-info">
+        <p><strong>تاريخ الرفع:</strong> 14/9/2024</p>
+        <p><strong>فريق المسح:</strong> الفرقة الثانية</p>
+        <p><strong>كود الطاقم:</strong> 1256</p>
+      </div>
+
+      <div class="request-info">
+        <p><strong>حاله الطلب:</strong> <span class="status-link">جاري المسح</span></p>
+        <p><strong>اسم القائم بالرفع:</strong> محمد جمال</p>
+      </div>
     </div>
   </div>
-</div>
 
+  <!--------------------------- Div ---------------------------->
+  <div class="title">
+    <h1>طلب الرفع المساحي</h1>
+  </div>
 
-    <!--------------------------- Div ---------------------------->
-    <div class="title">
-      <h1>طلب الرفع المساحي</h1>
-    </div>
-
-    <!--------------------------- بيانات صاحب الطلب ---------------------------->
-    <div class="data">
-      <div class="title1">
-        <p>بيانات صاحب الطلب</p>
-      </div>
-      <div class="container mr-5">
-        <div class="fields">
-          <div class="field">
-            <p>البريد الالكتروني</p>
-            <p>Mohamed54512yahoo.com</p>
-          </div>
-          <div class="field">
-            <p>ادخل رقم الموبايل</p>
-            <p>01234567890</p>
-          </div>
-          <div class="field">
-            <p>اسم صاحب العقار بالكامل</p>
-            <p>محمد</p>
-          </div>
-          <div class="field">
-            <p>الرقم القومي</p>
-            <p>12345678901234</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--------------------------- بيانات الوكيل ---------------------------->
-    <div class="data" style="width: 100%">
-      <div class="title1">
-        <p>بيانات الوكيل</p>
-      </div>
-      <div class="container mr-4">
-        <div class="fields">
-          <div class="field">
-            <p>اسم الوكيل</p>
-            <p>احمد</p>
-          </div>
-          <div class="field">
-            <p>رقم الموبايل</p>
-            <p>09876543210</p>
-          </div>
-          <div class="field">
-            <p>البريد الالكتروني للوكيل</p>
-            <p>Ahmedgmail.com</p>
-          </div>
-          <div class="field">
-            <p>الرقم القومي</p>
-            <p>98765432109876</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--------------------------- بيانات الطلب ---------------------------->
-    <div class="data" style="width: 100%">
-      <div class="title1">
-        <p>بيانات الطلب</p>
-      </div>
-      <div class="container mr-4">
-        <div class="fields">
-          <div class="field">
-            <p>نوع العقار</p>
-            <p>Apartment</p>
-          </div>
-          <div class="field">
-            <p>مساحه العقار</p>
-            <p>150 متر مربع</p>
-          </div>
-          <div class="field">
-            <p>المدينه</p>
-            <p>Cairo</p>
-          </div>
-          <div class="field">
-            <p>المحافظه</p>
-            <p>Giza</p>
-          </div>
-          <div class="field">
-            <p>رقم العقار</p>
-            <p>25</p>
-          </div>
-          <div class="field">
-            <p>ادخل عدد ادوار العقار</p>
-            <p>3</p>
-          </div>
-          <div class="field">
-            <p>ادخل العنوان بالكامل</p>
-            <p>123 مصر الجديدة القاهرة</p>
-          </div>
-          <br />
-          <div class="field">
-            <p>الوصف</p>
-            <p>شقة كبيرة بوسط البلد</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--------------------------- Docs ---------------------------->
+  <!--------------------------- بيانات صاحب الطلب ---------------------------->
+  <div class="data">
     <div class="title1">
-      <p>المستندات المرفوعه</p>
+      <p>بيانات صاحب الطلب</p>
     </div>
-    <br><br>
-   
-
-    <div class="docs ">
-      <div class="button-container">
-        <a href="https://example1.com">
-          <img src="/assets/idfront.jpg" alt="صوره البطاقه" class="styled-image" />
-        </a>
-        <a href="https://example2.com">
-          <img src="assets/سند ملكية.jpg" alt="صوره عقد الملكيه" class="styled-image" />
-        </a>
-        <a href="https://example3.com">
-          <img src="assets/idfront2.jpg" alt="صوره بطاقه الوكيل" class="styled-image" />
-        </a>
-        <a href="https://example4.com">
-          <img src="/assets/توكيل2.jpg" alt="صوره التوكيل" class="styled-image" />
-        </a>
-        <a href="https://example6.com">
-          <img src="assets/فيلا للبيع.jpg" alt="صوره العقار 2" class="styled-image" />
-        </a>
+    <div class="container mr-5">
+      <div class="fields">
+        <div class="field">
+          <p>البريد الالكتروني</p>
+          <p>Mohamed54512yahoo.com</p>
+        </div>
+        <div class="field">
+          <p>ادخل رقم الموبايل</p>
+          <p>01234567890</p>
+        </div>
+        <div class="field">
+          <p>اسم صاحب العقار بالكامل</p>
+          <p>محمد</p>
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <p>12345678901234</p>
+        </div>
       </div>
     </div>
-    <br><br>
-    <div class="survey-result">
-      <h2 class="text-primary">نتيجة الرفع المساحي</h2>
-      
-      <div class="survey-result ">
-        
-        <div class="survey-details">
-          <div class="survey-row">
-            <div class="survey-info">
-              <p><strong>اسم مقدم الطلب</strong></p>
-              <p>أحمد خالد اليبن</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>رقم القطعة</strong></p>
-              <p>12345</p>
-            </div>
-          </div>
-          
-          <div class="survey-row">
-            <div class="survey-info">
-              <p><strong>المدينة</strong></p>
-              <p>الرياض</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>رقم الوحدة الفعلي</strong></p>
-              <p>987654</p>
-            </div>
-          </div>
-          
-          <div class="survey-row">
-            <div class="survey-info">
-              <p><strong>رقم الوحدة مساحياً</strong></p>
-              <p>1234</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>رقم الدور</strong></p>
-              <p>2</p>
-            </div>
-          </div>
-          
-          <div class="survey-row">
-            <div class="survey-info">
-              <p><strong>وصف الحد</strong></p>
-              <p>حد شمالي</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>طول الحد</strong></p>
-              <p>50 متر</p>
-            </div>
-          </div>
-          
-          <div class="survey-row">
-            <div class="survey-info">
-              <p><strong>وصف الحد</strong></p>
-              <p>حد شرقي</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>توصيف المكان من أقرب مكان مميز</strong></p>
-              <p>بالقرب من المسجد الكبير</p>
-            </div>
-          </div>
-          
-          <div class="survey-row">
-            <div class="survey-info">
-              <p><strong>العنوان تفصيلا</strong></p>
-              <p>شارع الملك عبدالعزيز</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>المساحة طبقا للطلب</strong></p>
-              <p>500 متر مربع</p>
-            </div>
-          </div>
-          
-          <div class="survey-row">
-            <div class="survey-info">
-              <p><strong>وصف العقار</strong></p>
-              <p>مبنى سكني</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>المساحة طبقا للرفع المساحي</strong></p>
-              <p>480 متر مربع</p>
-            </div>
-          </div>
-          
-          <div class="survey-row lines">
-            <div class="survey-info">
-              <p><strong>خط العرض</strong></p>
-              <p>24.7136° N</p>
-            </div>
-            <div class="survey-info">
-              <p><strong>خط الطول</strong></p>
-              <p>46.6753° E</p>
-            </div>
-          </div>
+  </div>
+
+  <!--------------------------- بيانات الوكيل ---------------------------->
+  <div class="data" style="width: 100%">
+    <div class="title1">
+      <p>بيانات الوكيل</p>
+    </div>
+    <div class="container mr-4">
+      <div class="fields">
+        <div class="field">
+          <p>اسم الوكيل</p>
+          <p>احمد</p>
         </div>
-        
-        
-       
-      
-    
-      <h3>صورة محضر الارشاد</h3>
-      
-      <!--------------------------- Modal for Enlarged Image ---------------------------->
-      <div class="modal"></div>
-      <img class="modal-content" src="assets/محضر ارشاد.jpg" alt="Modal Image" />
-      <div id="caption"></div>
+        <div class="field">
+          <p>رقم الموبايل</p>
+          <p>09876543210</p>
+        </div>
+        <div class="field">
+          <p>البريد الالكتروني للوكيل</p>
+          <p>Ahmedgmail.com</p>
+        </div>
+        <div class="field">
+          <p>الرقم القومي</p>
+          <p>98765432109876</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--------------------------- بيانات الطلب ---------------------------->
+  <div class="data" style="width: 100%">
+    <div class="title1">
+      <p>بيانات الطلب</p>
+    </div>
+    <div class="container mr-4">
+      <div class="fields">
+        <div class="field">
+          <p>نوع العقار</p>
+          <p>Apartment</p>
+        </div>
+        <div class="field">
+          <p>مساحه العقار</p>
+          <p>150 متر مربع</p>
+        </div>
+        <div class="field">
+          <p>المدينه</p>
+          <p>Cairo</p>
+        </div>
+        <div class="field">
+          <p>المحافظه</p>
+          <p>Giza</p>
+        </div>
+        <div class="field">
+          <p>رقم العقار</p>
+          <p>25</p>
+        </div>
+        <div class="field">
+          <p>ادخل عدد ادوار العقار</p>
+          <p>3</p>
+        </div>
+        <div class="field">
+          <p>ادخل العنوان بالكامل</p>
+          <p>123 مصر الجديدة القاهرة</p>
+        </div>
+        <br />
+        <div class="field">
+          <p>الوصف</p>
+          <p>شقة كبيرة بوسط البلد</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!--------------------------- المستندات المرفوعه ---------------------------->
+  <div class="title1">
+    <p>المستندات المرفوعه</p>
+  </div>
+  <br><br>
+
+  <div class="docs">
+    <div class="button-container">
+      <a href="https://example1.com">
+        <img src="/assets/idfront.jpg" alt="صوره البطاقه" class="styled-image" />
+      </a>
+      <a href="https://example2.com">
+        <img src="assets/سند ملكية.jpg" alt="صوره عقد الملكيه" class="styled-image" />
+      </a>
+      <a href="https://example3.com">
+        <img src="assets/idfront2.jpg" alt="صوره بطاقه الوكيل" class="styled-image" />
+      </a>
+      <a href="https://example4.com">
+        <img src="assets/توكيل2.jpg" alt="صوره التوكيل" class="styled-image" />
+      </a>
+      <a href="https://example6.com">
+        <img src="assets/فيلا للبيع.jpg" alt="صوره العقار 2" class="styled-image" />
+      </a>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="survey-result">
+    <h2 class="text-primary">نتيجة الرفع المساحي</h2>
+    <div class="survey-details">
+      <!-- Survey result details here -->
+    </div>
+
+    <h3>صورة محضر الارشاد</h3>
+    <div class="modal"></div>
+    <img class="modal-content" src="assets/محضر ارشاد.jpg" alt="Modal Image" />
+    <div id="caption"></div>
+  </div>
+
+  <!--------------------------- Uploaded CAD File ---------------------------->
+  <div class="data" style="width: 100%">
+    <div class="title1">
+      <p>ملف CAD المرفوع</p>
+    </div>
+    <div class="container mr-4">
+      <div class="fields">
+        <div class="field">
+          <p><strong>ملف CAD:</strong></p>
+          <a href="assets/your-cad-file.dwg" target="_blank">تحميل الملف CAD</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-      

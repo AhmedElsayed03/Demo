@@ -1,9 +1,7 @@
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
-  <button class="cta-button">تسجيل خروج</button>
-  <div class="nav-links">
-    <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
-            <a href="#services" class="nav-button">تصفح الخدمات</a> -->
+    <button class="cta-button" routerLink="['/login']">تسجيل خروج</button>
+    <div class="nav-links">
   </div>
   <div class="logo">
     <img
@@ -252,6 +250,108 @@
             accept=".pdf, .png, .jpeg, .jpg"
             (change)="onSingleFileSelected($event, i, singleImageArrays[i])"
           />
+        </div>
+        <div class="field">
+          <p>المحافظه</p>
+          <select
+            name="cars"
+            id="cars"
+            formControlName="governorate"
+            class="inputText"
+          >
+            <option value="القاهره">القاهره</option>
+            <option value="بورسعيد">بورسعيد</option>
+            <option value="الاسكندريه">الاسكندريه</option>
+            <option value="المنصوره">المنصوره</option>
+            <option value="الاسماعيليه">الاسماعيليه</option>
+            <option value="الجيزه">الجيزه</option>
+            <option value="الدقهليه">الدقهليه</option>
+            <option value="دمياط">دمياط</option>
+            <option value="السويس">السويس</option>
+            <option value="مطروح">مطروح</option>
+            <option value="القليوبيه">القليوبيه</option>
+            <option value="قنا">قنا</option>
+            <option value="المنوفيه">المنوفيه</option>
+            <option value="الوادي الجديد">الوادي الجديد</option>
+            <option value="الفيوم">الفيوم</option>
+            <option value="سوهاج">سوهاج</option>
+            <option value="بني سويف">بني سويف</option>
+            <option value="جنوب سيناء">جنوب سيناء</option>
+            <option value="اسوان">اسوان</option>
+            <option value="اسيوط">اسيوط</option>
+            <option value="الاقصر">الاقصر</option>
+            <option value="البحر الاحمر">البحر الاحمر</option>
+          </select>
+        </div>
+        <div class="field">
+          <p>المدينه</p>
+          <select name="cars" formControlName="city" id="cars" class="inputText">
+            <option value="مدينه نصر">مدينه نصر</option>
+            <option value="مدينه الرحاب">مدينه الرحاب</option>
+            <option value="مدينه السلام">مدينه السلام</option>
+            <option value="مدينه النرجس">مدينه النرجس</option>
+            <option value="مصر الجديده">مصر الجديده</option>
+            <option value="منشيه ناصر">منشيه ناصر</option>
+            <option value="الزمالك">الزمالك</option>
+            <option value="الزاويه الحمراء">الزاويه الحمراء</option>
+            <option value="السيده زينب">السيده زينب</option>
+          </select>
+        </div>
+       
+        <div class="field">
+          <p>رقم العقار</p>
+          <input
+            class="inputText"
+            type="text"
+            formControlName="realStateNumber"
+            placeholder="ادخل رقم العقار"
+          />
+        </div>
+        <div class="field">
+          <p>ادخل عدد ادوار العقار</p>
+          <input
+            class="inputText"
+            type="text"
+            formControlName="realStateFloorsNumber"
+            placeholder="ادخل عدد الادوار"
+          />
+        </div>
+        <div class="field">
+          <p>ادخل العنوان بالكامل</p>
+          <input
+            class="inputText"
+            id="address"
+            type="text"
+            formControlName="realStateAddress"
+            placeholder="ادخل العنوان بالتفصيل"
+          />
+        </div>
+        <br />
+        <div class="field">
+          <p>الوصف</p>
+          <input
+            class="inputText"
+            id="desc"
+            type="text"
+            formControlName="realStateDescriptions"
+            placeholder="ادخل وصف العقار"
+          />
+        </div>
+      </div>
+    </div>
+  
+    <!--------------------------- Div ---------------------------->
+    <div class="data" style="height: 1800px; width: 100%">
+      <div class="title1">
+        <p>رفع المستندات المطلوبه</p>
+      </div>
+  
+      <div class="upload-container fields">
+        <!-- Single File Uploaders -->
+        <div class="single-file-uploads field">
+          <div
+            *ngFor="let singleFileArray of singleFileArrays; let i = index"
+            class="single-file-upload">
           <button
             class="upload-btn"
             (click)="triggerFileInput('singleFileInput' + i)"
@@ -339,4 +439,3 @@
   >
     <button (click)="sendRequest()" class="cta">انشئ طلب</button>
   </div>
-</form>

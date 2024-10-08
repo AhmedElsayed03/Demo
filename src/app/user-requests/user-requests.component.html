@@ -73,13 +73,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Edit Button -->
-    <div class="row my-4 text-center">
-      <div class="col">
-        <button type="button" class="btnEdit">تعديل البيانات</button>
-      </div>
-    </div>
     <br /><br />
 
     <!-- Requests Section -->
@@ -91,12 +84,15 @@
     <br /><br />
 
     <!-- Status Filters -->
-    <div class="row">
-      <div class="col-12">
-        <img src="assets/Guide.png" style="width: 900px" height="90px" />
-      </div>
+<div class="row">
+  <div class="col-12">
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <img src="assets/Guide.png" style="max-height: 80%; max-width: 80%; display: block;" />
     </div>
-    <br /><br />
+  </div>
+</div>
+<br /><br />
+
 
     <!-- Combined Requests Display -->
     <div class="request-box" *ngFor="let item of userRequests; let i = index">
