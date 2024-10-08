@@ -194,7 +194,15 @@ input:checked + .slider:before {
     text-align: right;
     width: 300px; 
   }
-  
+  .field2 {
+    margin: 20px;
+    font-family: NotoKufiSB;
+    text-align: right;
+    width: 300px; 
+  }
+  .field2 p{
+    color: #007bff;
+  }
   .inputText {
     width: 100%; /* Ensure input takes full width inside the .field */
     max-width: 300px; /* Limit the width of general inputs */
@@ -324,4 +332,91 @@ textarea {
 /* Button styling */
 .btn {
   margin-top: 10px;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  font-family: NotokufiB;
+}
+
+.single-file-upload,
+.multiple-file-upload {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border: 2px dashed #004cff;
+  border-radius: 15px;
+  background-color: #f3f4f6;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.single-file-upload:hover,
+.multiple-file-upload:hover {
+  background-color: #ebedf0;
+}
+
+h4 {
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-btn {
+  padding: 10px 25px;
+  background-color: #0088ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #004cff;
+}
+
+.file-preview {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.file-preview ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-preview li {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-preview li i {
+  margin-right: 10px;
+  color: #0062ff;
+}
+
+.remove-file {
+  color: #e53e3e;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.remove-file:hover {
+  color: #c53030;
 }
