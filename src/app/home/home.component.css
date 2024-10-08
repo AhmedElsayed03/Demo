@@ -1,4 +1,7 @@
 
+.firstSection, .secondSection, .fourthSection {
+  overflow: hidden; /* Prevent scrollbars in these sections */
+}
 /****************************NavBar************************************/
 .navbar {
   position: fixed;

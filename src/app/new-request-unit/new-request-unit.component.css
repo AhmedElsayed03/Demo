@@ -156,19 +156,18 @@
 /********************************* File Upload ********************************************/
 /********************************* File Upload ********************************************/
 /********************************* File Upload ********************************************/
+
 .upload-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 30px; /* Space between rows and columns */
-  justify-items: center; /* Center the upload fields horizontally */
-  align-items: start; /* Align fields at the top */
-  width: 100%; /* Make sure the container takes full width */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
 .single-file-upload,
 .multiple-file-upload {
   width: 100%;
-  max-width: 400px; /* Adjust the width as needed */
+  max-width: 500px;
   padding: 20px;
   border: 2px dashed #004cff;
   border-radius: 15px;
@@ -177,6 +176,7 @@
   transition: background-color 0.3s ease;
   margin-bottom: 20px;
 }
+
 .single-file-upload:hover,
 .multiple-file-upload:hover {
   background-color: #ebedf0;
@@ -254,6 +254,7 @@ h4 {
   );
   width: 200px;
   height: 50px;
+  margin-top: 30px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
