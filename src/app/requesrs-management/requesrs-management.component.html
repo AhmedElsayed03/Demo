@@ -150,12 +150,13 @@
             </th>
             <th>رقم الطلب</th>
             <th>اسم صاحب الطلب</th>
-            <th>تاريخ الطلب</th>
+            <th>تاريخ انشاء الطلب</th>
+            <th>التاريخ</th>
+            <th>الوقت</th>
             <th>عدد أيام إنشاء الطلب</th>
-            <th>حالة الطلب</th>
-            <th>التفاصيل </th>
-
+            <!-- <th>حالة الطلب</th>  -->
             <th>المساح المعين</th>
+            <th>التفاصيل </th>
             <!-- Add this column header -->
           </tr>
         </thead>
@@ -173,11 +174,13 @@
             <td>{{ request.reqNumber }}</td>
             <td>{{ request.ownerFullName }}</td>
             <td>{{ request.date | date : "yyyy/MM/dd" }}</td>
+            <td>2024-10-16</td>
+            <td>10:30 AM</td>
             <td>{{ numberOfDays(request.date) }}</td>
             <!-- <td>{{ request.status }}</td> -->
-            <td>مدفوع</td>
-            <td><button type="btn" class="btn btn-light" [routerLink]="['/assigning_requests_for_surveyors']"> تفاصيل بعد المراجعة </button></td>
+            <!-- <td>مدفوع</td> -->
             <td>{{ request.assignedSurveyor || "غير معين" }}</td>
+            <td><button type="btn" class="btn btn-light" [routerLink]="['/assigning_requests_for_surveyors']"> تفاصيل بعد المراجعة </button></td>
   
             <!-- Add this data cell in the table row -->
           </tr>
