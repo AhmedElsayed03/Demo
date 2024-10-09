@@ -20,6 +20,7 @@ import { AssigningRequestsForSurveyorsComponent } from './assigning-requests-for
 import { NewRequestUnitComponent } from './new-request-unit/new-request-unit.component';
 import { FinalRevisionComponent } from './final-revision/final-revision.component';
 import { RequestFinalRevisionComponent } from './request-final-revision/request-final-revision.component';
+import { SuperAdminComponent } from './super-admin/super-admin.component';
 export const routes: Routes = [
   {
     path: '',
@@ -46,15 +47,18 @@ export const routes: Routes = [
     component: NewRequestRealEstateComponent,
   },
   {
-     path: 'getRequest/:id',
-     component: GetRequestComponent },
+    path: 'getRequest/:id',
+    component: GetRequestComponent,
+  },
   {
-     path: 'getRequest',
-     component: GetRequestComponent },
+    path: 'getRequest',
+    component: GetRequestComponent,
+  },
 
   {
-     path: 'userRequest',
-     component: UserRequestsComponent },
+    path: 'userRequest',
+    component: UserRequestsComponent,
+  },
   {
     path: 'manageRequests',
     component: ManageRequestsComponent,
@@ -84,32 +88,35 @@ export const routes: Routes = [
     component: CallCenterComponent,
   },
   {
-  path:'audit_requests_with_surveyors',
-  component : AuditRequestsWithSurveyorsComponent
+    path: 'audit_requests_with_surveyors',
+    component: AuditRequestsWithSurveyorsComponent,
   },
   {
     path: 'revising_Management',
-    component : RevisingManagementComponent
+    component: RevisingManagementComponent,
   },
   {
     path: 'requests_management',
-    component : RequesrsManagementComponent
+    component: RequesrsManagementComponent,
   },
   {
-    path:'assigning_requests_for_surveyors',
-    component:AssigningRequestsForSurveyorsComponent
+    path: 'assigning_requests_for_surveyors',
+    component: AssigningRequestsForSurveyorsComponent,
   },
   {
     path: 'new_request_unit',
-    component: NewRequestUnitComponent
+    component: NewRequestUnitComponent,
   },
   {
-    path:'final_revision',
-    component: FinalRevisionComponent
+    path: 'final_revision',
+    component: FinalRevisionComponent,
   },
   {
-    path:'request_final_revision',
-    component: RequestFinalRevisionComponent
-  }
-
+    path: 'request_final_revision',
+    component: RequestFinalRevisionComponent,
+  },
+  {
+    path: 'super_admin',
+    component: SuperAdminComponent,
+  },
 ];

@@ -15,6 +15,7 @@ import { NewRequestLandComponent } from './new-request-land/new-request-land.com
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CallCenterComponent } from './call-center/call-center.component';
 import { NewRequestUnitComponent } from './new-request-unit/new-request-unit.component';
+import { SuperAdminComponent } from './super-admin/super-admin.component';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +36,8 @@ import { NewRequestUnitComponent } from './new-request-unit/new-request-unit.com
     NewRequestLandComponent,
     AdminLoginComponent,
     CallCenterComponent,
-    NewRequestUnitComponent
+    NewRequestUnitComponent,
+    SuperAdminComponent,
   ],
 
   templateUrl: './app.component.html',

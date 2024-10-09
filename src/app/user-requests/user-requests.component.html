@@ -18,15 +18,12 @@
       class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center order-2 order-md-1"
       style="font-size: 15px"
     >
-
       <button
         type="button"
         class="btn text-primary"
         style="font-size: inherit"
         [routerLink]="['/login']"
       >
-
-
         تسجيل الخروج
       </button>
       <button
@@ -84,15 +81,19 @@
     <br /><br />
 
     <!-- Status Filters -->
-<div class="row">
-  <div class="col-12">
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <img src="assets/Guide.png" style="max-height: 80%; max-width: 80%; display: block;" />
+    <div class="row">
+      <div class="col-12">
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <img
+            src="assets/Guide.png"
+            style="max-height: 80%; max-width: 80%; display: block"
+          />
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<br /><br />
-
+    <br /><br />
 
     <!-- Combined Requests Display -->
     <div class="request-box" *ngFor="let item of userRequests; let i = index">
@@ -104,6 +105,7 @@
           النوع:
           <span *ngIf="item.type === 'Real Estate'">عقار</span>
           <span *ngIf="item.type === 'Land'">ارض</span>
+          <span *ngIf="item.type === 'Unit'">وحده</span>
         </span>
         <!-- Display type if needed -->
         <span> <img src="assets/Pending Icon2.png" alt="Pending" /></span>
