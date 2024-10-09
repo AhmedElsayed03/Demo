@@ -1,9 +1,9 @@
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
-  <button class="cta-button" routerLink="['/login']">تسجيل خروج</button>
+  <button class="cta-button">تسجيل خروج</button>
   <div class="nav-links">
     <!-- <a href="#about" class="nav-button">دليل الجهات الحكوميه</a>
-          <a href="#services" class="nav-button">تصفح الخدمات</a> -->
+            <a href="#services" class="nav-button">تصفح الخدمات</a> -->
   </div>
   <div class="logo">
     <img
@@ -120,6 +120,18 @@
     </div>
     <div class="fields">
       <div class="field">
+        <p>نوع العقار</p>
+        <select formControlName="realStateType" id="cars" class="inputText">
+          <option value="villa">فيلا</option>
+          <option value="townHouse">تاون هاوس</option>
+          <option value="twinHouse">توين هاوس</option>
+          <option value="managerialBuilding">مبني اداري</option>
+          <option value="commercialBuilding">مبني تجاري</option>
+          <option value="Chalet">شاليه</option>
+          <option value="commercialStore">محل تجاري</option>
+        </select>
+      </div>
+      <div class="field">
         <p>مساحه العقار</p>
         <input
           class="inputText"
@@ -127,25 +139,6 @@
           type="text"
           placeholder="ادخل المساحه"
         />
-      </div>
-      <div class="field">
-        <p>المدينه</p>
-        <select
-          name="cars"
-          formControlName="measurement"
-          id="cars"
-          class="inputText"
-        >
-          <option value="مدينه نصر">مدينه نصر</option>
-          <option value="مدينه الرحاب">مدينه الرحاب</option>
-          <option value="مدينه السلام">مدينه السلام</option>
-          <option value="مدينه النرجس">مدينه النرجس</option>
-          <option value="مصر الجديده">مصر الجديده</option>
-          <option value="منشيه ناصر">منشيه ناصر</option>
-          <option value="الزمالك">الزمالك</option>
-          <option value="الزاويه الحمراء">الزاويه الحمراء</option>
-          <option value="السيده زينب">السيده زينب</option>
-        </select>
       </div>
       <div class="field">
         <p>المدينه</p>
@@ -161,7 +154,6 @@
           <option value="السيده زينب">السيده زينب</option>
         </select>
       </div>
-
       <div class="field">
         <p>المحافظه</p>
         <select
@@ -194,7 +186,6 @@
           <option value="البحر الاحمر">البحر الاحمر</option>
         </select>
       </div>
-
       <div class="field">
         <p>رقم العقار</p>
         <input
@@ -204,7 +195,15 @@
           placeholder="ادخل رقم العقار"
         />
       </div>
-
+      <div class="field">
+        <p>ادخل عدد ادوار العقار</p>
+        <input
+          class="inputText"
+          type="text"
+          formControlName="realStateFloorsNumber"
+          placeholder="ادخل عدد الادوار"
+        />
+      </div>
       <div class="field">
         <p>ادخل العنوان بالكامل</p>
         <input
@@ -223,14 +222,14 @@
           id="desc"
           type="text"
           formControlName="realStateDescriptions"
-          placeholder="ادخل وصف الارض"
+          placeholder="ادخل وصف العقار"
         />
       </div>
     </div>
   </div>
 
   <!--------------------------- Div ---------------------------->
-  <div class="data" style="height: 1800px; width: 100%">
+  <div class="data" style="height: 1000px; width: 100%">
     <div class="title1">
       <p>رفع المستندات المطلوبه</p>
     </div>
@@ -335,7 +334,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 100px;
     "
   >
     <button (click)="sendRequest()" class="cta">انشئ طلب</button>
