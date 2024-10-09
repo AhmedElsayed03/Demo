@@ -17,7 +17,6 @@
     <h2>اللوحة الادارية</h2>
   </div>
 
-  
   <div
     class="option"
     (click)="isOptionEnabled('audit') ? navigateTo('/final_revision') : null"
@@ -25,29 +24,30 @@
     <img src="/assets/audit.png" style="width: 50%" />
     <p>ادارة المراجعة النهائية</p>
   </div>
-
-  
- 
   <div
-  class="option"
-  (click)="isOptionEnabled('request') ? navigateTo('/requests_management') : null"
->
-  <img src="/assets/request.png" style="width: 50%" />
-  <p> اداره الطلبات</p>
-</div>
-<div
+    class="option"
+    (click)="
+      isOptionEnabled('review') ? navigateTo('/revising_Management') : null
+    "
+  >
+    <img src="/assets/review.png" style="width: 50%" />
+    <p>ادارة المراجعة بعد المسح</p>
+  </div>
+  
+  <div
+    class="option"
+    (click)="
+      isOptionEnabled('request') ? navigateTo('/requests_management') : null
+    "
+  >
+    <img src="/assets/request.png" style="width: 50%" />
+    <p>اداره الطلبات</p>
+  </div>
+  <div
     class="option"
     (click)="isOptionEnabled('callCenter') ? navigateTo('/call_center') : null"
   >
     <img src="/assets/Call-Center.png" style="width: 50%" />
     <p>كول سنتر</p>
-  </div>
-
-<div
-    class="option"
-    (click)="isOptionEnabled('review') ? navigateTo('/revising_Management') : null"
-  >
-    <img src="/assets/review.png" style="width: 50%" />
-    <p>اداره المراجعة قبل المسح</p>
   </div>
 </div>
