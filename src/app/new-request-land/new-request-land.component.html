@@ -120,19 +120,7 @@
     </div>
     <div class="fields">
       <div class="field">
-        <p>نوع العقار</p>
-        <select formControlName="realStateType" id="cars" class="inputText">
-          <option value="villa">فيلا</option>
-          <option value="townHouse">تاون هاوس</option>
-          <option value="twinHouse">توين هاوس</option>
-          <option value="managerialBuilding">مبني اداري</option>
-          <option value="commercialBuilding">مبني تجاري</option>
-          <option value="Chalet">شاليه</option>
-          <option value="commercialStore">محل تجاري</option>
-        </select>
-      </div>
-      <div class="field">
-        <p>مساحه العقار</p>
+        <p>المساحه</p>
         <input
           class="inputText"
           formControlName="area"
@@ -140,6 +128,15 @@
           placeholder="ادخل المساحه"
         />
       </div>
+
+      <div class="field">
+        <p>وحده القياس</p>
+        <select name="cars" formControlName="city" id="cars" class="inputText">
+          <option value="مدينه نصر">متر</option>
+          <option value="مدينه الرحاب">فدان</option>
+        </select>
+      </div>
+
       <div class="field">
         <p>المحافظه</p>
         <select
@@ -186,24 +183,7 @@
           <option value="السيده زينب">السيده زينب</option>
         </select>
       </div>
-      <div class="field">
-        <p>رقم العقار</p>
-        <input
-          class="inputText"
-          type="text"
-          formControlName="realStateNumber"
-          placeholder="ادخل رقم العقار"
-        />
-      </div>
-      <div class="field">
-        <p>ادخل عدد ادوار العقار</p>
-        <input
-          class="inputText"
-          type="text"
-          formControlName="realStateFloorsNumber"
-          placeholder="ادخل عدد الادوار"
-        />
-      </div>
+
       <div class="field">
         <p>ادخل العنوان بالكامل</p>
         <input
