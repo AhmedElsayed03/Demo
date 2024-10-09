@@ -223,7 +223,6 @@ input:checked + .slider:before {
 .title1 {
   display: flex;
   justify-content: end;
-  /* border: solid 2px #ba063c; */
   margin-bottom: 20px;
 }
 
@@ -519,3 +518,10 @@ strong {
   flex: 1; /* Take equal space */
 }
 
+.field2 p{
+  color: #007bff;
+}
+.recieved-results{
+  font-family: "NotoKufiSB";
+
+}

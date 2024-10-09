@@ -1,6 +1,6 @@
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
-  <button class="cta-button" type="button" routerLink="['/admin_login']">تسجيل الخروج</button>
+  <button class="cta-button" type="button" >تسجيل الخروج</button>
   <div class="nav-links"></div>
   <div class="logo">
     <img class="text" src="/assets/LogoText.png" style="width: 212px; height: 29px" />
@@ -17,7 +17,7 @@
 
     <div class="request-details">
       <div class="button-section">
-        <button class="btn-redistribute">إعادة توزيع الطلب</button>
+        <button class="btn-redistribute"  type="button" routerLink="/revising_Management">إعادة توزيع الطلب</button>
       </div>
 
       <div class="request-info">
@@ -165,30 +165,99 @@
   </div>
   <br><br>
 
-  <div class="survey-result">
-    <h2 class="text-primary">نتيجة الرفع المساحي</h2>
-    <div class="survey-details">
-      <!-- Survey result details here -->
+<!--------------------------- Recived Results ---------------------------->
+ <div class="recieved-results">
+  <div class="title1">
+    <p>نتيجه الرفع المساحي</p>
+  </div>
+  <div class="container mr-5">
+    <div class="fields">
+    <br>
+      <div class="field2">
+        <p>خط الطول</p>
+        41.40338
+      </div>
+      <div class="field2">
+        <p>خط العرض</p>
+        2.17403
+      </div>
+      <div class="field2">
+        <p>اسم مقدم الطلب</p>
+        احمد خالد ايمن
+      </div>
+      <div class="field2">
+        <p>رقم القطعه</p>
+        5
+      </div>
+      <div class="field2">
+        <p>المدينه</p>
+        مدينه نصر
+      </div>
+      <div class="field2">
+        <p>رقم الوحده الفعلي</p>
+        6
+      </div>
+      <div class="field2">
+        <p>رقم الوحده مساحيا</p>
+        87
+      </div>
+      <div class="field2">
+        <p>رقم الدور</p>
+        2
+      </div>
+      <div class="field2">
+        <p>وصف الحد</p>
+        12345678901234
+      </div>
+      <div class="field2">
+        <p>طول الحد</p>
+        12345678901234
+      </div>
+      <div class="field2">
+        <p>توصيف المكان من اقرب مكان مميزه</p>
+        وصف
+      </div>
+      <div class="field2">
+        <p>العنوان تفصيلا</p>
+        عنوان
+      </div>
+      <div class="field2">
+        <p>المساحه طبقا للطلب</p>
+        500 متر
+      </div>
+      <div class="field2">
+        <p>المساحه طبقا للرفع المساحي</p>
+        498 متر
+      </div>
+      <div class="field2">
+        <p>وصف العقار</p>
+        وصف
+      </div>
+      <div class="field2">
+        <p>استخدام (المبني/الشقه) حسب نوع الطلب</p>
+        تجاري 
+      </div>
+      <div class="fields">
+        <div class="image" style="width: 500px; height: 500px;">
+          <img src="assets/draw.png" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
     </div>
-
-    <h3>صورة محضر الارشاد</h3>
-    <div class="modal"></div>
-    <img class="modal-content" src="assets/محضر ارشاد.jpg" alt="Modal Image" />
-    <div id="caption"></div>
   </div>
 
   <!--------------------------- Uploaded CAD File ---------------------------->
   <div class="data" style="width: 100%">
     <div class="title1">
-      <p>ملف CAD المرفوع</p>
+      <p>الشهادة لنهائية</p>
     </div>
     <div class="container mr-4">
       <div class="fields">
         <div class="field">
-          <p><strong>ملف CAD:</strong></p>
-          <a href="assets/your-cad-file.dwg" target="_blank">تحميل الملف CAD</a>
+          <p><strong>الشهادة النهائية</strong></p>
+          <a href="assets\محضر ارشاد.jpg" target="_blank">تحميل الملف CAD</a>
         </div>
       </div>
     </div>
   </div>
+  
+</div>
 </div>
