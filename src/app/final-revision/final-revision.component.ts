@@ -1,14 +1,14 @@
 import { CommonModule, DatePipe, NgClass, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 import * as bootstrap from 'bootstrap';
 import { RealEstateRequestService } from '../services/real-estate-request.service';
 import { LandRequestService } from '../services/land-request.service';
 @Component({
   selector: 'app-final-revision',
   standalone: true,
-  imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule ,RouterLink],
+  imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule ,RouterModule],
   templateUrl: './final-revision.component.html',
   styleUrl: './final-revision.component.css'
 })

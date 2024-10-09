@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <nav class="navbar">
-    <button class="cta-button" routerLink="['/admin_login']">تسجيل خروج</button>
+    <button class="cta-button" routerLink="/admin_login">تسجيل خروج</button>
     <div class="nav-links">
     </div>
     <div class="logo">
@@ -136,10 +136,7 @@
     <table class="table table-striped" style="height: 350px">
       <thead>
         <tr>
-          <th>
-            <!-- Checkbox for selecting all requests -->
-            <input type="checkbox" (change)="toggleSelectAll($event)" />
-          </th>
+         
           <th>رقم الطلب</th>
           <th>اسم صاحب الطلب</th>
           <th>تاريخ الطلب</th>
@@ -151,15 +148,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let request of filteredRequests">
-          <td>
-            <!-- Individual checkboxes for each request -->
-            <input
-              type="checkbox"
-              [value]="request"
-              (change)="toggleSelection(request)"
-              [checked]="isSelected(request)"
-            />
-          </td>
+         
           <td>{{ request.reqNumber }}</td>
           <td>{{ request.ownerFullName }}</td>
           <td>{{ request.date | date : "yyyy/MM/dd" }}</td>
