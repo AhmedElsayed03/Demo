@@ -1,8 +1,7 @@
 <!--------------------------- Nav Bar ---------------------------->
 <nav class="navbar">
-    <button class="cta-button" routerLink="['/login']">تسجيل خروج</button>
-    <div class="nav-links">
-  </div>
+  <button class="cta-button" routerLink="['/login']">تسجيل خروج</button>
+  <div class="nav-links"></div>
   <div class="logo">
     <img
       class="text"
@@ -138,20 +137,7 @@
           placeholder="ادخل المساحه"
         />
       </div>
-      <div class="field">
-        <p>المدينه</p>
-        <select name="cars" formControlName="city" id="cars" class="inputText">
-          <option value="مدينه نصر">مدينه نصر</option>
-          <option value="مدينه الرحاب">مدينه الرحاب</option>
-          <option value="مدينه السلام">مدينه السلام</option>
-          <option value="مدينه النرجس">مدينه النرجس</option>
-          <option value="مصر الجديده">مصر الجديده</option>
-          <option value="منشيه ناصر">منشيه ناصر</option>
-          <option value="الزمالك">الزمالك</option>
-          <option value="الزاويه الحمراء">الزاويه الحمراء</option>
-          <option value="السيده زينب">السيده زينب</option>
-        </select>
-      </div>
+
       <div class="field">
         <p>المحافظه</p>
         <select
@@ -182,6 +168,20 @@
           <option value="اسيوط">اسيوط</option>
           <option value="الاقصر">الاقصر</option>
           <option value="البحر الاحمر">البحر الاحمر</option>
+        </select>
+      </div>
+      <div class="field">
+        <p>المدينه</p>
+        <select name="cars" formControlName="city" id="cars" class="inputText">
+          <option value="مدينه نصر">مدينه نصر</option>
+          <option value="مدينه الرحاب">مدينه الرحاب</option>
+          <option value="مدينه السلام">مدينه السلام</option>
+          <option value="مدينه النرجس">مدينه النرجس</option>
+          <option value="مصر الجديده">مصر الجديده</option>
+          <option value="منشيه ناصر">منشيه ناصر</option>
+          <option value="الزمالك">الزمالك</option>
+          <option value="الزاويه الحمراء">الزاويه الحمراء</option>
+          <option value="السيده زينب">السيده زينب</option>
         </select>
       </div>
       <div class="field">
@@ -226,109 +226,108 @@
     </div>
   </div>
 
- 
-    <!--------------------------- Div ---------------------------->
-    <div class="data" style="height: 1800px; width: 100%">
-      <div class="title1">
-        <p>رفع المستندات المطلوبه</p>
-      </div>
-  
-      <div class="upload-container fields">
-        <!-- Single File Uploaders -->
-        <div class="single-file-uploads field">
-          <div
-            *ngFor="let singleFileArray of singleFileArrays; let i = index"
-            class="single-file-upload"
+  <!--------------------------- Div ---------------------------->
+  <div class="data" style="height: 1800px; width: 100%">
+    <div class="title1">
+      <p>رفع المستندات المطلوبه</p>
+    </div>
+
+    <div class="upload-container fields">
+      <!-- Single File Uploaders -->
+      <div class="single-file-uploads field">
+        <div
+          *ngFor="let singleFileArray of singleFileArrays; let i = index"
+          class="single-file-upload"
+        >
+          <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
+          <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
+          <h6 *ngIf="i === 2">صوره وجه البطاقه للوكيل</h6>
+          <h6 *ngIf="i === 3">صوره ضهر البطاقه للوكيل</h6>
+          <input
+            type="file"
+            id="singleFileInput{{ i }}"
+            class="file-input"
+            accept=".pdf, .png, .jpeg, .jpg"
+            (change)="onSingleFileSelected($event, i, singleImageArrays[i])"
+          />
+          <button
+            class="upload-btn"
+            (click)="triggerFileInput('singleFileInput' + i)"
           >
-            <h6 *ngIf="i === 0">صوره وجه البطاقه</h6>
-            <h6 *ngIf="i === 1">صوره ضهر البطاقه</h6>
-            <h6 *ngIf="i === 2">صوره وجه البطاقه للوكيل</h6>
-            <h6 *ngIf="i === 3">صوره ضهر البطاقه للوكيل</h6>
-            <input
-              type="file"
-              id="singleFileInput{{ i }}"
-              class="file-input"
-              accept=".pdf, .png, .jpeg, .jpg"
-              (change)="onSingleFileSelected($event, i, singleImageArrays[i])"
-            />
-            <button
-              class="upload-btn"
-              (click)="triggerFileInput('singleFileInput' + i)"
-            >
-              اضغط هنا
-            </button>
-            <div class="file-preview" *ngIf="singleFileArray">
-              <p>
-                <i class="fas fa-file"></i> {{ singleFileArray?.name }} -
-                {{ singleFileArray.size / 1024 / 1024 | number : "1.2-2" }} MB
-                <span class="remove-file" (click)="removeSingleFile(i)"
+            اضغط هنا
+          </button>
+          <div class="file-preview" *ngIf="singleFileArray">
+            <p>
+              <i class="fas fa-file"></i> {{ singleFileArray?.name }} -
+              {{ singleFileArray.size / 1024 / 1024 | number : "1.2-2" }} MB
+              <span class="remove-file" (click)="removeSingleFile(i)"
+                >&#10006;</span
+              >
+            </p>
+          </div>
+          <p
+            style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
+          >
+            PDF, JPG, JPEG, PNG :الصيغ المدعومه
+          </p>
+          <p
+            style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
+          >
+            اقصي حجم للملف 5 ميجابايت
+          </p>
+        </div>
+      </div>
+
+      <!-- Multiple File Uploaders -->
+      <div class="multiple-file-uploads field">
+        <div
+          *ngFor="let multipleFilesArray of multipleFileArrays; let j = index"
+          class="multiple-file-upload"
+        >
+          <h6 *ngIf="j === 0">صور محل الطلب</h6>
+          <h6 *ngIf="j === 1">صور سند الملكيه</h6>
+          <h6 *ngIf="j === 2">صور التوكيل</h6>
+          <input
+            type="file"
+            id="multipleFileInput{{ j }}"
+            class="file-input"
+            multiple
+            accept=".pdf, .png, .jpeg, .jpg"
+            (change)="onMultipleFilesSelected($event, j)"
+          />
+          <button
+            class="upload-btn"
+            (click)="triggerFileInput('multipleFileInput' + j)"
+          >
+            اضغط لاضافه ملفات متعدده
+          </button>
+          <div class="file-preview" *ngIf="multipleFilesArray.length">
+            <ul>
+              <li *ngFor="let file of multipleFilesArray">
+                <i class="fas fa-file"></i> {{ file.name }} -
+                {{ file.size / 1024 / 1024 | number : "1.2-2" }} MB
+                <span class="remove-file" (click)="removeMultipleFile(file, j)"
                   >&#10006;</span
                 >
-              </p>
-            </div>
-            <p
-              style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
-            >
-              PDF, JPG, JPEG, PNG :الصيغ المدعومه
-            </p>
-            <p
-              style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
-            >
-              اقصي حجم للملف 5 ميجابايت
-            </p>
+              </li>
+            </ul>
           </div>
-        </div>
-  
-        <!-- Multiple File Uploaders -->
-        <div class="multiple-file-uploads field">
-          <div
-            *ngFor="let multipleFilesArray of multipleFileArrays; let j = index"
-            class="multiple-file-upload"
+          <p
+            style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
           >
-            <h6 *ngIf="j === 0">صور محل الطلب</h6>
-            <h6 *ngIf="j === 1">صور سند الملكيه</h6>
-            <h6 *ngIf="j === 2">صور التوكيل</h6>
-            <input
-              type="file"
-              id="multipleFileInput{{ j }}"
-              class="file-input"
-              multiple
-              accept=".pdf, .png, .jpeg, .jpg"
-              (change)="onMultipleFilesSelected($event, j)"
-            />
-            <button
-              class="upload-btn"
-              (click)="triggerFileInput('multipleFileInput' + j)"
-            >
-              اضغط لاضافه ملفات متعدده
-            </button>
-            <div class="file-preview" *ngIf="multipleFilesArray.length">
-              <ul>
-                <li *ngFor="let file of multipleFilesArray">
-                  <i class="fas fa-file"></i> {{ file.name }} -
-                  {{ file.size / 1024 / 1024 | number : "1.2-2" }} MB
-                  <span class="remove-file" (click)="removeMultipleFile(file, j)"
-                    >&#10006;</span
-                  >
-                </li>
-              </ul>
-            </div>
-            <p
-              style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
-            >
-              PDF, JPG, JPEG, PNG :الصيغ المدعومه
-            </p>
-            <p
-              style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
-            >
-              اقصي حجم للملف 5 ميجابايت
-            </p>
-          </div>
+            PDF, JPG, JPEG, PNG :الصيغ المدعومه
+          </p>
+          <p
+            style="font-size: 12px; margin-top: 5px; color: rgb(146, 146, 146)"
+          >
+            اقصي حجم للملف 5 ميجابايت
+          </p>
         </div>
       </div>
     </div>
-  
-    <div
+  </div>
+
+  <div
     style="
       display: flex;
       justify-content: center;
@@ -338,8 +337,6 @@
   >
     <button (click)="sendRequest()" class="cta">انشئ طلب</button>
   </div>
-  <br><br><br>
-  <br><br><br>
-
-  </form>
-  
+  <br /><br /><br />
+  <br /><br /><br />
+</form>

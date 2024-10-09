@@ -1,0 +1,92 @@
+.container {
+  font-family: "NotoKufiSB";
+}
+
+/****************************NavBar************************************/
+.navbar {
+  position: fixed;
+  top: 25px; /* Keep this if you want a top offset */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* 80% of the viewport width */
+  height: 70px; /* Height of the navbar */
+  z-index: 1000; /* Keep it above other content */
+  background-color: #ffffff; /* Background color */
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Padding on left and right */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  border-radius: 5px;
+}
+
+.logo {
+  font-size: 24px; /* Logo font size */
+  font-weight: bold; /* Logo font weight */
+  color: #333; /* Logo color */
+  margin-right: 20px;
+}
+.text {
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex; /* Horizontal layout for links */
+  margin-right: 500px;
+}
+
+.nav-button {
+  color: #333; /* Text color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Padding */
+  transition: background-color 0.3s; /* Smooth transition */
+  font-family: NotoKufiB;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+}
+
+.cta-button {
+  background-color: #007bff; /* CTA button background color */
+  color: white; /* CTA button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+  font-family: NotoKufiB;
+  margin-left: 20px;
+}
+
+.cta-button:hover {
+  background-color: #0056b3; /* Darken on hover */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-top: 10px;
+  }
+  .btn {
+    margin-bottom: 10px;
+  }
+}
+
+.table {
+  text-align: right;
+  direction: rtl;
+}
+
+.table thead th {
+  text-align: center;
+}
+
+.table tbody td {
+  text-align: center;
+}
+
+.form-select,
+.form-control {
+  text-align: right;
+  direction: rtl;
+}
