@@ -24,6 +24,15 @@
     <img src="/assets/audit.png" style="width: 50%" />
     <p>ادارة المراجعة النهائية</p>
   </div>
+  <div
+    class="option"
+    (click)="
+      isOptionEnabled('review') ? navigateTo('/revising_Management') : null
+    "
+  >
+    <img src="/assets/review.png" style="width: 50%" />
+    <p>ادارة المراجعة بعد المسح</p>
+  </div>
 
   <div
     class="option"
@@ -40,15 +49,5 @@
   >
     <img src="/assets/Call-Center.png" style="width: 50%" />
     <p>كول سنتر</p>
-  </div>
-
-  <div
-    class="option"
-    (click)="
-      isOptionEnabled('review') ? navigateTo('/revising_Management') : null
-    "
-  >
-    <img src="/assets/review.png" style="width: 50%" />
-    <p>اداره المراجعة قبل المسح</p>
   </div>
 </div>
