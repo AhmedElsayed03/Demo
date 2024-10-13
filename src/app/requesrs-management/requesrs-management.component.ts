@@ -18,7 +18,7 @@ export class RequesrsManagementComponent  implements OnInit {
   requests: any[] = [];
   statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
   governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];
-  requestTypes = ['عقار', 'شقة'];
+  requestTypes = ['عقار', 'شقة' , 'أرض'];
 
   // Filters
   statusFilter: string = '';

@@ -1,36 +1,21 @@
 <div class="container mt-4">
-  <div class="row align-items-center shadow-box">
-    <!-- Right section with logo and title -->
-    <div
-      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center order-1 order-md-2"
-      style="margin-bottom: 25px"
-    >
-      <img src="assets/LogoText.png" alt="Egypt Logo" class="logotext" />
+  <nav class="navbar">
+    <button class="cta-button" routerLink="/admin_login">تسجيل خروج</button>
+    <div class="nav-links">
+    </div>
+    <div class="logo">
       <img
-        src="assets/CoatOfArms.png"
-        alt="Your Logo"
-        class="logo coatofarms ms-2"
+        class="text"
+        src="/assets/LogoText.png"
+        style="width: 212px; height: 29px"
       />
+      <img src="/assets/CoatOfArms.png" style="width: 34px; height: 47px" />
     </div>
-
-    <!-- Left section with buttons -->
-    <div
-      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center order-2 order-md-1"
-      style="font-size: 15px"
-    >
-      <button
-        type="button"
-        class="btn text-primary"
-        style="font-size: inherit"
-        [routerLink]="['/login']"
-      >
-        تسجيل الخروج
-      </button>
-      <img src="assets/Notifications.png" />
-    </div>
-  </div>
-
+  </nav>
+  <br /><br />  <br /><br />
   <br /><br />
+
+
 
   <div class="container">
     <div class="row mb-3">
@@ -86,9 +71,8 @@
       </div>
     </div>
     <br /><br />
-
     <!-- Filter Section -->
-    <div class="row mb-4 d-flex justify-content-between align-items-center">
+    <div class="row mb-4 d-flex justify-content-between align-items-center" >
       <!-- Date Filter (From Date) -->
       <div class="col-md-2 mb-2 mb-md-0">
         <input
@@ -144,19 +128,20 @@
 
       <!-- Status Filter -->
       <div class="col-md-2 mb-2 mb-md-0">
-        <!-- <select
-            class="form-select"
-            [(ngModel)]="statusFilter"
-            (ngModelChange)="applyFilters()"
-          >
-            <option value="">حالة الطلب</option>
-            <option *ngFor="let status of statuses" [value]="status">
-              {{ status }}
-            </option>
-          </select> -->
+        <select
+          class="form-select"
+          [(ngModel)]="statusFilter"
+          (ngModelChange)="applyFilters()"
+        >
+          <option value="">حالة الطلب</option>
+          <option *ngFor="let status of statuses" [value]="status">
+            {{ status }}
+          </option>
+        </select>
       </div>
     </div>
     <br /><br />
+
     <!-- Requests Table -->
     <table class="table table-striped" style="height: 550px">
       <thead>
@@ -178,37 +163,24 @@
       </thead>
       <tbody>
         <tr *ngFor="let request of filteredRequests">
-          <!-- <td> -->
-          <!-- Individual checkboxes for each request -->
-          <!-- <input
-                type="checkbox"
-                [value]="request"
-                (change)="toggleSelection(request)"
-                [checked]="isSelected(request)"
-              />
-            </td> -->
-          <td>{{ request.reqNumber }}</td>
-          <td>{{ request.ownerFullName }}</td>
-          <td>{{ request.date | date : "yyyy/MM/dd" }}</td>
-          <!-- <td>{{ numberOfDays(request.date) }}</td> -->
-          <!-- <td>{{ request.status }}</td> -->
-          <td>{{ request.phone || "غير معين" }}</td>
-          <td>{{ selectedDate }}</td>
-          <td>{{ selectedHour }}:{{ selectedMinute }} {{ amPm }}</td>
-
-          <td>
-            <button
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#scheduleModal"
-            >
-              تحديد الموعد
-            </button>
-          </td>
-
-          <!-- Add this data cell in the table row -->
+            <td>{{ request.reqNumber }}</td>
+            <td>{{ request.ownerFullName }}</td>
+            <td>{{ request.date | date : "yyyy/MM/dd" }}</td>
+            <td>{{ request.phone || "غير معين" }}</td>
+            <td>{{ request.appointment.date }}</td> <!-- Bind to request-specific date -->
+            <td>{{ request.appointment.hour }}:{{ request.appointment.minute }} {{ request.appointment.amPm }}</td> <!-- Bind to request-specific time -->
+    
+            <td>
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  (click)="openScheduleModal(request)" >
+                  تحديد الموعد
+                </button>
+            </td>
         </tr>
-      </tbody>
+    </tbody>
+    
     </table>
 
     <!-- Surveyor Assignment Modal -->
@@ -243,21 +215,7 @@
             </div>
 
             <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="assignSurveyor()"
-                [disabled]="!selectedSurveyor"
-              >
-                تعيين
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                إغلاق
-              </button>
+             
             </div>
           </div>
         </div>
