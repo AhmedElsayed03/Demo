@@ -9,16 +9,16 @@ import { LandRequestService } from '../services/land-request.service';
 @Component({
   selector: 'app-requesrs-management',
   standalone: true,
-  imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule ,RouterModule],
+  imports: [FormsModule, NgFor, NgClass, DatePipe, CommonModule, RouterModule],
   templateUrl: './requesrs-management.component.html',
-  styleUrl: './requesrs-management.component.css'
+  styleUrls: ['./requesrs-management.component.css']
 })
-export class RequesrsManagementComponent  implements OnInit {
-  requestId :number =0;
+export class RequesrsManagementComponent implements OnInit {
+  requestId: number = 0;
   requests: any[] = [];
   statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
   governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];
-  requestTypes = ['عقار', 'شقة' , 'أرض'];
+  requestTypes = ['عقار', 'شقة', 'أرض'];
 
   // Filters
   statusFilter: string = '';
@@ -37,7 +37,7 @@ export class RequesrsManagementComponent  implements OnInit {
     private activatedRoute: ActivatedRoute,
     private realEstateSer: RealEstateRequestService,
     private landSer: LandRequestService,
-    private router : ActivatedRoute
+    private router: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -47,21 +47,104 @@ export class RequesrsManagementComponent  implements OnInit {
       const id = params.get('id');  // 'id' is extracted from the route parameters
       // Handle the 'id' value here
     });
-
   }
 
   loadRequests() {
-    const storedRealEstateRequests = localStorage.getItem('realEstateRequests');
-    const storedLandRequests = localStorage.getItem('landRequests');
-
-    const realEstateRequests = storedRealEstateRequests
-      ? JSON.parse(storedRealEstateRequests)
-      : [];
-    const landRequests = storedLandRequests
-      ? JSON.parse(storedLandRequests)
-      : [];
-
-    this.requests = [...realEstateRequests, ...landRequests]; // Combine both requests
+    // Static data for requests
+    this.requests = [
+      {
+        reqNumber: 11202154,
+        date: '2024/10/01',
+        status: 'تم الرفع المساحي',
+        governorate: 'القاهرة',
+        type: 'عقار',
+        ownerFullName: 'أحمد علي',
+        ssn: '1234567890',
+      },
+      {
+        reqNumber: 15802154,
+        date: '2024/10/02',
+        status: 'تعذر',
+        governorate: 'الإسكندرية',
+        type: 'شقة',
+        ownerFullName: 'مريم محمد',
+        ssn: '0987654321',
+      },
+      {
+        reqNumber: 11205854,
+        date: '2024/10/03',
+        status: 'مدفوع',
+        governorate: 'الجيزة',
+        type: 'أرض',
+        ownerFullName: 'علي أحمد',
+        ssn: '1122334455',
+      },
+      
+      {
+        reqNumber: 11205854,
+        date: '2024/10/04',
+        status: 'مدفوع',
+        governorate: 'القاهرة',
+        type: 'أرض',
+        ownerFullName: 'مروة محمد',
+        ssn: '1122334455',
+      },
+      {
+        reqNumber: 18521367,
+        date: '2024/10/01',
+        status: 'تم الرفع المساحي',
+        governorate: 'القاهرة',
+        type: 'عقار',
+        ownerFullName: 'أحمد علي',
+        ssn: '1234567890',
+      },
+      {
+        reqNumber: 11205878,
+        date: '2024/10/02',
+        status: 'تعذر',
+        governorate: 'الإسكندرية',
+        type: 'شقة',
+        ownerFullName: 'مريم محمد',
+        ssn: '0987654321',
+      },
+      {
+        reqNumber: 11578543,
+        date: '2024/10/03',
+        status: 'مدفوع',
+        governorate: 'الجيزة',
+        type: 'أرض',
+        ownerFullName: 'علي أحمد',
+        ssn: '1122334455',
+      },
+      {
+        reqNumber: 11485626,
+        date: '2024/10/04',
+        status: 'تم الرفع المساحي',
+        governorate: 'القاهرة',
+        type: 'شقة',
+        ownerFullName: 'سمية حسن',
+        ssn: '2233445566',
+      },
+      {
+        reqNumber: 11202752,
+        date: '2024/10/05',
+        status: 'مدفوع',
+        governorate: 'الإسكندرية',
+        type: 'عقار',
+        ownerFullName: 'سعيد محمود',
+        ssn: '3344556677',
+      },
+      {
+        reqNumber:1158975 ,
+        date: '2024/10/06',
+        status: 'تعذر',
+        governorate: 'الجيزة',
+        type: 'أرض',
+        ownerFullName: 'فاطمة علي',
+        ssn: '4455667788',
+      },
+      // Add more static data as needed
+    ];
   }
 
   numberOfDays(pastDate: any): number {
@@ -163,7 +246,4 @@ export class RequesrsManagementComponent  implements OnInit {
     // Reapply filters to refresh the displayed requests
     this.applyFilters();
   }
-  
 }
-
-

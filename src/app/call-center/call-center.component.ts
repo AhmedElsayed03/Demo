@@ -61,9 +61,9 @@ export class CallCenterComponent implements OnInit {
         status: 'تم الرفع المساحي',
         appointment: {
           date: '',
-          hour: 12,
-          minute: 10,
-          amPm: 'AM'
+          hour: '00',
+          minute: '00',
+          amPm: '',
         }
       },
       {
@@ -76,9 +76,9 @@ export class CallCenterComponent implements OnInit {
         status: 'مدفوع',
         appointment: {
           date: '',
-          hour: 12,
-          minute: 10,
-          amPm: 'AM'
+          hour: '00',
+          minute: '00',
+          amPm: ''
         }
       },
       {
@@ -91,9 +91,9 @@ export class CallCenterComponent implements OnInit {
         status: 'تعذر',
         appointment: {
           date: '',
-          hour: 12,
-          minute: 10,
-          amPm: 'AM'
+          hour: '00',
+          minute: '00',
+          amPm: ''
         }
       },
       {
@@ -106,13 +106,13 @@ export class CallCenterComponent implements OnInit {
         status: 'مدفوع',
         appointment: {
           date: '',
-          hour: 12,
-          minute: 10,
-          amPm: 'AM'
+          hour: '00',
+          minute: '00',
+          amPm: ''
         }
       },
       {
-        reqNumber: '15863415',
+        reqNumber: '15863',
         ownerFullName: 'محمد حسن',
         date: '2023/09/30',
         phone: '01654321987',
@@ -121,9 +121,9 @@ export class CallCenterComponent implements OnInit {
         status: 'تم الرفع المساحي',
         appointment: {
           date: '',
-          hour: 12,
-          minute: 10,
-          amPm: 'AM'
+          hour: '00',
+          minute: '00',
+          amPm: ''
         }
       }
     ];

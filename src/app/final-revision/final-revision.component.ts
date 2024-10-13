@@ -16,7 +16,7 @@ export class FinalRevisionComponent implements OnInit {
   requests: any[] = [];
   statuses = ['تم الرفع المساحي', 'تعذر', 'مدفوع'];
   governorates = ['القاهرة', 'الإسكندرية', 'الجيزة'];
-  requestTypes = ['عقار', 'شقة'];
+  requestTypes = ['عقار', 'شقة' , 'أرض'];
 
   // Filters
   statusFilter: string = '';
@@ -53,8 +53,21 @@ export class FinalRevisionComponent implements OnInit {
       ? JSON.parse(storedLandRequests)
       : [];
 
-    this.requests = [...realEstateRequests, ...landRequests]; // Combine both requests
-  }
+      this.requests = [...realEstateRequests, ...landRequests]; // Combine both requests
+      this.requests = [
+        { reqNumber: 1158523, date: '2024/10/01', status: 'تم الرفع المساحي', governorate: 'القاهرة', type: 'عقار', ownerFullName: 'أحمد علي', ssn: '1234567890' },
+        { reqNumber: 1126987, date: '2024/10/02', status: 'تعذر', governorate: 'الإسكندرية', type: 'شقة', ownerFullName: 'مريم محمد', ssn: '0987654321' },
+        { reqNumber: 1145986, date: '2024/10/03', status: 'مدفوع', governorate: 'الجيزة', type: 'أرض', ownerFullName: 'علي أحمد', ssn: '1122334455' },
+        { reqNumber: 1147895, date: '2024/10/04', status: 'تم الرفع المساحي', governorate: 'القاهرة', type: 'شقة', ownerFullName: 'سمية حسن', ssn: '2233445566' },
+        { reqNumber: 1125245, date: '2024/10/05', status: 'مدفوع', governorate: 'الإسكندرية', type: 'عقار', ownerFullName: 'سعيد محمود', ssn: '3344556677' },
+        { reqNumber: 1148585, date: '2024/10/06', status: 'تعذر', governorate: 'الجيزة', type: 'أرض', ownerFullName: 'فاطمة علي', ssn: '4455667788' },
+        { reqNumber: 1135145, date: '2024/10/07', status: 'مدفوع', governorate: 'القاهرة', type: 'شقة', ownerFullName: 'نادية جابر', ssn: '5566778899' },
+        { reqNumber: 1145697, date: '2024/10/08', status: 'تعذر', governorate: 'الإسكندرية', type: 'عقار', ownerFullName: 'حسن عبد الله', ssn: '6677889900' },
+        { reqNumber: 1147566, date: '2024/10/09', status: 'تم الرفع المساحي', governorate: 'الجيزة', type: 'أرض', ownerFullName: 'ليلى كمال', ssn: '7788990011' },
+        { reqNumber: 1455962, date: '2024/10/10', status: 'مدفوع', governorate: 'القاهرة', type: 'شقة', ownerFullName: 'محمود سعيد', ssn: '8899001122' }
+      ];
+    }
+  
 
   numberOfDays(pastDate: any): number {
     if (typeof pastDate === 'string' || typeof pastDate === 'number') {
